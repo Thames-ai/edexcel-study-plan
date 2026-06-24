@@ -498,7 +498,7 @@ function renderDay(i){
     sl+='<button class="awb" onclick="openMod(\''+k+'\',\''+t.topic.replace(/'/g,"\\'")+'\')">❌ 加入错题本</button>';
     if(quizAvail)sl+='<button class="awb" style="color:var(--green);border-color:rgba(16,185,129,.3)" onclick="startTopicQuiz(\''+t.subject+'\',\''+topicKey.replace(/'/g,"\\'")+'\')">🧠 做题</button>';
     var conceptAvail=CONCEPTS[t.subject]&&CONCEPTS[t.subject][topicKey];
-    if(conceptAvail&&t.type==='学习')sl+='<button class="awb" style="color:var(--accent);border-color:rgba(59,130,246,.3)" onclick="goToLearn(\''+t.subject+'\',\''+topicKey.replace(/'/g,"\\'")+'\')">📖 学习</button>';
+    if(conceptAvail&&t.type==='learn')sl+='<button class="awb" style="color:var(--accent);border-color:rgba(59,130,246,.3)" onclick="goToLearn(\''+t.subject+'\',\''+topicKey.replace(/'/g,"\\'")+'\')">📖 学习</button>';
     sl+='</div>';
     sl+='<button class="sc-move" onclick="openMoveMod('+t.id+')" title="\u79fb\u52a8">\ud83d\udd00</button>';
     sl+='</div>';
