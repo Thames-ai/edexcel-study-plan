@@ -590,6 +590,7 @@ function backToQuizSubjects(){quizState.subject=null;quizState.topic=null;
 
 function startTopicQuiz(s,t){
   quizState={subject:s,topic:t,questions:QBANK[s][t].slice(),current:0,score:0,answers:{},submitted:false};
+  showSec('quiz');
   document.getElementById('quiz-subjects').style.display='none';document.getElementById('quiz-topics').style.display='none';renderQuiz()}
 
 function renderQuiz(){
