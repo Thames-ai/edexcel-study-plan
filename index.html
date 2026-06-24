@@ -7,13 +7,12 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 :root{--bg:#080c14;--bg2:#0f1520;--card:#141c2b;--surface:#111827;--text:#e2e8f0;--text2:#94a3b8;--muted:#64748b;--border:#1e293b;--border2:#334155;--accent:#3b82f6;--green:#10b981;--red:#ef4444;--yellow:#eab308;--orange:#f97316;--purple:#8b5cf6;--cyan:#06b6d4}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(800px 600px at 15% 5%,rgba(59,130,246,0.05),transparent),radial-gradient(600px 400px at 85% 90%,rgba(139,92,246,0.04),transparent);pointer-events:none;z-index:0}
 
-.topnav{position:sticky;top:0;z-index:100;background:rgba(8,12,20,0.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;padding:10px 20px;overflow-x:auto}
-.nav-logo{font-weight:800;font-size:15px;color:var(--accent);white-space:nowrap;letter-spacing:-0.5px}
+.topnav{position:sticky;top:0;z-index:100;background:rgba(8,12,20,0.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;padding:10px 20px}
+.nav-logo{font-weight:800;font-size:15px;color:var(--accent);white-space:nowrap;letter-spacing:-.5px}
 .nav-links{display:flex;gap:4px}
 .nav-links button{background:none;border:1px solid transparent;border-radius:8px;color:var(--text2);font-size:13px;font-weight:500;padding:6px 14px;cursor:pointer;white-space:nowrap;transition:all .2s;font-family:inherit}
 .nav-links button:hover{color:var(--text);background:var(--surface)}
@@ -58,26 +57,43 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(800px 
 .wk-hdr.collapsed .wk-tog{transform:rotate(-90deg)}
 .wk-body{padding-top:4px}.wk-body.hidden{display:none}
 
+/* Day card */
 .dc{background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:6px;overflow:hidden;transition:all .3s}
 .dc:hover{border-color:var(--border2)}
 .dc.wknd{border-left:3px solid var(--yellow)}
-.dc.shifted{opacity:.5;border-left:3px solid var(--red)}
+.dc.skipped{opacity:.45;border-left:3px solid var(--red)}
+
 .dh{display:flex;align-items:center;gap:6px;padding:7px 12px;background:var(--surface);border-bottom:1px solid var(--border);font-size:11px;flex-wrap:wrap}
 .dh-idx{font-family:'JetBrains Mono',monospace;color:var(--muted);font-size:10px}
 .dh-date{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--text2)}
 .dh-dow{font-weight:500;color:var(--muted)}
 .dh-note{margin-left:auto;font-size:9px;font-weight:600;color:var(--yellow);background:rgba(234,179,8,0.1);padding:1px 6px;border-radius:3px}
-.shift-b{background:none;border:1px solid rgba(239,68,68,0.25);color:var(--red);font-size:9px;font-weight:600;padding:2px 7px;border-radius:3px;cursor:pointer;font-family:inherit;margin-left:6px;transition:all .2s}
+
+/* Capacity bar in day header */
+.cap-bar{display:flex;align-items:center;gap:4px;margin-left:8px}
+.cap-track{width:60px;height:4px;background:var(--bg2);border-radius:3px;overflow:hidden}
+.cap-fill{height:100%;border-radius:3px;transition:width .4s}
+.cap-txt{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);min-width:35px}
+
+/* Shift buttons */
+.shift-b{background:none;border:1px solid rgba(239,68,68,0.25);color:var(--red);font-size:9px;font-weight:600;padding:2px 7px;border-radius:3px;cursor:pointer;font-family:inherit;margin-left:4px;transition:all .2s}
 .shift-b:hover{background:rgba(239,68,68,0.1)}
-.ushift-b{display:none;background:none;border:1px solid rgba(16,185,129,0.25);color:var(--green);font-size:9px;font-weight:600;padding:2px 7px;border-radius:3px;cursor:pointer;font-family:inherit;margin-left:6px;transition:all .2s}
+.ushift-b{display:none;background:none;border:1px solid rgba(16,185,129,0.25);color:var(--green);font-size:9px;font-weight:600;padding:2px 7px;border-radius:3px;cursor:pointer;font-family:inherit;margin-left:4px;transition:all .2s}
 .ushift-b:hover{background:rgba(16,185,129,0.1)}
-.dc.shifted .ushift-b{display:inline}.dc.shifted .shift-b{display:none}
-.shift-tag{display:none;font-size:9px;font-weight:700;color:var(--red);background:rgba(239,68,68,0.08);padding:1px 6px;border-radius:3px}
-.dc.shifted .shift-tag{display:inline}
+.dc.skipped .ushift-b{display:inline}.dc.skipped .shift-b{display:none}
+.shift-tag{display:none;font-size:9px;font-weight:700;color:var(--red);background:rgba(239,68,68,0.08);padding:1px 6px;border-radius:3px;margin-left:4px}
+.dc.skipped .shift-tag{display:inline}
+
 .ds{padding:8px 10px;display:flex;flex-direction:column;gap:6px}
 
-.sc{background:var(--bg2);border-radius:7px;padding:9px 10px;border-left:3px solid transparent;transition:all .3s}
-.sc.done{opacity:.4}.sc.done .st{opacity:0.6;text-decoration:line-through}
+.sc{background:var(--bg2);border-radius:7px;padding:9px 10px;border-left:3px solid transparent;transition:all .3s;position:relative}
+.sc.done{opacity:.4}.sc.done .st{opacity:.6;text-decoration:line-through}
+.sc.moved-in{border-left:3px dashed var(--cyan);animation:slideIn .4s ease}
+@keyframes slideIn{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:translateX(0)}}
+
+.sc-move{position:absolute;top:4px;right:4px;background:none;border:1px solid rgba(6,182,212,0.25);color:var(--cyan);font-size:8px;font-weight:600;padding:1px 5px;border-radius:2px;cursor:pointer;font-family:inherit;transition:all .2s;opacity:.5}
+.sc-move:hover{opacity:1;background:rgba(6,182,212,0.1)}
+
 .sh{display:flex;align-items:center;gap:5px;margin-bottom:4px;flex-wrap:wrap}
 .scb{width:14px;height:14px;accent-color:var(--accent);cursor:pointer;flex-shrink:0}
 .ssubj{font-size:10px;font-weight:700;padding:1px 6px;border-radius:3px;white-space:nowrap}
@@ -91,8 +107,19 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(800px 
 .awb{display:inline-flex;align-items:center;gap:2px;background:none;border:1px solid rgba(239,68,68,0.2);color:var(--red);font-size:9px;font-weight:600;padding:2px 6px;border-radius:3px;cursor:pointer;font-family:inherit;margin-top:3px;transition:all .2s}
 .awb:hover{background:rgba(239,68,68,0.08)}
 
+/* Origin tag for moved tasks */
+.orig-tag{font-size:8px;color:var(--cyan);background:rgba(6,182,212,0.08);padding:1px 5px;border-radius:2px;margin-left:4px;font-weight:600}
+
+/* Notification toast */
+.toast{position:fixed;top:60px;right:20px;z-index:300;background:var(--card);border:1px solid var(--border2);border-radius:10px;padding:12px 18px;max-width:340px;font-size:12px;box-shadow:0 8px 24px rgba(0,0,0,0.4);transform:translateX(120%);transition:transform .4s ease}
+.toast.show{transform:translateX(0)}
+.toast-title{font-weight:700;margin-bottom:4px;font-size:13px}
+.toast-body{color:var(--text2);line-height:1.6}
+.toast-body .hl{color:var(--accent);font-weight:600}
+.toast-body .warn{color:var(--orange);font-weight:600}
+
 /* Wrong Q Section */
-.wq-sec{}.wq-hdr{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.wq-hdr{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
 .wq-hdr h2{font-size:18px;font-weight:800}
 .wq-stats{display:flex;gap:10px;margin-bottom:16px}
 .wq-stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;text-align:center;flex:1;min-width:80px}
@@ -131,13 +158,23 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(800px 
 .modal-b{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;max-width:480px;width:100%;max-height:80vh;overflow-y:auto}
 .modal-b h3{font-size:15px;font-weight:800;margin-bottom:12px}
 
+/* Move task modal */
+.move-targets{display:flex;flex-direction:column;gap:4px;margin:10px 0;max-height:300px;overflow-y:auto}
+.move-target{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--surface);border:1px solid var(--border);border-radius:7px;cursor:pointer;transition:all .2s;font-size:12px}
+.move-target:hover{border-color:var(--accent);background:rgba(59,130,246,0.05)}
+.move-target.full{opacity:.4;cursor:not-allowed;border-color:var(--border)}
+.move-target .mt-date{font-family:'JetBrains Mono',monospace;font-weight:600;min-width:80px}
+.move-target .mt-dow{color:var(--muted)}
+.move-target .mt-cap{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:9px}
+.move-target .mt-cap.over{color:var(--red)}.move-target .mt-cap.ok{color:var(--green)}
+
 .tips{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-top:24px}
 .tips h3{font-size:14px;font-weight:700;margin-bottom:10px}
 .tips-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px}
 .tip-b{background:var(--surface);border-radius:8px;padding:10px}
 .tip-b .te{font-size:16px;margin-bottom:3px}.tip-b .tt{font-size:11px;font-weight:700;margin-bottom:2px}.tip-b .tx{font-size:10px;color:var(--text2);line-height:1.6}
 
-@media(max-width:600px){.container{padding:12px 8px}.stats{grid-template-columns:repeat(3,1fr)}.wq-fr{flex-direction:column}.wq-fr label{min-width:unset}}
+@media(max-width:600px){.container{padding:12px 8px}.stats{grid-template-columns:repeat(3,1fr)}.wq-fr{flex-direction:column}.wq-fr label{min-width:unset}.cap-bar{display:none}}
 </style>
 </head>
 <body>
@@ -151,7 +188,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(800px 
 
 <div class="section active" id="sec-schedule">
 <div class="container">
-<div class="hdr"><div class="hdr-badge">📅 EDEXCEL A-LEVEL · DAILY PLAN</div><h1>每日学习计划</h1><p>2026年6月25日 → 9月2日 · 70天 · 从零到全书完成</p></div>
+<div class="hdr"><div class="hdr-badge">📅 EDEXCEL A-LEVEL · DAILY PLAN</div><h1>每日学习计划</h1><p>2026年6月25日 → 9月2日 · <span id="hdr-days">70</span>天 · 从零到全书完成</p></div>
 <div class="stats" id="stats-row"></div>
 <div class="prog-sec" id="prog-section"></div>
 <div class="toolbar">
@@ -161,10 +198,10 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(800px 
 </div>
 <div id="sched-root"></div>
 <div class="tips"><h3>💡 使用说明</h3><div class="tips-g">
-<div class="tip-b"><div class="te">🔄</div><div class="tt">间隔复习</div><div class="tx">🔄标记的任务学后1/3/7天回顾，做题检测记忆。</div></div>
-<div class="tip-b"><div class="te">⏸</div><div class="tt">推迟日程</div><div class="tx">点击每天的⏸按钮跳过，日期自动顺延。支持批量推迟。</div></div>
-<div class="tip-b"><div class="te">❌</div><div class="tt">错题本</div><div class="tx">做错点击➕加入错题本，记录错误原因和正确思路。</div></div>
-<div class="tip-b"><div class="te">✅</div><div class="tt">进度追踪</div><div class="tx">勾选任务自动保存，进度条实时更新。</div></div>
+<div class="tip-b"><div class="te">⏸</div><div class="tt">智能推迟</div><div class="tx">跳过某天时，该天任务按容量自动分配到后续日期。工作日5h vs 周末3h自适应调整！</div></div>
+<div class="tip-b"><div class="te">🔀</div><div class="tt">手动迁移</div><div class="tx">每个任务右上角可单独移动到其他日期，灵活微调日程安排。</div></div>
+<div class="tip-b"><div class="te">📊</div><div class="tt">容量监控</div><div class="tx">每日头部显示容量进度条，超载变红预警，轻松掌握每天负担。</div></div>
+<div class="tip-b"><div class="te">❌</div><div class="tt">错题本</div><div class="tx">做错点击❌加入错题本，记录错误原因和正确思路，定期回顾。</div></div>
 </div></div>
 </div>
 </div>
@@ -198,31 +235,253 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(800px 
 </div>
 </div>
 
+<!-- Move task modal -->
+<div class="modal-ov" id="move-modal">
+<div class="modal-b">
+<h3>🔀 移动任务到其他日期</h3>
+<p style="font-size:12px;color:var(--text2);margin-bottom:8px" id="move-info"></p>
+<div class="move-targets" id="move-targets"></div>
+<div style="display:flex;gap:6px;margin-top:12px"><button class="wq-a" onclick="closeMoveMod()">取消</button></div>
+</div>
+</div>
+
+<!-- Toast notification -->
+<div class="toast" id="toast"><div class="toast-title" id="toast-title"></div><div class="toast-body" id="toast-body"></div></div>
+
 <script>
-const D=[{"idx":0,"dow":"Thu","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch1 Algebraic Expressions","tasks":["Read p10-18: indices, surds, rationalising","Ex 1A Q1-5, Ex 1B Q1-4","Ex 1C Q1-5 (surds)"],"type":"learn","hrs":2},{"subject":"Stats Y1","topic":"Ch1 Data Collection (start)","tasks":["Read p10-15: populations, samples, sampling","Ex 1A Q1-3, Ex 1B Q1-3"],"type":"learn","hrs":1.5},{"subject":"Chem Y1","topic":"Ch1 Atomic Structure (1.1-1.3)","tasks":["Read p19-26: atomic structure, mass spec","Section questions p26 Q1-4"],"type":"learn","hrs":1.5}]},{"idx":1,"dow":"Fri","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch1 (finish)","tasks":["Ex 1D Q1-6 (rationalising)","Mixed Ex 1 Q1,3,5,7,9","🔄 Quick review: Ex 1A-C key examples"],"type":"practice","hrs":2},{"subject":"Pure Y1","topic":"Ch2 Quadratics (start)","tasks":["Read p27-35: solving quadratics, discriminant","Ex 2A Q1-4, Ex 2B Q1-5, Ex 2C Q1-3"],"type":"learn","hrs":2},{"subject":"Stats Y1","topic":"Ch1 (continue)","tasks":["Ex 1C Q1-3 (non-random sampling)","Ex 1D Q1-3 (types of data)"],"type":"learn","hrs":1}]},{"idx":2,"dow":"Sat","isWeekend":true,"slots":[{"subject":"Pure Y1","topic":"Ch2 (continue)","tasks":["Ex 2D Q1-4, Ex 2E Q1-3 (completing the square)","🔄 Review Ch1: redo 2 tricky Qs from Mixed Ex 1"],"type":"learn","hrs":1.5},{"subject":"Chem Y1","topic":"Ch1 (1.4-1.5)","tasks":["Read p27-34: electron config, periodic trends","Section questions p34 Q1-5"],"type":"learn","hrs":1.5}]},{"idx":3,"dow":"Sun","isWeekend":true,"slots":[{"subject":"Stats Y1","topic":"Ch1 (finish)","tasks":["Ex 1E Q1-3 (large data set)","Mixed Ex 1 Q1,3,5","🔄 Review Pure Ch1 vocab"],"type":"practice","hrs":1.5},{"subject":"Pure Y1","topic":"Ch2 (finish)","tasks":["Ex 2F Q1-4, Ex 2G Q1-3, Ex 2H Q1-3","Mixed Ex 2 Q1,3,5,7,9"],"type":"practice","hrs":1.5}]},{"idx":4,"dow":"Mon","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch3 Equations & Inequalities (start)","tasks":["Read p47-55: simultaneous eq, quadratic inequalities","Ex 3A Q1-4, Ex 3B Q1-4, Ex 3C Q1-4"],"type":"learn","hrs":2},{"subject":"Chem Y1","topic":"Ch1 (1.6-1.8)","tasks":["Read p35-44: ionisation energy trends","Section questions p44 Q1-6","🔄 Review Ch1.1-1.5 definitions"],"type":"learn","hrs":1.5},{"subject":"Mech Y1","topic":"Ch8 Modelling in Mechanics (start)","tasks":["Read p127-131: models, assumptions, SI units","Ex 8A Q1-3, Ex 8B Q1-3"],"type":"learn","hrs":1.5}]},{"idx":5,"dow":"Tue","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch3 (continue)","tasks":["Ex 3D Q1-5, Ex 3E Q1-4 (regions on graphs)","🔄 Review Ch2: Mixed Ex 2 Q2,4,6"],"type":"learn","hrs":2},{"subject":"Stats Y1","topic":"Ch2 Measures of Location & Spread (start)","tasks":["Read p29-36: mean, median, mode, quartiles","Ex 2A Q1-4, Ex 2B Q1-3"],"type":"learn","hrs":2},{"subject":"Mech Y1","topic":"Ch8 (finish)","tasks":["Ex 8C Q1-3, Ex 8D Q1-3","Mixed Ex 8 Q1-5"],"type":"learn","hrs":1}]},{"idx":6,"dow":"Wed","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch3 (finish)","tasks":["Ex 3F-H Q1-3 each, Mixed Ex 3 Q1,3,5,7"],"type":"practice","hrs":2},{"subject":"Stats Y1","topic":"Ch2 (continue)","tasks":["Ex 2C-D Q1-3 each","🔄 Review Ch1: key definitions quiz"],"type":"learn","hrs":2},{"subject":"Chem Y1","topic":"Ch1 Review + Ch2 start","tasks":["Ch1 Mixed questions all","Read p45-52: ionic bonding"],"type":"practice","hrs":1}]},{"idx":7,"dow":"Thu","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch4 Graphs & Transformations","tasks":["Read p68-80: cubic/reciprocal graphs, transformations","Ex 4A-C Q1-4 each"],"type":"learn","hrs":2},{"subject":"Stats Y1","topic":"Ch2 (finish)","tasks":["Ex 2E Q1-3, Mixed Ex 2 Q1,3,5,7","🔄 Review Ch2 formulas"],"type":"practice","hrs":2},{"subject":"Chem Y1","topic":"Ch2 (2.1-2.4)","tasks":["Read p45-60: ionic, covalent, metallic bonding","Section questions p60 Q1-5"],"type":"learn","hrs":1}]},{"idx":8,"dow":"Fri","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch4 (finish)","tasks":["Ex 4D-F Q1-3 each, Mixed Ex 4 Q1,3,5","🔄 Review Ch3: timed inequalities practice"],"type":"practice","hrs":2.5},{"subject":"Mech Y1","topic":"Ch9 Constant Acceleration (start)","tasks":["Read p139-148: displacement-time, velocity-time, suvat","Ex 9A-B Q1-4 each"],"type":"learn","hrs":2.5}]},{"idx":9,"dow":"Sat","isWeekend":true,"slots":[{"subject":"Mech Y1","topic":"Ch9 (continue)","tasks":["Ex 9C-D Q1-4 each","🔄 Review Ch8: modelling assumptions"],"type":"learn","hrs":1.5},{"subject":"Stats Y1","topic":"Ch3 Representations of Data","tasks":["Read p49-55: outliers, box plots","Ex 3A-B Q1-3 each"],"type":"learn","hrs":1.5}]},{"idx":10,"dow":"Sun","isWeekend":true,"slots":[{"subject":"Pure Y1","topic":"Ch5 Straight Line Graphs (start)","tasks":["Read p98-108: gradients, eq of lines","Ex 5A-B Q1-4 each"],"type":"learn","hrs":1.5},{"subject":"Chem Y1","topic":"Ch2 (2.5-2.7)","tasks":["Read p61-74: molecular shapes, VSEPR","Section Qs Q1-5"],"type":"learn","hrs":1.5}]},{"idx":11,"dow":"Mon","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch5 (finish)","tasks":["Ex 5C-G Q1-3 each, Mixed Ex 5 Q1,3,5,7"],"type":"practice","hrs":2.5},{"subject":"Mech Y1","topic":"Ch9 (continue)","tasks":["Ex 9D-E Q1-3 each (vertical motion)"],"type":"learn","hrs":2.5}]},{"idx":12,"dow":"Tue","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch6 Circles (start)","tasks":["Read p122-132: equation of circle","Ex 6A-B Q1-4 each"],"type":"learn","hrs":2},{"subject":"Stats Y1","topic":"Ch3 (finish)","tasks":["Ex 3C-E Q1-3 each, Mixed Ex 3 Q1,3,5"],"type":"learn","hrs":2},{"subject":"Chem Y1","topic":"Ch2 (2.8-2.9)","tasks":["Read p75-87: intermolecular forces","Ch2 Mixed Qs all","🔄 Review Ch1 definitions"],"type":"learn","hrs":1}]},{"idx":13,"dow":"Wed","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch6 (finish) + Review Ex 1","tasks":["Ex 6C-F Q1-3 each, Mixed Ex 6 Q1,3,5","Review Exercise 1: Q1,3,5,7,9,11,13"],"type":"practice","hrs":3},{"subject":"Mech Y1","topic":"Ch9 (finish)","tasks":["Mixed Ex 9 Q1-8","🔄 Draw suvat triangles from memory"],"type":"practice","hrs":2}]},{"idx":14,"dow":"Thu","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch7 Algebraic Methods (start)","tasks":["Read p146-155: proof, algebraic fractions","Ex 7A-C Q1-4 each"],"type":"learn","hrs":2.5},{"subject":"Stats Y1","topic":"Ch4 Correlation","tasks":["Read p68-77: correlation, regression","Ex 4A-B Q1-3 each, Mixed Ex 4 Q1-5"],"type":"learn","hrs":2},{"subject":"Chem Y1","topic":"Ch3 Redox I","tasks":["Read p88-100: oxidation states, half-eq","All section Qs & Mixed Ex 3"],"type":"learn","hrs":0.5}]},{"idx":15,"dow":"Fri","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch7 (finish)","tasks":["Ex 7D-F Q1-3 each, Mixed Ex 7 Q1,3,5,7"],"type":"practice","hrs":2.5},{"subject":"Mech Y1","topic":"Ch10 Forces and Motion (start)","tasks":["Read p165-174: force diagrams, Newton 2","Ex 10A-C Q1-4 each"],"type":"learn","hrs":2.5}]},{"idx":16,"dow":"Sat","isWeekend":true,"slots":[{"subject":"Stats Y1","topic":"Ch5 Probability (start)","tasks":["Read p78-84: Venn diagrams, mutually exclusive","Ex 5A-B Q1-4 each"],"type":"learn","hrs":1.5},{"subject":"Chem Y1","topic":"Ch4 Inorganic Chemistry","tasks":["Read p101-112: Group 2, Group 7","Section Qs Q1-5","🔄 Review Ch2: bonding types"],"type":"learn","hrs":1.5}]},{"idx":17,"dow":"Sun","isWeekend":true,"slots":[{"subject":"Mech Y1","topic":"Ch10 (continue)","tasks":["Ex 10D Q1-4 (motion in 2D)","🔄 Review Ch9: redo 3 tricky Qs"],"type":"learn","hrs":1.5},{"subject":"Pure Y1","topic":"🔄 Review Ch4-7","tasks":["Redo wrongly answered Qs from Mixed Ex 4-7","Timed practice: 5 Qs in 15 min"],"type":"revise","hrs":1.5}]},{"idx":18,"dow":"Mon","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch8 Binomial Expansion","tasks":["Read p167-181: Pascal, binomial","Ex 8A-D Q1-3 each, Mixed Ex 8 Q1,3,5"],"type":"learn","hrs":2.5},{"subject":"Mech Y1","topic":"Ch10 (finish)","tasks":["Ex 10E-F Q1-4 each, Mixed Ex 10 Q1-6","🔄 Write all formulas from memory"],"type":"learn","hrs":2.5}]},{"idx":19,"dow":"Tue","isWeekend":false,"slots":[{"subject":"Stats Y1","topic":"Ch5 (finish)","tasks":["Ex 5C-D Q1-3 each, Mixed Ex 5 Q1,3,5,7"],"type":"learn","hrs":2},{"subject":"Chem Y1","topic":"Ch4 (finish) + Ch5 start","tasks":["Read p113-125: Group 2 & 7 reactions","Ch4 Mixed Qs","Read p126-135: moles, equations"],"type":"learn","hrs":3}]},{"idx":20,"dow":"Wed","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch9 Trigonometric Ratios (start)","tasks":["Read p182-196: sin/cos/tan, exact values","Ex 9A-C Q1-4 each"],"type":"learn","hrs":2.5},{"subject":"Mech Y1","topic":"Ch11 Variable Acceleration","tasks":["Read p190-205: diff/integration for motion","Ex 11A-E Q1-3 each, Mixed Ex 11 Q1-5"],"type":"learn","hrs":2.5}]},{"idx":21,"dow":"Thu","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch9 (finish)","tasks":["Ex 9D-F Q1-3 each, Mixed Ex 9 Q1,3,5,7","🔄 Review Ch7-8: redo 3 tricky Qs"],"type":"practice","hrs":3},{"subject":"Chem Y1","topic":"Ch5 (continue)","tasks":["Read p136-150: ideal gas, atom economy","Section Qs Q1-6"],"type":"learn","hrs":2}]},{"idx":22,"dow":"Fri","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch10 Trig Identities & Equations","tasks":["Read p211-225: identities, solving trig eq","Ex 10A-D Q1-4 each"],"type":"learn","hrs":3},{"subject":"Stats Y1","topic":"Ch6 Statistical Distributions (start)","tasks":["Read p92-100: distributions, binomial","Ex 6A-B Q1-4 each"],"type":"learn","hrs":2}]},{"idx":23,"dow":"Sat","isWeekend":true,"slots":[{"subject":"Pure Y1","topic":"Ch10 (finish)","tasks":["Ex 10E-F Q1-3 each, Mixed Ex 10 Q1,3,5"],"type":"practice","hrs":1.5},{"subject":"Mech Y1","topic":"🔄 Review Ex 2 + Exam Prep","tasks":["Review Ex 2 Q1,3,5,7,9","Exam-style: timed"],"type":"revise","hrs":1.5}]},{"idx":24,"dow":"Sun","isWeekend":true,"slots":[{"subject":"Stats Y1","topic":"Ch6 (finish)","tasks":["Ex 6C Q1-4, Mixed Ex 6 Q1,3,5"],"type":"learn","hrs":1.5},{"subject":"Chem Y1","topic":"Ch5 (finish)","tasks":["Read p151-156: practical techniques","Ch5 Mixed Qs all","🔄 Review Ch3 half-equations"],"type":"learn","hrs":1.5}]},{"idx":25,"dow":"Mon","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch11 Vectors","tasks":["Read p238-262: vector notation, magnitude","Ex 11A-F Q1-3 each, Mixed Ex 11 Q1,3,5"],"type":"learn","hrs":3},{"subject":"Stats Y1","topic":"Ch7 Hypothesis Testing (start)","tasks":["Read p107-115: hypothesis testing","Ex 7A-B Q1-4 each"],"type":"learn","hrs":2}]},{"idx":26,"dow":"Tue","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Review Exercise 2","tasks":["Review Ex 2: Q1,3,5,7,9,11","🔄 Solve 5 trig eq timed"],"type":"revise","hrs":2.5},{"subject":"Stats Y1","topic":"Ch7 (finish)","tasks":["Ex 7C-D Q1-3 each, Mixed Ex 7 Q1,3,5,7"],"type":"learn","hrs":2.5}]},{"idx":27,"dow":"Wed","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch12 Differentiation (start)","tasks":["Read p263-280: gradient, first principles","Ex 12A-C Q1-5 each"],"type":"learn","hrs":2.5},{"subject":"Chem Y1","topic":"Ch6.1 Organic Intro","tasks":["Read p157-177: nomenclature, isomerism","Section Qs p177 Q1-6"],"type":"learn","hrs":2.5}]},{"idx":28,"dow":"Thu","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch12 (continue)","tasks":["Ex 12D-E Q1-4 each","🔄 Review Ch11: vector problems x3"],"type":"learn","hrs":2.5},{"subject":"Stats Y1","topic":"Review Ex 1 + Full Review","tasks":["Review Ex 1 Q1,3,5,7,9","📋 Make formula sheet from memory"],"type":"revise","hrs":2.5}]},{"idx":29,"dow":"Fri","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch12 (finish)","tasks":["Ex 12F-G Q1-3 each, Mixed Ex 12 Q1,3,5,7"],"type":"practice","hrs":3},{"subject":"Chem Y1","topic":"Ch6.2 Hydrocarbons","tasks":["Read p178-198: alkanes, distillation","Section Qs p198 Q1-5"],"type":"learn","hrs":2}]},{"idx":30,"dow":"Sat","isWeekend":true,"slots":[{"subject":"Pure Y1","topic":"Ch13 Integration (start)","tasks":["Read p294-304: indefinite/definite integrals","Ex 13A-B Q1-5 each"],"type":"learn","hrs":1.5},{"subject":"Chem Y1","topic":"Ch6.2 (continue)","tasks":["Read p199-208: alkenes, electrophilic addition","Section Qs p208 Q1-5"],"type":"learn","hrs":1.5}]},{"idx":31,"dow":"Sun","isWeekend":true,"slots":[{"subject":"Pure Y1","topic":"Ch13 (continue)","tasks":["Ex 13C-D Q1-3 each","🔄 Review Ch12: differentiation rules"],"type":"learn","hrs":1.5},{"subject":"Stats Y1","topic":"🔄 Full Stats Review","tasks":["Redo wrong Qs from Review Ex 1","Practice 10 Mixed questions"],"type":"revise","hrs":1.5}]},{"idx":32,"dow":"Mon","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch13 (finish)","tasks":["Ex 13E-F Q1-3 each, Mixed Ex 13 Q1,3,5,7"],"type":"practice","hrs":2.5},{"subject":"Chem Y1","topic":"Ch6.3 Halogenoalkanes & Alcohols","tasks":["Read p209-220: substitution, elimination","Section Qs p220 Q1-5"],"type":"learn","hrs":2.5}]},{"idx":33,"dow":"Tue","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch14 Exponentials & Logs (start)","tasks":["Read p318-330: exp functions, log laws","Ex 14A-C Q1-4 each"],"type":"learn","hrs":2.5},{"subject":"Chem Y1","topic":"Ch6.3 (finish) + Ch7 start","tasks":["Read p221-231: oxidation of alcohols","Ch6.3 Mixed Qs","Read p232-243: mass spec, IR"],"type":"learn","hrs":2.5}]},{"idx":34,"dow":"Wed","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"Ch14 (finish) + Review Ex 3","tasks":["Ex 14D-F Q1-3 each, Mixed Ex 14 Q1,3,5,7","Review Ex 3: Q1,3,5,7,9,11"],"type":"practice","hrs":3},{"subject":"Chem Y1","topic":"Ch7 (finish) + Ch8 start","tasks":["Ch7 Mixed Qs","Read p244-255: enthalpy, Hess's law"],"type":"learn","hrs":2}]},{"idx":35,"dow":"Thu","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"🔄 PURE Y1 REVIEW","tasks":["Exam Paper 1 — TIMED 2hr","Mark errors, add to ❌错题本"],"type":"revise","hrs":2.5},{"subject":"Chem Y1","topic":"Ch8 Energetics (continue)","tasks":["Read p256-268: bond enthalpies","Section Qs Q1-5","🔄 Review Ch5: mole calculations"],"type":"learn","hrs":2.5}]},{"idx":36,"dow":"Fri","isWeekend":false,"slots":[{"subject":"Pure Y1","topic":"🔄 PURE Y1 REVIEW 2","tasks":["Exam Paper 2 — TIMED","Mark, review, redo wrong Qs"],"type":"revise","hrs":2.5},{"subject":"Chem Y1","topic":"Ch8 (finish) + Ch9 start","tasks":["Ch8 Mixed Qs","Read p269-275: collision theory"],"type":"learn","hrs":2.5}]},{"idx":37,"dow":"Sat","isWeekend":true,"slots":[{"subject":"Stats Y1","topic":"🔄 STATS Y1 REVIEW","tasks":["Practice exam — TIMED","Mark & identify weak areas"],"type":"revise","hrs":1.5},{"subject":"Mech Y1","topic":"🔄 MECH Y1 REVIEW","tasks":["Practice exam — TIMED","Mark & identify weak areas"],"type":"revise","hrs":1.5}]},{"idx":38,"dow":"Sun","isWeekend":true,"slots":[{"subject":"Pure Y2","topic":"Ch1 Algebraic Methods","tasks":["Read p2-18: proof, partial fractions","Ex 1A-E Q1-3 each, Mixed Ex 1 Q1,3,5"],"type":"learn","hrs":2},{"subject":"Chem Y1","topic":"🔄 Chem Review","tasks":["Redo wrongly answered Qs","Organic flowchart from memory"],"type":"revise","hrs":1}]},{"idx":39,"dow":"Mon","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch2 Functions and Graphs (start)","tasks":["Read p25-42: modulus, composite/inverse","Ex 2A-D Q1-4 each"],"type":"learn","hrs":3},{"subject":"Chem Y1","topic":"Ch9 Kinetics I (finish)","tasks":["Read p276-280: Maxwell-Boltzmann","Ch9 Mixed Qs","🔄 Review Ch8 energetics"],"type":"learn","hrs":2}]},{"idx":40,"dow":"Tue","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch2 (finish)","tasks":["Ex 2E-G Q1-3 each, Mixed Ex 2 Q1,3,5"],"type":"practice","hrs":2.5},{"subject":"Chem Y1","topic":"Ch10 Equilibrium I","tasks":["Read p281-292: Le Chatelier, Kc","All section Qs + Mixed Ex 10"],"type":"learn","hrs":2.5}]},{"idx":41,"dow":"Wed","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch3 Sequences & Series (start)","tasks":["Read p56-75: arithmetic/geometric","Ex 3A-D Q1-4 each"],"type":"learn","hrs":3},{"subject":"Chem Y1","topic":"🔄 CHEM Y1 FULL REVIEW","tasks":["Ch1-10 comprehensive quiz","Make complete reaction map","📝 Identify top 3 weak chapters"],"type":"revise","hrs":2}]},{"idx":42,"dow":"Thu","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch3 (continue)","tasks":["Ex 3E-G Q1-4 each","🔄 Review Ch2: composite/inverse fn Qs"],"type":"learn","hrs":2.5},{"subject":"Stats Y2","topic":"Ch1 Regression & Hypothesis Testing","tasks":["Read p10-24: PMCC, testing correlation","Ex 1A-C Q1-3 each"],"type":"learn","hrs":2.5}]},{"idx":43,"dow":"Fri","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch3 (finish)","tasks":["Ex 3H Q1-4, Mixed Ex 3 Q1,3,5,7"],"type":"practice","hrs":2.5},{"subject":"Stats Y2","topic":"Ch2 Conditional Probability","tasks":["Read p25-42: conditional prob, Venn/tree","Ex 2A-C Q1-4 each"],"type":"learn","hrs":2.5}]},{"idx":44,"dow":"Sat","isWeekend":true,"slots":[{"subject":"Stats Y2","topic":"Ch2 (finish)","tasks":["Ex 2D Q1-3","🔄 Review Stats Y1 Ch5"],"type":"learn","hrs":1.5},{"subject":"Mech Y2","topic":"Ch4 Moments (start)","tasks":["Read p79-90: moments, equilibrium","Ex 4A-B Q1-4 each"],"type":"learn","hrs":1.5}]},{"idx":45,"dow":"Sun","isWeekend":true,"slots":[{"subject":"Pure Y2","topic":"Ch4 Binomial Expansion","tasks":["Read p101-107: (1+x)^n expansion","Ex 4A-C Q1-3 each, Mixed Ex 4 Q1,3,5"],"type":"learn","hrs":2},{"subject":"Mech Y2","topic":"Ch4 (continue)","tasks":["Ex 4C-D Q1-3 each","🔄 Review Mech Y1 Ch10"],"type":"learn","hrs":1}]},{"idx":46,"dow":"Mon","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch5 Radians","tasks":["Read p107-113: radian, arc/sector","Ex 5A-E Q1-3 each, Mixed Ex 5 Q1,3,5"],"type":"learn","hrs":2.5},{"subject":"Stats Y2","topic":"Ch3 Normal Distribution (start)","tasks":["Read p46-58: normal distribution","Ex 3A-B Q1-5 each"],"type":"learn","hrs":2.5}]},{"idx":47,"dow":"Tue","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"🔄 Review Ch1-5 + Review Ex 1","tasks":["Review Ex 1: Q1,3,5,7,9,11","🔄 Flashcards: sequences, binomial, radians"],"type":"revise","hrs":2.5},{"subject":"Stats Y2","topic":"Ch3 (finish)","tasks":["Ex 3C-E Q1-3 each, Mixed Ex 3 Q1,3,5"],"type":"learn","hrs":2.5}]},{"idx":48,"dow":"Wed","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch6 Trigonometric Functions","tasks":["Read p114-127: sec/cosec/cot","Ex 6A-E Q1-3 each, Mixed Ex 6 Q1,3,5"],"type":"learn","hrs":3},{"subject":"Mech Y2","topic":"Ch4 (finish) + Ch5 start","tasks":["Mixed Ex 4 Q1-5","Read p99-107: friction, F=μR","Ex 5A Q1-4"],"type":"learn","hrs":2}]},{"idx":49,"dow":"Thu","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch7 Trigonometry & Modelling (start)","tasks":["Read p128-145: addition, double angle","Ex 7A-D Q1-4 each"],"type":"learn","hrs":2.5},{"subject":"Mech Y2","topic":"Ch5 (finish)","tasks":["Ex 5B-D Q1-3 each, Mixed Ex 5 Q1,3,5"],"type":"learn","hrs":2.5}]},{"idx":50,"dow":"Fri","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch7 (continue)","tasks":["Ex 7E-F Q1-3 each","🔄 Review Ch6: sec/cosec/cot quiz"],"type":"learn","hrs":2.5},{"subject":"Mech Y2","topic":"Ch6 Projectiles (start)","tasks":["Read p116-126: horizontal projectiles","Ex 6A-B Q1-4 each"],"type":"learn","hrs":2.5}]},{"idx":51,"dow":"Sat","isWeekend":true,"slots":[{"subject":"Pure Y2","topic":"Ch7 (finish)","tasks":["Ex 7G Q1-3, Mixed Ex 7 Q1,3,5,7"],"type":"practice","hrs":1.5},{"subject":"Chem Y1","topic":"🔄 Chem Y1 Review Day","tasks":["Redo top 3 weak chapter exercises","Organic pathways from memory"],"type":"revise","hrs":1.5}]},{"idx":52,"dow":"Sun","isWeekend":true,"slots":[{"subject":"Mech Y2","topic":"Ch6 (continue)","tasks":["Ex 6C-D Q1-3 each","🔄 Review Mech Y1: suvat quiz"],"type":"learn","hrs":1.5},{"subject":"Stats Y2","topic":"🔄 Stats Y2 Review","tasks":["Review Ex 1: Q1,3,5,7","🔄 Review Stats Y1 Ch6-7"],"type":"revise","hrs":1.5}]},{"idx":53,"dow":"Mon","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch8 Parametric Equations","tasks":["Read p162-173: parametric forms","Ex 8A-E Q1-3 each, Mixed Ex 8 Q1,3,5"],"type":"learn","hrs":3},{"subject":"Mech Y2","topic":"Ch6 (finish)","tasks":["Mixed Ex 6 Q1,3,5","🔄 Summary sheet Ch4-5"],"type":"practice","hrs":2}]},{"idx":54,"dow":"Tue","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"🔄 Review Ch6-8 + Review Ex 2","tasks":["Review Ex 2: Q1,3,5,7,9","🔄 Trig addition/double angle from memory"],"type":"revise","hrs":3},{"subject":"Mech Y2","topic":"Ch7 Applications of Forces (start)","tasks":["Read p137-150: statics, dynamics","Ex 7A-B Q1-4 each"],"type":"learn","hrs":2}]},{"idx":55,"dow":"Wed","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch9 Differentiation (start)","tasks":["Read p174-195: chain/product/quotient","Ex 9A-D Q1-4 each"],"type":"learn","hrs":3},{"subject":"Mech Y2","topic":"Ch7 (continue)","tasks":["Ex 7C-D Q1-3 each","🔄 Review Ch6 projectile paths"],"type":"learn","hrs":2}]},{"idx":56,"dow":"Thu","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch9 (continue)","tasks":["Ex 9E-G Q1-4 each (trig, parametric, implicit)"],"type":"learn","hrs":3},{"subject":"Mech Y2","topic":"Ch7 (finish) + Ch8 start","tasks":["Mixed Ex 7 Q1-5","Read p168-180: variable acceleration","Ex 8A Q1-4"],"type":"learn","hrs":2}]},{"idx":57,"dow":"Fri","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch9 (finish)","tasks":["Ex 9H-I Q1-3 each, Mixed Ex 9 Q1,3,5,7","🔄 Review Ch8: parametric → Cartesian x3"],"type":"practice","hrs":3},{"subject":"Mech Y2","topic":"Ch8 (continue)","tasks":["Ex 8B-C Q1-3 each"],"type":"learn","hrs":2}]},{"idx":58,"dow":"Sat","isWeekend":true,"slots":[{"subject":"Mech Y2","topic":"Ch8 (finish) + Review","tasks":["Mixed Ex 8 Q1-5","🔄 All Mech Y2 formulas from memory"],"type":"practice","hrs":1.5},{"subject":"Chem Y1","topic":"🔄 Chem Deep Review","tasks":["Redo all wrongly answered mixed exercises","Practice explaining practicals"],"type":"revise","hrs":1.5}]},{"idx":59,"dow":"Sun","isWeekend":true,"slots":[{"subject":"Pure Y2","topic":"Ch10 Numerical Methods","tasks":["Read p221-237: roots, iteration, Newton-Raphson","Ex 10A-D Q1-3 each, Mixed Ex 10 Q1,3,5"],"type":"learn","hrs":2},{"subject":"Stats Y2","topic":"🔄 Stats Y2 Mixed Practice","tasks":["Mixed practice Ch1-3: 10 questions","Calculator skills practice"],"type":"revise","hrs":1}]},{"idx":60,"dow":"Mon","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch11 Integration (start - BIG chapter!)","tasks":["Read p238-260: standard, reverse chain, trig","Ex 11A-D Q1-5 each"],"type":"learn","hrs":3},{"subject":"Stats Y2","topic":"🔄 Review Ex 2 (SM Y2)","tasks":["Review Ex 2: Q1,3,5,7,9","🔄 Review Stats Y1: 15 mixed Qs"],"type":"revise","hrs":2}]},{"idx":61,"dow":"Tue","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch11 (continue)","tasks":["Ex 11E-G Q1-4 each (substitution, parts, partial frac)"],"type":"learn","hrs":3},{"subject":"Mech Y2","topic":"🔄 Mech Y2 Full Review","tasks":["Mixed practice: 10 questions Ch4-8","Exam-style: TIMED"],"type":"revise","hrs":2}]},{"idx":62,"dow":"Wed","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch11 (continue)","tasks":["Ex 11H-J Q1-3 each (areas, trapezium rule, DEs)"],"type":"learn","hrs":3},{"subject":"Chem Y1","topic":"🔄 Chem Final Review","tasks":["Topic quiz: 20 questions","6-mark writing Qs x3"],"type":"revise","hrs":2}]},{"idx":63,"dow":"Thu","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch11 (finish)","tasks":["Ex 11K Q1-3, Mixed Ex 11 Q1,3,5,7,9"],"type":"practice","hrs":3},{"subject":"Chem Y1","topic":"🔄 Chem Weak Topics Focus","tasks":["Targeted practice 3 weakest chapters","Review all required practicals"],"type":"revise","hrs":2}]},{"idx":64,"dow":"Fri","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"Ch12 Vectors 3D","tasks":["Read p311-329: 3D vectors","Ex 12A-D Q1-3 each, Mixed Ex 12 Q1,3,5"],"type":"learn","hrs":3},{"subject":"Mech Y2","topic":"🔄 Mech Weak Topics Focus","tasks":["Pulleys & connected particles practice","Inclined plane problems"],"type":"revise","hrs":2}]},{"idx":65,"dow":"Sat","isWeekend":true,"slots":[{"subject":"Pure Y2","topic":"🔄 PURE Y2 Review Ex 3","tasks":["Review Ex 3: Q1,3,5,7,9,11,13","🔄 Integration techniques summary"],"type":"revise","hrs":1.5},{"subject":"Stats ALL","topic":"🔄 Stats Y1+Y2 Combined","tasks":["Mixed practice: 15 questions","Hypothesis testing rules from memory"],"type":"revise","hrs":1.5}]},{"idx":66,"dow":"Sun","isWeekend":true,"slots":[{"subject":"Pure Y2","topic":"🔄 PURE Y2 Exam Practice","tasks":["Exam Paper 1: TIMED 2hr","Mark errors, add to ❌错题本"],"type":"revise","hrs":2},{"subject":"Chem Y1","topic":"🔄 Chem Final","tasks":["Practice paper TIMED","Organic mechanisms from memory"],"type":"revise","hrs":1}]},{"idx":67,"dow":"Mon","isWeekend":false,"slots":[{"subject":"Pure Y2","topic":"🔄 PURE Y2 Exam Practice 2","tasks":["Exam Paper 2: TIMED 2hr","Mark, review, redo wrong Qs"],"type":"revise","hrs":2.5},{"subject":"Stats+Mech ALL","topic":"🔄 Stats & Mech Full Paper","tasks":["Complete paper: TIMED","Mark & identify weakest topics","Formula sheet: write ALL from memory"],"type":"revise","hrs":2.5}]},{"idx":68,"dow":"Tue","isWeekend":false,"slots":[{"subject":"ALL","topic":"🔄 COMPREHENSIVE REVIEW","tasks":["Redo ALL wrong Qs from ❌错题本","Focus on weakest topics","Create master formula sheets","🏁 You finished all 5 textbooks!"],"type":"revise","hrs":5}]},{"idx":69,"dow":"Wed","isWeekend":false,"slots":[{"subject":"ALL","topic":"🔄 FINAL CONSOLIDATION","tasks":["Light review of summary sheets","Redo easy Qs for confidence","📌 1 past paper/week/subject until 2028 exam"],"type":"revise","hrs":3}]}];
+const TASKS=[{"id":1,"origDay":0,"subject":"Pure Y1","topic":"Ch1 Algebraic Expressions","tasks":["Read p10-18: indices, surds, rationalising","Ex 1A Q1-5, Ex 1B Q1-4","Ex 1C Q1-5 (surds)"],"type":"learn","hrs":2},{"id":2,"origDay":0,"subject":"Stats Y1","topic":"Ch1 Data Collection (start)","tasks":["Read p10-15: populations, samples, sampling","Ex 1A Q1-3, Ex 1B Q1-3"],"type":"learn","hrs":1.5},{"id":3,"origDay":0,"subject":"Chem Y1","topic":"Ch1 Atomic Structure (1.1-1.3)","tasks":["Read p19-26: atomic structure, mass spec","Section questions p26 Q1-4"],"type":"learn","hrs":1.5},{"id":4,"origDay":1,"subject":"Pure Y1","topic":"Ch1 (finish)","tasks":["Ex 1D Q1-6 (rationalising)","Mixed Ex 1 Q1,3,5,7,9","🔄 Quick review: Ex 1A-C key examples"],"type":"practice","hrs":2},{"id":5,"origDay":1,"subject":"Pure Y1","topic":"Ch2 Quadratics (start)","tasks":["Read p27-35: solving quadratics, discriminant","Ex 2A Q1-4, Ex 2B Q1-5, Ex 2C Q1-3"],"type":"learn","hrs":2},{"id":6,"origDay":1,"subject":"Stats Y1","topic":"Ch1 (continue)","tasks":["Ex 1C Q1-3 (non-random sampling)","Ex 1D Q1-3 (types of data)"],"type":"learn","hrs":1},{"id":7,"origDay":2,"subject":"Pure Y1","topic":"Ch2 (continue)","tasks":["Ex 2D Q1-4, Ex 2E Q1-3 (completing the square)","🔄 Review Ch1: redo 2 tricky Qs from Mixed Ex 1"],"type":"learn","hrs":1.5},{"id":8,"origDay":2,"subject":"Chem Y1","topic":"Ch1 (1.4-1.5)","tasks":["Read p27-34: electron config, periodic trends","Section questions p34 Q1-5"],"type":"learn","hrs":1.5},{"id":9,"origDay":3,"subject":"Stats Y1","topic":"Ch1 (finish)","tasks":["Ex 1E Q1-3 (large data set)","Mixed Ex 1 Q1,3,5","🔄 Review Pure Ch1 vocab"],"type":"practice","hrs":1.5},{"id":10,"origDay":3,"subject":"Pure Y1","topic":"Ch2 (finish)","tasks":["Ex 2F Q1-4, Ex 2G Q1-3, Ex 2H Q1-3","Mixed Ex 2 Q1,3,5,7,9"],"type":"practice","hrs":1.5},{"id":11,"origDay":4,"subject":"Pure Y1","topic":"Ch3 Equations & Inequalities (start)","tasks":["Read p47-55: simultaneous eq, quadratic inequalities","Ex 3A Q1-4, Ex 3B Q1-4, Ex 3C Q1-4"],"type":"learn","hrs":2},{"id":12,"origDay":4,"subject":"Chem Y1","topic":"Ch1 (1.6-1.8)","tasks":["Read p35-44: ionisation energy trends","Section questions p44 Q1-6","🔄 Review Ch1.1-1.5 definitions"],"type":"learn","hrs":1.5},{"id":13,"origDay":4,"subject":"Mech Y1","topic":"Ch8 Modelling in Mechanics (start)","tasks":["Read p127-131: models, assumptions, SI units","Ex 8A Q1-3, Ex 8B Q1-3"],"type":"learn","hrs":1.5},{"id":14,"origDay":5,"subject":"Pure Y1","topic":"Ch3 (continue)","tasks":["Ex 3D Q1-5, Ex 3E Q1-4 (regions on graphs)","🔄 Review Ch2: Mixed Ex 2 Q2,4,6"],"type":"learn","hrs":2},{"id":15,"origDay":5,"subject":"Stats Y1","topic":"Ch2 Measures of Location & Spread (start)","tasks":["Read p29-36: mean, median, mode, quartiles","Ex 2A Q1-4, Ex 2B Q1-3"],"type":"learn","hrs":2},{"id":16,"origDay":5,"subject":"Mech Y1","topic":"Ch8 (finish)","tasks":["Ex 8C Q1-3, Ex 8D Q1-3","Mixed Ex 8 Q1-5"],"type":"learn","hrs":1},{"id":17,"origDay":6,"subject":"Pure Y1","topic":"Ch3 (finish)","tasks":["Ex 3F-H Q1-3 each, Mixed Ex 3 Q1,3,5,7"],"type":"practice","hrs":2},{"id":18,"origDay":6,"subject":"Stats Y1","topic":"Ch2 (continue)","tasks":["Ex 2C-D Q1-3 each","🔄 Review Ch1: key definitions quiz"],"type":"learn","hrs":2},{"id":19,"origDay":6,"subject":"Chem Y1","topic":"Ch1 Review + Ch2 start","tasks":["Ch1 Mixed questions all","Read p45-52: ionic bonding"],"type":"practice","hrs":1},{"id":20,"origDay":7,"subject":"Pure Y1","topic":"Ch4 Graphs & Transformations","tasks":["Read p68-80: cubic/reciprocal graphs, transformations","Ex 4A-C Q1-4 each"],"type":"learn","hrs":2},{"id":21,"origDay":7,"subject":"Stats Y1","topic":"Ch2 (finish)","tasks":["Ex 2E Q1-3, Mixed Ex 2 Q1,3,5,7","🔄 Review Ch2 formulas"],"type":"practice","hrs":2},{"id":22,"origDay":7,"subject":"Chem Y1","topic":"Ch2 (2.1-2.4)","tasks":["Read p45-60: ionic, covalent, metallic bonding","Section questions p60 Q1-5"],"type":"learn","hrs":1},{"id":23,"origDay":8,"subject":"Pure Y1","topic":"Ch4 (finish)","tasks":["Ex 4D-F Q1-3 each, Mixed Ex 4 Q1,3,5","🔄 Review Ch3: timed inequalities practice"],"type":"practice","hrs":2.5},{"id":24,"origDay":8,"subject":"Mech Y1","topic":"Ch9 Constant Acceleration (start)","tasks":["Read p139-148: displacement-time, velocity-time, suvat","Ex 9A-B Q1-4 each"],"type":"learn","hrs":2.5},{"id":25,"origDay":9,"subject":"Mech Y1","topic":"Ch9 (continue)","tasks":["Ex 9C-D Q1-4 each","🔄 Review Ch8: modelling assumptions"],"type":"learn","hrs":1.5},{"id":26,"origDay":9,"subject":"Stats Y1","topic":"Ch3 Representations of Data","tasks":["Read p49-55: outliers, box plots","Ex 3A-B Q1-3 each"],"type":"learn","hrs":1.5},{"id":27,"origDay":10,"subject":"Pure Y1","topic":"Ch5 Straight Line Graphs (start)","tasks":["Read p98-108: gradients, eq of lines","Ex 5A-B Q1-4 each"],"type":"learn","hrs":1.5},{"id":28,"origDay":10,"subject":"Chem Y1","topic":"Ch2 (2.5-2.7)","tasks":["Read p61-74: molecular shapes, VSEPR","Section Qs Q1-5"],"type":"learn","hrs":1.5},{"id":29,"origDay":11,"subject":"Pure Y1","topic":"Ch5 (finish)","tasks":["Ex 5C-G Q1-3 each, Mixed Ex 5 Q1,3,5,7"],"type":"practice","hrs":2.5},{"id":30,"origDay":11,"subject":"Mech Y1","topic":"Ch9 (continue)","tasks":["Ex 9D-E Q1-3 each (vertical motion)"],"type":"learn","hrs":2.5},{"id":31,"origDay":12,"subject":"Pure Y1","topic":"Ch6 Circles (start)","tasks":["Read p122-132: equation of circle","Ex 6A-B Q1-4 each"],"type":"learn","hrs":2},{"id":32,"origDay":12,"subject":"Stats Y1","topic":"Ch3 (finish)","tasks":["Ex 3C-E Q1-3 each, Mixed Ex 3 Q1,3,5"],"type":"learn","hrs":2},{"id":33,"origDay":12,"subject":"Chem Y1","topic":"Ch2 (2.8-2.9)","tasks":["Read p75-87: intermolecular forces","Ch2 Mixed Qs all","🔄 Review Ch1 definitions"],"type":"learn","hrs":1},{"id":34,"origDay":13,"subject":"Pure Y1","topic":"Ch6 (finish) + Review Ex 1","tasks":["Ex 6C-F Q1-3 each, Mixed Ex 6 Q1,3,5","Review Exercise 1: Q1,3,5,7,9,11,13"],"type":"practice","hrs":3},{"id":35,"origDay":13,"subject":"Mech Y1","topic":"Ch9 (finish)","tasks":["Mixed Ex 9 Q1-8","🔄 Draw suvat triangles from memory"],"type":"practice","hrs":2},{"id":36,"origDay":14,"subject":"Pure Y1","topic":"Ch7 Algebraic Methods (start)","tasks":["Read p146-155: proof, algebraic fractions","Ex 7A-C Q1-4 each"],"type":"learn","hrs":2.5},{"id":37,"origDay":14,"subject":"Stats Y1","topic":"Ch4 Correlation","tasks":["Read p68-77: correlation, regression","Ex 4A-B Q1-3 each, Mixed Ex 4 Q1-5"],"type":"learn","hrs":2},{"id":38,"origDay":14,"subject":"Chem Y1","topic":"Ch3 Redox I","tasks":["Read p88-100: oxidation states, half-eq","All section Qs & Mixed Ex 3"],"type":"learn","hrs":0.5},{"id":39,"origDay":15,"subject":"Pure Y1","topic":"Ch7 (finish)","tasks":["Ex 7D-F Q1-3 each, Mixed Ex 7 Q1,3,5,7"],"type":"practice","hrs":2.5},{"id":40,"origDay":15,"subject":"Mech Y1","topic":"Ch10 Forces and Motion (start)","tasks":["Read p165-174: force diagrams, Newton 2","Ex 10A-C Q1-4 each"],"type":"learn","hrs":2.5},{"id":41,"origDay":16,"subject":"Stats Y1","topic":"Ch5 Probability (start)","tasks":["Read p78-84: Venn diagrams, mutually exclusive","Ex 5A-B Q1-4 each"],"type":"learn","hrs":1.5},{"id":42,"origDay":16,"subject":"Chem Y1","topic":"Ch4 Inorganic Chemistry","tasks":["Read p101-112: Group 2, Group 7","Section Qs Q1-5","🔄 Review Ch2: bonding types"],"type":"learn","hrs":1.5},{"id":43,"origDay":17,"subject":"Mech Y1","topic":"Ch10 (continue)","tasks":["Ex 10D Q1-4 (motion in 2D)","🔄 Review Ch9: redo 3 tricky Qs"],"type":"learn","hrs":1.5},{"id":44,"origDay":17,"subject":"Pure Y1","topic":"🔄 Review Ch4-7","tasks":["Redo wrongly answered Qs from Mixed Ex 4-7","Timed practice: 5 Qs in 15 min"],"type":"revise","hrs":1.5},{"id":45,"origDay":18,"subject":"Pure Y1","topic":"Ch8 Binomial Expansion","tasks":["Read p167-181: Pascal, binomial","Ex 8A-D Q1-3 each, Mixed Ex 8 Q1,3,5"],"type":"learn","hrs":2.5},{"id":46,"origDay":18,"subject":"Mech Y1","topic":"Ch10 (finish)","tasks":["Ex 10E-F Q1-4 each, Mixed Ex 10 Q1-6","🔄 Write all formulas from memory"],"type":"learn","hrs":2.5},{"id":47,"origDay":19,"subject":"Stats Y1","topic":"Ch5 (finish)","tasks":["Ex 5C-D Q1-3 each, Mixed Ex 5 Q1,3,5,7"],"type":"learn","hrs":2},{"id":48,"origDay":19,"subject":"Chem Y1","topic":"Ch4 (finish) + Ch5 start","tasks":["Read p113-125: Group 2 & 7 reactions","Ch4 Mixed Qs","Read p126-135: moles, equations"],"type":"learn","hrs":3},{"id":49,"origDay":20,"subject":"Pure Y1","topic":"Ch9 Trigonometric Ratios (start)","tasks":["Read p182-196: sin/cos/tan, exact values","Ex 9A-C Q1-4 each"],"type":"learn","hrs":2.5},{"id":50,"origDay":20,"subject":"Mech Y1","topic":"Ch11 Variable Acceleration","tasks":["Read p190-205: diff/integration for motion","Ex 11A-E Q1-3 each, Mixed Ex 11 Q1-5"],"type":"learn","hrs":2.5},{"id":51,"origDay":21,"subject":"Pure Y1","topic":"Ch9 (finish)","tasks":["Ex 9D-F Q1-3 each, Mixed Ex 9 Q1,3,5,7","🔄 Review Ch7-8: redo 3 tricky Qs"],"type":"practice","hrs":3},{"id":52,"origDay":21,"subject":"Chem Y1","topic":"Ch5 (continue)","tasks":["Read p136-150: ideal gas, atom economy","Section Qs Q1-6"],"type":"learn","hrs":2},{"id":53,"origDay":22,"subject":"Pure Y1","topic":"Ch10 Trig Identities & Equations","tasks":["Read p211-225: identities, solving trig eq","Ex 10A-D Q1-4 each"],"type":"learn","hrs":3},{"id":54,"origDay":22,"subject":"Stats Y1","topic":"Ch6 Statistical Distributions (start)","tasks":["Read p92-100: distributions, binomial","Ex 6A-B Q1-4 each"],"type":"learn","hrs":2},{"id":55,"origDay":23,"subject":"Pure Y1","topic":"Ch10 (finish)","tasks":["Ex 10E-F Q1-3 each, Mixed Ex 10 Q1,3,5"],"type":"practice","hrs":1.5},{"id":56,"origDay":23,"subject":"Mech Y1","topic":"🔄 Review Ex 2 + Exam Prep","tasks":["Review Ex 2 Q1,3,5,7,9","Exam-style: timed"],"type":"revise","hrs":1.5},{"id":57,"origDay":24,"subject":"Stats Y1","topic":"Ch6 (finish)","tasks":["Ex 6C Q1-4, Mixed Ex 6 Q1,3,5"],"type":"learn","hrs":1.5},{"id":58,"origDay":24,"subject":"Chem Y1","topic":"Ch5 (finish)","tasks":["Read p151-156: practical techniques","Ch5 Mixed Qs all","🔄 Review Ch3 half-equations"],"type":"learn","hrs":1.5},{"id":59,"origDay":25,"subject":"Pure Y1","topic":"Ch11 Vectors","tasks":["Read p238-262: vector notation, magnitude","Ex 11A-F Q1-3 each, Mixed Ex 11 Q1,3,5"],"type":"learn","hrs":3},{"id":60,"origDay":25,"subject":"Stats Y1","topic":"Ch7 Hypothesis Testing (start)","tasks":["Read p107-115: hypothesis testing","Ex 7A-B Q1-4 each"],"type":"learn","hrs":2},{"id":61,"origDay":26,"subject":"Pure Y1","topic":"Review Exercise 2","tasks":["Review Ex 2: Q1,3,5,7,9,11","🔄 Solve 5 trig eq timed"],"type":"revise","hrs":2.5},{"id":62,"origDay":26,"subject":"Stats Y1","topic":"Ch7 (finish)","tasks":["Ex 7C-D Q1-3 each, Mixed Ex 7 Q1,3,5,7"],"type":"learn","hrs":2.5},{"id":63,"origDay":27,"subject":"Pure Y1","topic":"Ch12 Differentiation (start)","tasks":["Read p263-280: gradient, first principles","Ex 12A-C Q1-5 each"],"type":"learn","hrs":2.5},{"id":64,"origDay":27,"subject":"Chem Y1","topic":"Ch6.1 Organic Intro","tasks":["Read p157-177: nomenclature, isomerism","Section Qs p177 Q1-6"],"type":"learn","hrs":2.5},{"id":65,"origDay":28,"subject":"Pure Y1","topic":"Ch12 (continue)","tasks":["Ex 12D-E Q1-4 each","🔄 Review Ch11: vector problems x3"],"type":"learn","hrs":2.5},{"id":66,"origDay":28,"subject":"Stats Y1","topic":"Review Ex 1 + Full Review","tasks":["Review Ex 1 Q1,3,5,7,9","📋 Make formula sheet from memory"],"type":"revise","hrs":2.5},{"id":67,"origDay":29,"subject":"Pure Y1","topic":"Ch12 (finish)","tasks":["Ex 12F-G Q1-3 each, Mixed Ex 12 Q1,3,5,7"],"type":"practice","hrs":3},{"id":68,"origDay":29,"subject":"Chem Y1","topic":"Ch6.2 Hydrocarbons","tasks":["Read p178-198: alkanes, distillation","Section Qs p198 Q1-5"],"type":"learn","hrs":2},{"id":69,"origDay":30,"subject":"Pure Y1","topic":"Ch13 Integration (start)","tasks":["Read p294-304: indefinite/definite integrals","Ex 13A-B Q1-5 each"],"type":"learn","hrs":1.5},{"id":70,"origDay":30,"subject":"Chem Y1","topic":"Ch6.2 (continue)","tasks":["Read p199-208: alkenes, electrophilic addition","Section Qs p208 Q1-5"],"type":"learn","hrs":1.5},{"id":71,"origDay":31,"subject":"Pure Y1","topic":"Ch13 (continue)","tasks":["Ex 13C-D Q1-3 each","🔄 Review Ch12: differentiation rules"],"type":"learn","hrs":1.5},{"id":72,"origDay":31,"subject":"Stats Y1","topic":"🔄 Full Stats Review","tasks":["Redo wrong Qs from Review Ex 1","Practice 10 Mixed questions"],"type":"revise","hrs":1.5},{"id":73,"origDay":32,"subject":"Pure Y1","topic":"Ch13 (finish)","tasks":["Ex 13E-F Q1-3 each, Mixed Ex 13 Q1,3,5,7"],"type":"practice","hrs":2.5},{"id":74,"origDay":32,"subject":"Chem Y1","topic":"Ch6.3 Halogenoalkanes & Alcohols","tasks":["Read p209-220: substitution, elimination","Section Qs p220 Q1-5"],"type":"learn","hrs":2.5},{"id":75,"origDay":33,"subject":"Pure Y1","topic":"Ch14 Exponentials & Logs (start)","tasks":["Read p318-330: exp functions, log laws","Ex 14A-C Q1-4 each"],"type":"learn","hrs":2.5},{"id":76,"origDay":33,"subject":"Chem Y1","topic":"Ch6.3 (finish) + Ch7 start","tasks":["Read p221-231: oxidation of alcohols","Ch6.3 Mixed Qs","Read p232-243: mass spec, IR"],"type":"learn","hrs":2.5},{"id":77,"origDay":34,"subject":"Pure Y1","topic":"Ch14 (finish) + Review Ex 3","tasks":["Ex 14D-F Q1-3 each, Mixed Ex 14 Q1,3,5,7","Review Ex 3: Q1,3,5,7,9,11"],"type":"practice","hrs":3},{"id":78,"origDay":34,"subject":"Chem Y1","topic":"Ch7 (finish) + Ch8 start","tasks":["Ch7 Mixed Qs","Read p244-255: enthalpy, Hess's law"],"type":"learn","hrs":2},{"id":79,"origDay":35,"subject":"Pure Y1","topic":"🔄 PURE Y1 REVIEW","tasks":["Exam Paper 1 — TIMED 2hr","Mark errors, add to ❌错题本"],"type":"revise","hrs":2.5},{"id":80,"origDay":35,"subject":"Chem Y1","topic":"Ch8 Energetics (continue)","tasks":["Read p256-268: bond enthalpies","Section Qs Q1-5","🔄 Review Ch5: mole calculations"],"type":"learn","hrs":2.5},{"id":81,"origDay":36,"subject":"Pure Y1","topic":"🔄 PURE Y1 REVIEW 2","tasks":["Exam Paper 2 — TIMED","Mark, review, redo wrong Qs"],"type":"revise","hrs":2.5},{"id":82,"origDay":36,"subject":"Chem Y1","topic":"Ch8 (finish) + Ch9 start","tasks":["Ch8 Mixed Qs","Read p269-275: collision theory"],"type":"learn","hrs":2.5},{"id":83,"origDay":37,"subject":"Stats Y1","topic":"🔄 STATS Y1 REVIEW","tasks":["Practice exam — TIMED","Mark & identify weak areas"],"type":"revise","hrs":1.5},{"id":84,"origDay":37,"subject":"Mech Y1","topic":"🔄 MECH Y1 REVIEW","tasks":["Practice exam — TIMED","Mark & identify weak areas"],"type":"revise","hrs":1.5},{"id":85,"origDay":38,"subject":"Pure Y2","topic":"Ch1 Algebraic Methods","tasks":["Read p2-18: proof, partial fractions","Ex 1A-E Q1-3 each, Mixed Ex 1 Q1,3,5"],"type":"learn","hrs":2},{"id":86,"origDay":38,"subject":"Chem Y1","topic":"🔄 Chem Review","tasks":["Redo wrongly answered Qs","Organic flowchart from memory"],"type":"revise","hrs":1},{"id":87,"origDay":39,"subject":"Pure Y2","topic":"Ch2 Functions and Graphs (start)","tasks":["Read p25-42: modulus, composite/inverse","Ex 2A-D Q1-4 each"],"type":"learn","hrs":3},{"id":88,"origDay":39,"subject":"Chem Y1","topic":"Ch9 Kinetics I (finish)","tasks":["Read p276-280: Maxwell-Boltzmann","Ch9 Mixed Qs","🔄 Review Ch8 energetics"],"type":"learn","hrs":2},{"id":89,"origDay":40,"subject":"Pure Y2","topic":"Ch2 (finish)","tasks":["Ex 2E-G Q1-3 each, Mixed Ex 2 Q1,3,5"],"type":"practice","hrs":2.5},{"id":90,"origDay":40,"subject":"Chem Y1","topic":"Ch10 Equilibrium I","tasks":["Read p281-292: Le Chatelier, Kc","All section Qs + Mixed Ex 10"],"type":"learn","hrs":2.5},{"id":91,"origDay":41,"subject":"Pure Y2","topic":"Ch3 Sequences & Series (start)","tasks":["Read p56-75: arithmetic/geometric","Ex 3A-D Q1-4 each"],"type":"learn","hrs":3},{"id":92,"origDay":41,"subject":"Chem Y1","topic":"🔄 CHEM Y1 FULL REVIEW","tasks":["Ch1-10 comprehensive quiz","Make complete reaction map","📝 Identify top 3 weak chapters"],"type":"revise","hrs":2},{"id":93,"origDay":42,"subject":"Pure Y2","topic":"Ch3 (continue)","tasks":["Ex 3E-G Q1-4 each","🔄 Review Ch2: composite/inverse fn Qs"],"type":"learn","hrs":2.5},{"id":94,"origDay":42,"subject":"Stats Y2","topic":"Ch1 Regression & Hypothesis Testing","tasks":["Read p10-24: PMCC, testing correlation","Ex 1A-C Q1-3 each"],"type":"learn","hrs":2.5},{"id":95,"origDay":43,"subject":"Pure Y2","topic":"Ch3 (finish)","tasks":["Ex 3H Q1-4, Mixed Ex 3 Q1,3,5,7"],"type":"practice","hrs":2.5},{"id":96,"origDay":43,"subject":"Stats Y2","topic":"Ch2 Conditional Probability","tasks":["Read p25-42: conditional prob, Venn/tree","Ex 2A-C Q1-4 each"],"type":"learn","hrs":2.5},{"id":97,"origDay":44,"subject":"Stats Y2","topic":"Ch2 (finish)","tasks":["Ex 2D Q1-3","🔄 Review Stats Y1 Ch5"],"type":"learn","hrs":1.5},{"id":98,"origDay":44,"subject":"Mech Y2","topic":"Ch4 Moments (start)","tasks":["Read p79-90: moments, equilibrium","Ex 4A-B Q1-4 each"],"type":"learn","hrs":1.5},{"id":99,"origDay":45,"subject":"Pure Y2","topic":"Ch4 Binomial Expansion","tasks":["Read p101-107: (1+x)^n expansion","Ex 4A-C Q1-3 each, Mixed Ex 4 Q1,3,5"],"type":"learn","hrs":2},{"id":100,"origDay":45,"subject":"Mech Y2","topic":"Ch4 (continue)","tasks":["Ex 4C-D Q1-3 each","🔄 Review Mech Y1 Ch10"],"type":"learn","hrs":1},{"id":101,"origDay":46,"subject":"Pure Y2","topic":"Ch5 Radians","tasks":["Read p107-113: radian, arc/sector","Ex 5A-E Q1-3 each, Mixed Ex 5 Q1,3,5"],"type":"learn","hrs":2.5},{"id":102,"origDay":46,"subject":"Stats Y2","topic":"Ch3 Normal Distribution (start)","tasks":["Read p46-58: normal distribution","Ex 3A-B Q1-5 each"],"type":"learn","hrs":2.5},{"id":103,"origDay":47,"subject":"Pure Y2","topic":"🔄 Review Ch1-5 + Review Ex 1","tasks":["Review Ex 1: Q1,3,5,7,9,11","🔄 Flashcards: sequences, binomial, radians"],"type":"revise","hrs":2.5},{"id":104,"origDay":47,"subject":"Stats Y2","topic":"Ch3 (finish)","tasks":["Ex 3C-E Q1-3 each, Mixed Ex 3 Q1,3,5"],"type":"learn","hrs":2.5},{"id":105,"origDay":48,"subject":"Pure Y2","topic":"Ch6 Trigonometric Functions","tasks":["Read p114-127: sec/cosec/cot","Ex 6A-E Q1-3 each, Mixed Ex 6 Q1,3,5"],"type":"learn","hrs":3},{"id":106,"origDay":48,"subject":"Mech Y2","topic":"Ch4 (finish) + Ch5 start","tasks":["Mixed Ex 4 Q1-5","Read p99-107: friction, F=μR","Ex 5A Q1-4"],"type":"learn","hrs":2},{"id":107,"origDay":49,"subject":"Pure Y2","topic":"Ch7 Trigonometry & Modelling (start)","tasks":["Read p128-145: addition, double angle","Ex 7A-D Q1-4 each"],"type":"learn","hrs":2.5},{"id":108,"origDay":49,"subject":"Mech Y2","topic":"Ch5 (finish)","tasks":["Ex 5B-D Q1-3 each, Mixed Ex 5 Q1,3,5"],"type":"learn","hrs":2.5},{"id":109,"origDay":50,"subject":"Pure Y2","topic":"Ch7 (continue)","tasks":["Ex 7E-F Q1-3 each","🔄 Review Ch6: sec/cosec/cot quiz"],"type":"learn","hrs":2.5},{"id":110,"origDay":50,"subject":"Mech Y2","topic":"Ch6 Projectiles (start)","tasks":["Read p116-126: horizontal projectiles","Ex 6A-B Q1-4 each"],"type":"learn","hrs":2.5},{"id":111,"origDay":51,"subject":"Pure Y2","topic":"Ch7 (finish)","tasks":["Ex 7G Q1-3, Mixed Ex 7 Q1,3,5,7"],"type":"practice","hrs":1.5},{"id":112,"origDay":51,"subject":"Chem Y1","topic":"🔄 Chem Y1 Review Day","tasks":["Redo top 3 weak chapter exercises","Organic pathways from memory"],"type":"revise","hrs":1.5},{"id":113,"origDay":52,"subject":"Mech Y2","topic":"Ch6 (continue)","tasks":["Ex 6C-D Q1-3 each","🔄 Review Mech Y1: suvat quiz"],"type":"learn","hrs":1.5},{"id":114,"origDay":52,"subject":"Stats Y2","topic":"🔄 Stats Y2 Review","tasks":["Review Ex 1: Q1,3,5,7","🔄 Review Stats Y1 Ch6-7"],"type":"revise","hrs":1.5},{"id":115,"origDay":53,"subject":"Pure Y2","topic":"Ch8 Parametric Equations","tasks":["Read p162-173: parametric forms","Ex 8A-E Q1-3 each, Mixed Ex 8 Q1,3,5"],"type":"learn","hrs":3},{"id":116,"origDay":53,"subject":"Mech Y2","topic":"Ch6 (finish)","tasks":["Mixed Ex 6 Q1,3,5","🔄 Summary sheet Ch4-5"],"type":"practice","hrs":2},{"id":117,"origDay":54,"subject":"Pure Y2","topic":"🔄 Review Ch6-8 + Review Ex 2","tasks":["Review Ex 2: Q1,3,5,7,9","🔄 Trig addition/double angle from memory"],"type":"revise","hrs":3},{"id":118,"origDay":54,"subject":"Mech Y2","topic":"Ch7 Applications of Forces (start)","tasks":["Read p137-150: statics, dynamics","Ex 7A-B Q1-4 each"],"type":"learn","hrs":2},{"id":119,"origDay":55,"subject":"Pure Y2","topic":"Ch9 Differentiation (start)","tasks":["Read p174-195: chain/product/quotient","Ex 9A-D Q1-4 each"],"type":"learn","hrs":3},{"id":120,"origDay":55,"subject":"Mech Y2","topic":"Ch7 (continue)","tasks":["Ex 7C-D Q1-3 each","🔄 Review Ch6 projectile paths"],"type":"learn","hrs":2},{"id":121,"origDay":56,"subject":"Pure Y2","topic":"Ch9 (continue)","tasks":["Ex 9E-G Q1-4 each (trig, parametric, implicit)"],"type":"learn","hrs":3},{"id":122,"origDay":56,"subject":"Mech Y2","topic":"Ch7 (finish) + Ch8 start","tasks":["Mixed Ex 7 Q1-5","Read p168-180: variable acceleration","Ex 8A Q1-4"],"type":"learn","hrs":2},{"id":123,"origDay":57,"subject":"Pure Y2","topic":"Ch9 (finish)","tasks":["Ex 9H-I Q1-3 each, Mixed Ex 9 Q1,3,5,7","🔄 Review Ch8: parametric → Cartesian x3"],"type":"practice","hrs":3},{"id":124,"origDay":57,"subject":"Mech Y2","topic":"Ch8 (continue)","tasks":["Ex 8B-C Q1-3 each"],"type":"learn","hrs":2},{"id":125,"origDay":58,"subject":"Mech Y2","topic":"Ch8 (finish) + Review","tasks":["Mixed Ex 8 Q1-5","🔄 All Mech Y2 formulas from memory"],"type":"practice","hrs":1.5},{"id":126,"origDay":58,"subject":"Chem Y1","topic":"🔄 Chem Deep Review","tasks":["Redo all wrongly answered mixed exercises","Practice explaining practicals"],"type":"revise","hrs":1.5},{"id":127,"origDay":59,"subject":"Pure Y2","topic":"Ch10 Numerical Methods","tasks":["Read p221-237: roots, iteration, Newton-Raphson","Ex 10A-D Q1-3 each, Mixed Ex 10 Q1,3,5"],"type":"learn","hrs":2},{"id":128,"origDay":59,"subject":"Stats Y2","topic":"🔄 Stats Y2 Mixed Practice","tasks":["Mixed practice Ch1-3: 10 questions","Calculator skills practice"],"type":"revise","hrs":1},{"id":129,"origDay":60,"subject":"Pure Y2","topic":"Ch11 Integration (start - BIG chapter!)","tasks":["Read p238-260: standard, reverse chain, trig","Ex 11A-D Q1-5 each"],"type":"learn","hrs":3},{"id":130,"origDay":60,"subject":"Stats Y2","topic":"🔄 Review Ex 2 (SM Y2)","tasks":["Review Ex 2: Q1,3,5,7,9","🔄 Review Stats Y1: 15 mixed Qs"],"type":"revise","hrs":2},{"id":131,"origDay":61,"subject":"Pure Y2","topic":"Ch11 (continue)","tasks":["Ex 11E-G Q1-4 each (substitution, parts, partial frac)"],"type":"learn","hrs":3},{"id":132,"origDay":61,"subject":"Mech Y2","topic":"🔄 Mech Y2 Full Review","tasks":["Mixed practice: 10 questions Ch4-8","Exam-style: TIMED"],"type":"revise","hrs":2},{"id":133,"origDay":62,"subject":"Pure Y2","topic":"Ch11 (continue)","tasks":["Ex 11H-J Q1-3 each (areas, trapezium rule, DEs)"],"type":"learn","hrs":3},{"id":134,"origDay":62,"subject":"Chem Y1","topic":"🔄 Chem Final Review","tasks":["Topic quiz: 20 questions","6-mark writing Qs x3"],"type":"revise","hrs":2},{"id":135,"origDay":63,"subject":"Pure Y2","topic":"Ch11 (finish)","tasks":["Ex 11K Q1-3, Mixed Ex 11 Q1,3,5,7,9"],"type":"practice","hrs":3},{"id":136,"origDay":63,"subject":"Chem Y1","topic":"🔄 Chem Weak Topics Focus","tasks":["Targeted practice 3 weakest chapters","Review all required practicals"],"type":"revise","hrs":2},{"id":137,"origDay":64,"subject":"Pure Y2","topic":"Ch12 Vectors 3D","tasks":["Read p311-329: 3D vectors","Ex 12A-D Q1-3 each, Mixed Ex 12 Q1,3,5"],"type":"learn","hrs":3},{"id":138,"origDay":64,"subject":"Mech Y2","topic":"🔄 Mech Weak Topics Focus","tasks":["Pulleys & connected particles practice","Inclined plane problems"],"type":"revise","hrs":2},{"id":139,"origDay":65,"subject":"Pure Y2","topic":"🔄 PURE Y2 Review Ex 3","tasks":["Review Ex 3: Q1,3,5,7,9,11,13","🔄 Integration techniques summary"],"type":"revise","hrs":1.5},{"id":140,"origDay":65,"subject":"Stats ALL","topic":"🔄 Stats Y1+Y2 Combined","tasks":["Mixed practice: 15 questions","Hypothesis testing rules from memory"],"type":"revise","hrs":1.5},{"id":141,"origDay":66,"subject":"Pure Y2","topic":"🔄 PURE Y2 Exam Practice","tasks":["Exam Paper 1: TIMED 2hr","Mark errors, add to ❌错题本"],"type":"revise","hrs":2},{"id":142,"origDay":66,"subject":"Chem Y1","topic":"🔄 Chem Final","tasks":["Practice paper TIMED","Organic mechanisms from memory"],"type":"revise","hrs":1},{"id":143,"origDay":67,"subject":"Pure Y2","topic":"🔄 PURE Y2 Exam Practice 2","tasks":["Exam Paper 2: TIMED 2hr","Mark, review, redo wrong Qs"],"type":"revise","hrs":2.5},{"id":144,"origDay":67,"subject":"Stats+Mech ALL","topic":"🔄 Stats & Mech Full Paper","tasks":["Complete paper: TIMED","Mark & identify weakest topics","Formula sheet: write ALL from memory"],"type":"revise","hrs":2.5},{"id":145,"origDay":68,"subject":"ALL","topic":"🔄 COMPREHENSIVE REVIEW","tasks":["Redo ALL wrong Qs from ❌错题本","Focus on weakest topics","Create master formula sheets","🏁 You finished all 5 textbooks!"],"type":"revise","hrs":5},{"id":146,"origDay":69,"subject":"ALL","topic":"🔄 FINAL CONSOLIDATION","tasks":["Light review of summary sheets","Redo easy Qs for confidence","📌 1 past paper/week/subject until 2028 exam"],"type":"revise","hrs":3}];
+
+const DOW=["Thu","Fri","Sat","Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+const WKND=[false,false,true,true,false,false,false,false,false,true,true,false,false,false,false,false,true,true,false,false,false,false,false,true,true,false,false,false,false,false,true,true,false,false,false,false,false,false,true,true,false,false,false,false,false,true,true,false,false,false,false,false,true,true,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,true,true,false,false,false,false];
+
 const DOW_CN={Mon:"周一",Tue:"周二",Wed:"周三",Thu:"周四",Fri:"周五",Sat:"周六",Sun:"周日"};
 const SC={Pure:{bg:"rgba(59,130,246,.12)",tx:"#60a5fa",bd:"rgba(59,130,246,.4)",ic:"📐"},Stats:{bg:"rgba(139,92,246,.12)",tx:"#a78bfa",bd:"rgba(139,92,246,.4)",ic:"📊"},Mech:{bg:"rgba(16,185,129,.12)",tx:"#34d399",bd:"rgba(16,185,129,.4)",ic:"⚙️"},Chem:{bg:"rgba(249,115,22,.12)",tx:"#fb923c",bd:"rgba(249,115,22,.4)",ic:"🧪"}};
 
-let shifted=new Set(),cbState={},wqData=[],wqFilter="all";
+const CAP_WKDAY=5, CAP_WKEND=3;
+const TOTAL_DAYS=70;
 
-function save(){localStorage.setItem('sp-s',JSON.stringify([...shifted]));localStorage.setItem('sp-c',JSON.stringify(cbState));localStorage.setItem('sp-w',JSON.stringify(wqData))}
-function load(){try{const s=localStorage.getItem('sp-s');if(s)shifted=new Set(JSON.parse(s));const c=localStorage.getItem('sp-c');if(c)cbState=JSON.parse(c);const w=localStorage.getItem('sp-w');if(w)wqData=JSON.parse(w)}catch(e){}}
+// State
+let skipped=new Set();     // set of day indices that are skipped
+let taskMap={};            // taskId -> dayIndex (current assignment)
+let cbState={};            // checkbox state: "taskId" -> checked
+let wqData=[], wqFilter="all";
 
-function dateOf(i){const b=new Date(2026,5,25);let off=0;for(const s of shifted)if(parseInt(s)<=i)off++;return new Date(b.getTime()+(i+off)*864e5)}
-function fmtD(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function dayCap(di){
+  // Get the actual day-of-week for day index di considering skipped days
+  let shift=0;
+  for(const s of skipped) if(s<=di) shift++;
+  let actualIdx=di+shift;
+  return WKND[actualIdx]?CAP_WKEND:CAP_WKDAY;
+}
 
-function subjKey(s){if(s.includes('Pure'))return'Pure';if(s.includes('Stats'))return'Stats';if(s.includes('Mech'))return'Mech';return'Chem'}
+function dayDow(di){
+  let shift=0;
+  for(const s of skipped) if(s<=di) shift++;
+  return DOW[di+shift]||"Mon";
+}
+
+function dayIsWknd(di){ return dayCap(di)===CAP_WKEND; }
+
+function dateOf(di){
+  const base=new Date(2026,5,25); // Jun 25 2026
+  let shift=0;
+  for(const s of skipped) if(s<=di) shift++;
+  return new Date(base.getTime()+(di+shift)*864e5);
+}
+
+function fmtD(d){
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+
+function subjKey(s){
+  if(s.includes('Pure'))return'Pure';
+  if(s.includes('Stats'))return'Stats';
+  if(s.includes('Mech'))return'Mech';
+  return'Chem';
+}
+
 function typeLabel(t){return t==='practice'?'✍️ 练习':t==='revise'?'🔄 复习':'📖 学习'}
 
-function render(){
-  let h='',wn=0,wd=[];
-  for(let i=0;i<D.length;i++){
-    if(i%7===0){if(wn>0)h+=renderWk(wn,wd);wn++;wd=[]}
-    wd.push(i);
+function subjPriority(s){return{Pure:1,Stats:2,Mech:3,Chem:4}[subjKey(s)]||5}
+
+// Build initial taskMap from TASKS
+function initTaskMap(){
+  if(Object.keys(taskMap).length>0)return;
+  TASKS.forEach(t=>{taskMap[t.id]=t.origDay});
+}
+
+function save(){
+  localStorage.setItem('sp2-sk',JSON.stringify([...skipped]));
+  localStorage.setItem('sp2-tm',JSON.stringify(taskMap));
+  localStorage.setItem('sp2-cb',JSON.stringify(cbState));
+  localStorage.setItem('sp2-wq',JSON.stringify(wqData));
+}
+
+function load(){
+  try{
+    const s=localStorage.getItem('sp2-sk');
+    if(s)skipped=new Set(JSON.parse(s));
+    const t=localStorage.getItem('sp2-tm');
+    if(t)taskMap=JSON.parse(t);
+    else initTaskMap();
+    const c=localStorage.getItem('sp2-cb');
+    if(c)cbState=JSON.parse(c);
+    const w=localStorage.getItem('sp2-wq');
+    if(w)wqData=JSON.parse(w);
+  }catch(e){initTaskMap()}
+}
+
+// Core: redistribute tasks after skip change
+function redistribute(){
+  // Rebuild skipped set ordered
+  const sortedSkipped=[...skipped].sort((a,b)=>a-b);
+  
+  // Collect all tasks that belong to skipped days OR overflow days
+  // Task priorities: preserve original order within a day, prefer keeping higher-subjPriority
+  let orphaned=[];
+  
+  // For each skipped day, collect its tasks
+  for(const di of sortedSkipped){
+    const dayTasks=TASKS.filter(t=>taskMap[t.id]===di);
+    dayTasks.sort((a,b)=>subjPriority(a.subject)-subjPriority(b.subject));
+    orphaned.push(...dayTasks);
   }
-  if(wd.length)h+=renderWk(wn,wd);
+  
+  // Also find overflow tasks: tasks on non-skipped days that exceed capacity
+  for(let di=0;di<TOTAL_DAYS;di++){
+    if(skipped.has(di))continue;
+    const cap=dayCap(di);
+    const dayTasks=TASKS.filter(t=>taskMap[t.id]===di);
+    let hrs=0;
+    dayTasks.sort((a,b)=>subjPriority(a.subject)-subjPriority(b.subject));
+    for(const t of dayTasks){
+      hrs+=t.hrs;
+      if(hrs>cap+0.01){
+        // This task and remaining overflow
+        const idx=dayTasks.indexOf(t);
+        const overflow=dayTasks.slice(idx);
+        orphaned.push(...overflow);
+        overflow.forEach(ot=>{taskMap[ot.id]=-1}); // mark as homeless
+        break;
+      }
+    }
+  }
+  
+  // Remove duplicates from orphaned
+  const seen=new Set();
+  orphaned=orphaned.filter(t=>{if(seen.has(t.id))return false;seen.add(t.id);return true});
+  
+  // Place orphaned tasks into available capacity slots
+  orphaned.sort((a,b)=>subjPriority(a.subject)-subjPriority(b.subject));
+  
+  for(const task of orphaned){
+    // Find the earliest non-skipped day with enough capacity
+    let placed=false;
+    for(let di=0;di<TOTAL_DAYS;di++){
+      if(skipped.has(di))continue;
+      const cap=dayCap(di);
+      const currentHrs=TASKS.filter(t=>taskMap[t.id]===di).reduce((s,t)=>s+t.hrs,0);
+      if(currentHrs+task.hrs<=cap+0.01){
+        taskMap[task.id]=di;
+        placed=true;
+        break;
+      }
+    }
+    if(!placed){
+      // Force place on the last non-skipped day (overflow warning)
+      for(let di=TOTAL_DAYS-1;di>=0;di--){
+        if(!skipped.has(di)){taskMap[task.id]=di;break}
+      }
+    }
+  }
+}
+
+// Skip / unskip a day
+function togShift(di){
+  const wasSkipped=skipped.has(di);
+  if(wasSkipped){
+    skipped.delete(di);
+  }else{
+    skipped.add(di);
+  }
+  
+  // Before redistributing, if unskipping: restore original tasks to this day if they still fit
+  if(wasSkipped){
+    // Try to pull back tasks that originally belonged to this day
+    const origTasks=TASKS.filter(t=>t.origDay===di);
+    const cap=dayCap(di);
+    let hrs=TASKS.filter(t=>taskMap[t.id]===di).reduce((s,t)=>s+t.hrs,0);
+    origTasks.sort((a,b)=>subjPriority(a.subject)-subjPriority(b.subject));
+    origTasks.forEach(t=>{
+      if(taskMap[t.id]!==di && hrs+t.hrs<=cap+0.01){
+        taskMap[t.id]=di;
+        hrs+=t.hrs;
+      }
+    });
+  }
+  
+  redistribute();
+  save();
+  render();
+  
+  // Toast notification
+  if(!wasSkipped){
+    const movedOut=TASKS.filter(t=>t.origDay===di);
+    showToast('⏸ 已跳过第'+(di+1)+'天','<span class="hl">'+movedOut.length+'</span>个任务已按容量重新分配到后续日期');
+  }else{
+    showToast('↩ 恢复第'+(di+1)+'天','原任务已尝试回归，容量不足的留在了后续日期');
+  }
+}
+
+// Move a single task to another day
+function openMoveMod(taskId){
+  const task=TASKS.find(t=>t.id===taskId);
+  if(!task)return;
+  document.getElementById('move-info').textContent=`📋 ${task.subject} · ${task.topic} (${task.hrs}h)`;
+  
+  let html='';
+  for(let di=0;di<TOTAL_DAYS;di++){
+    if(skipped.has(di))continue;
+    const cap=dayCap(di);
+    const curHrs=TASKS.filter(t=>taskMap[t.id]===di&&t.id!==taskId).reduce((s,t)=>s+t.hrs,0);
+    const newHrs=curHrs+task.hrs;
+    const full=newHrs>cap+0.01;
+    const dt=fmtD(dateOf(di));
+    const dow=dayDow(di);
+    html+=`<div class="move-target${full?' full':''}" onclick="${full?'':"moveTask("+taskId+","+di+")"}">
+      <span class="mt-date">${dt}</span><span class="mt-dow">${dow} ${DOW_CN[dow]||''}</span>
+      <span class="mt-cap ${full?'over':'ok'}">${curHrs}/${cap}h${full?' · 超载':''}</span>
+    </div>`;
+  }
+  document.getElementById('move-targets').innerHTML=html;
+  document.getElementById('move-modal').classList.add('show');
+}
+
+function moveTask(taskId,di){
+  taskMap[taskId]=di;
+  redistribute();
+  save();
+  render();
+  closeMoveMod();
+  showToast('🔀 任务已移动','已移动到 第'+(di+1)+'天 ('+fmtD(dateOf(di))+')');
+}
+
+function closeMoveMod(){document.getElementById('move-modal').classList.remove('show')}
+
+// Render
+function render(){
+  let h='',wn=0,Wd=[];
+  for(let i=0;i<TOTAL_DAYS;i++){
+    if(i%7===0){if(wn>0)h+=renderWk(wn,Wd);wn++;Wd=[]}
+    Wd.push(i);
+  }
+  if(Wd.length)h+=renderWk(wn,Wd);
   document.getElementById('sched-root').innerHTML=h;
-  for(const[id,ck]of Object.entries(cbState)){const e=document.getElementById(id);if(e){e.checked=ck;if(ck)e.closest('.sc').classList.add('done')}}
+  // Restore checkboxes
+  for(const[id,ck]of Object.entries(cbState)){
+    const e=document.getElementById('cb'+id);
+    if(e){e.checked=ck;if(ck)e.closest('.sc').classList.add('done')}
+  }
   updStats();
 }
 
@@ -233,47 +492,108 @@ function renderWk(n,di){
 }
 
 function renderDay(i){
-  const d=D[i],dt=fmtD(dateOf(i)),sh=shifted.has(String(i)),wk=d.isWeekend;
-  const cls=['dc'];if(wk)cls.push('wknd');if(sh)cls.push('shifted');
-  let sl='';d.slots.forEach((s,si)=>{
-    const cb=`cb${i}_${si}`,k=subjKey(s.subject),c=SC[k]||SC.Pure,tl=typeLabel(s.type);
-    let ts='';s.tasks.forEach(t=>{if(t.startsWith('🔄'))ts+=`<div class="ti rev">${t}</div>`;else if(t.startsWith('🏁')||t.startsWith('📌'))ts+=`<div class="ti mile">${t}</div>`;else ts+=`<div class="ti">${t}</div>`});
-    sl+=`<div class="sc" style="border-left-color:${c.bd}" id="s${cb}"><div class="sh"><input type="checkbox" class="scb" id="${cb}" onchange="onCb(this)"><span class="ssubj" style="background:${c.bg};color:${c.tx}">${c.ic} ${s.subject}</span><span class="stype">${tl}</span><span class="shrs">${s.hrs}h</span></div><div class="st">${s.topic}</div><div class="stasks">${ts}</div><button class="awb" onclick="openMod('${k}','${s.topic.replace(/'/g,"\'")}')">❌ 加入错题本</button></div>`;
+  const dt=fmtD(dateOf(i)),dow=dayDow(i),sk=skipped.has(i),wk=dayIsWknd(i);
+  const cls=['dc'];if(wk)cls.push('wknd');if(sk)cls.push('skipped');
+  
+  // Get tasks assigned to this day
+  const dayTasks=TASKS.filter(t=>taskMap[t.id]===i);
+  const curHrs=dayTasks.reduce((s,t)=>s+t.hrs,0);
+  const cap=dayCap(i);
+  const pct=Math.min(100,Math.round(curHrs/cap*100));
+  const overFull=curHrs>cap+0.01;
+  const capColor=pct>100?'var(--red)':pct>80?'var(--yellow)':'var(--green)';
+  
+  let sl='';
+  dayTasks.forEach(t=>{
+    const k=subjKey(t.subject),c=SC[k]||SC.Pure,tl=typeLabel(t.type);
+    const isMoved=t.origDay!==i;
+    let ts='';
+    t.tasks.forEach(task=>{
+      if(task.startsWith('🔄'))ts+=`<div class="ti rev">${task}</div>`;
+      else if(task.startsWith('🏁')||task.startsWith('📌'))ts+=`<div class="ti mile">${task}</div>`;
+      else ts+=`<div class="ti">${task}</div>`;
+    });
+    sl+=`<div class="sc${cbState[t.id]?' done':''}" style="border-left-color:${c.bd}" id="sc${t.id}">
+      <div class="sh"><input type="checkbox" class="scb" id="cb${t.id}" onchange="onCb(this,${t.id})"><span class="ssubj" style="background:${c.bg};color:${c.tx}">${c.ic} ${t.subject}</span><span class="stype">${tl}</span><span class="shrs">${t.hrs}h</span></div>
+      <div class="st">${t.topic}${isMoved?'<span class="orig-tag">从第'+(t.origDay+1)+'天移入</span>':''}</div>
+      <div class="stasks">${ts}</div>
+      <button class="awb" onclick="openMod('${k}','${t.topic.replace(/'/g,"\\'")}')">❌ 加入错题本</button>
+      <button class="sc-move" onclick="openMoveMod(${t.id})" title="移动到其他日期">🔀</button>
+    </div>`;
   });
-  return`<div class="${cls.join(' ')}" id="d${i}"><div class="dh"><span class="dh-idx">#${i+1}</span><span class="dh-date">${dt}</span><span class="dh-dow">${d.dow} ${DOW_CN[d.dow]||''}</span>${wk?'<span class="dh-note">打工日</span>':''}<span class="shift-tag">⏸ 已推迟</span><button class="shift-b" onclick="togShift(${i})">⏸ 推迟</button><button class="ushift-b" onclick="togShift(${i})">↩ 恢复</button></div><div class="ds">${sl}</div></div>`;
+  
+  return`<div class="${cls.join(' ')}" id="d${i}">
+    <div class="dh">
+      <span class="dh-idx">#${i+1}</span>
+      <span class="dh-date">${dt}</span>
+      <span class="dh-dow">${dow} ${DOW_CN[dow]||''}</span>
+      ${wk?'<span class="dh-note">打工日</span>':''}
+      ${sk?'':`<div class="cap-bar"><div class="cap-track"><div class="cap-fill" style="width:${pct}%;background:${capColor}"></div></div><span class="cap-txt${overFull?' over':''}">${curHrs}/${cap}h</span></div>`}
+      <span class="shift-tag">⏸ 已跳过</span>
+      <button class="shift-b" onclick="togShift(${i})">⏸ 跳过</button>
+      <button class="ushift-b" onclick="togShift(${i})">↩ 恢复</button>
+    </div>
+    <div class="ds">${sk?'<div style="text-align:center;padding:12px;color:var(--muted);font-size:12px">📋 任务已按容量分配到后续日期</div>':sl&&!sl.length?'<div style="text-align:center;padding:10px;color:var(--muted);font-size:11px">✓ 无待办任务</div>':sl}</div>
+  </div>`;
 }
 
-function onCb(e){const c=e.closest('.sc');if(e.checked)c.classList.add('done');else c.classList.remove('done');cbState[e.id]=e.checked;save();updStats()}
-
-function togShift(i){const k=String(i);if(shifted.has(k))shifted.delete(k);else shifted.add(k);save();render()}
-
-function shiftRange(){
-  const v=prompt('推迟哪几天？\n输入天数编号(逗号分隔) 如: 3,4,5\n或范围 如: 3-7');
-  if(!v)return;let idx=[];
-  if(v.includes('-')){const[a,b]=v.split('-').map(Number);for(let i=a;i<=b;i++)idx.push(i-1)}
-  else idx=v.split(',').map(s=>parseInt(s.trim())-1).filter(n=>!isNaN(n));
-  idx.forEach(i=>shifted.add(String(i)));save();render();
-  alert(`已推迟${idx.length}天，后续日期自动顺延！`);
+function onCb(e,tid){
+  const c=e.closest('.sc');
+  if(e.checked)c.classList.add('done');else c.classList.remove('done');
+  cbState[tid]=e.checked;save();updStats();
 }
 
 function expAll(){document.querySelectorAll('.wk-hdr').forEach(h=>h.classList.remove('collapsed'));document.querySelectorAll('.wk-body').forEach(b=>b.classList.remove('hidden'))}
 function colAll(){document.querySelectorAll('.wk-hdr').forEach(h=>h.classList.add('collapsed'));document.querySelectorAll('.wk-body').forEach(b=>b.classList.add('hidden'))}
 
+function shiftRange(){
+  const v=prompt('跳过哪几天？\n输入天数编号(逗号分隔) 如: 4,5,6\n或范围 如: 4-7\n\n💡 跳过后任务会自动按容量重新分配');
+  if(!v)return;let idx=[];
+  if(v.includes('-')){const[a,b]=v.split('-').map(Number);for(let i=a;i<=b;i++)idx.push(i-1)}
+  else idx=v.split(',').map(s=>parseInt(s.trim())-1).filter(n=>!isNaN(n)&&n>=0&&n<TOTAL_DAYS);
+  if(!idx.length){alert('无效输入');return}
+  idx.forEach(i=>skipped.add(i));
+  redistribute();save();render();
+  showToast('⏸ 批量跳过',`已跳过<span class="hl">${idx.length}</span>天，任务已按容量重新分配`);
+}
+
 function updStats(){
   let tot=0,dn=0;const ct={Pure:{d:0,t:0},Stats:{d:0,t:0},Mech:{d:0,t:0},Chem:{d:0,t:0}};
-  document.querySelectorAll('.scb').forEach(cb=>{tot++;if(cb.checked)dn++;const s=cb.closest('.sc').querySelector('.ssubj').textContent;const k=subjKey(s);if(ct[k]){ct[k].t++;if(cb.checked)ct[k].d++}});
+  TASKS.forEach(t=>{
+    if(skipped.has(taskMap[t.id]))return;
+    tot++;if(cbState[t.id])dn++;
+    const k=subjKey(t.subject);if(ct[k]){ct[k].t++;if(cbState[t.id])ct[k].d++}
+  });
+  const activeDays=TOTAL_DAYS-skipped.size;
+  document.getElementById('hdr-days').textContent=activeDays;
   document.getElementById('stats-row').innerHTML=`
-    <div class="stat"><div class="num">70</div><div class="lbl">总天数</div></div>
+    <div class="stat"><div class="num">${activeDays}</div><div class="lbl">有效天数</div></div>
     <div class="stat"><div class="num" style="color:var(--green)">${dn}</div><div class="lbl">已完成</div></div>
-    <div class="stat"><div class="num" style="color:var(--red)">${shifted.size}</div><div class="lbl">已推迟</div></div>
+    <div class="stat"><div class="num" style="color:var(--red)">${skipped.size}</div><div class="lbl">已跳过</div></div>
     <div class="stat"><div class="num" style="color:var(--purple)">55</div><div class="lbl">章节</div></div>
     <div class="stat"><div class="num" style="color:var(--orange)">5</div><div class="lbl">教材</div></div>
     <div class="stat"><div class="num" style="color:var(--yellow)">~260</div><div class="lbl">总学时</div></div>`;
-
+  
   let ph='';for(const[k,v]of Object.entries(ct)){const p=v.t?Math.round(v.d/v.t*100):0;ph+=`<div class="prog-row"><span class="prog-label">${SC[k].ic} ${k}</span><div class="prog-bar"><div class="prog-fill f${k[0].toLowerCase()}" style="width:${p}%"></div></div><span class="prog-pct">${p}%</span></div>`}
   document.getElementById('prog-section').innerHTML=`<div class="prog-title">📈 实时进度</div>${ph}`;
 
-  document.querySelectorAll('.wk').forEach(w=>{const t=w.querySelectorAll('.scb').length,d=w.querySelectorAll('.scb:checked').length;const n=w.querySelector('.wk-badge').textContent.replace('W','');const e=document.getElementById('wd'+n);if(e&&t)e.textContent=d+'/'+t+' ✓'});
+  document.querySelectorAll('.wk').forEach(w=>{
+    const cbs=w.querySelectorAll('.scb');const t=cbs.length,d=cbs.length?Array.from(cbs).filter(c=>c.checked).length:0;
+    const n=w.querySelector('.wk-badge').textContent.replace('W','');
+    const e=document.getElementById('wd'+n);if(e&&t)e.textContent=d+'/'+t+' ✓';
+  });
+  
+  document.getElementById('shift-info').textContent=skipped.size?`已跳过${skipped.size}天 → 结束日期顺延至 ${fmtD(dateOf(TOTAL_DAYS-1))}`:'';
+}
+
+// Toast
+let toastTimer;
+function showToast(title,body){
+  document.getElementById('toast-title').textContent=title;
+  document.getElementById('toast-body').innerHTML=body;
+  document.getElementById('toast').classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>document.getElementById('toast').classList.remove('show'),3500);
 }
 
 // WRONG QUESTIONS
@@ -315,7 +635,7 @@ function submitMod(){
   const b=document.getElementById('wq-badge');b.style.transform='scale(1.5)';setTimeout(()=>b.style.transform='',300);
 }
 document.getElementById('modal').onclick=function(e){if(e.target===this)closeMod()};
-
+document.getElementById('move-modal').onclick=function(e){if(e.target===this)closeMoveMod()};
 document.getElementById('wq-filters').onclick=function(e){const b=e.target.closest('.wq-f');if(!b)return;wqFilter=b.dataset.f;renderWQ()};
 
 function showSec(n){
@@ -327,7 +647,14 @@ function showSec(n){
   window.scrollTo(0,0);
 }
 
-load();render();renderWQ();
+// Init
+load();
+if(!Object.keys(taskMap).length)initTaskMap();
+// First-time redistribution
+redistribute();
+save();
+render();
+renderWQ();
 </script>
 </body>
 </html>
