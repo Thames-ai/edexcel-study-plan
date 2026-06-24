@@ -495,8 +495,10 @@ function renderDay(i){
     sl+='<div class="st">'+t.topic+(isMoved?'<span class="orig-tag">\u4ece\u7b2c'+(t.origDay+1)+'\u5929\u79fb\u5165</span>':'')+'</div>';
     sl+='<div class="stasks">'+ts+'</div>';
     sl+='<div style="display:flex;gap:3px;flex-wrap:wrap;margin-top:3px">';
-    sl+='<button class="awb" onclick="openMod(\''+k+'\',\''+t.topic.replace(/'/g,"\\'")+'\')">\u274c \u52a0\u5165\u9519\u9898\u672c</button>';
-    if(quizAvail)sl+='<button class="awb" style="color:var(--green);border-color:rgba(16,185,129,.3)" onclick="startTopicQuiz(\''+t.subject+'\',\''+topicKey.replace(/'/g,"\\'")+'\')">\ud83e\udde0 \u505a\u9898</button>';
+    sl+='<button class="awb" onclick="openMod(\''+k+'\',\''+t.topic.replace(/'/g,"\\'")+'\')">❌ 加入错题本</button>';
+    if(quizAvail)sl+='<button class="awb" style="color:var(--green);border-color:rgba(16,185,129,.3)" onclick="startTopicQuiz(\''+t.subject+'\',\''+topicKey.replace(/'/g,"\\'")+'\')">🧠 做题</button>';
+    var conceptAvail=CONCEPTS[t.subject]&&CONCEPTS[t.subject][topicKey];
+    if(conceptAvail&&t.type==='学习')sl+='<button class="awb" style="color:var(--accent);border-color:rgba(59,130,246,.3)" onclick="goToLearn(\''+t.subject+'\',\''+topicKey.replace(/'/g,"\\'")+'\')">📖 学习</button>';
     sl+='</div>';
     sl+='<button class="sc-move" onclick="openMoveMod('+t.id+')" title="\u79fb\u52a8">\ud83d\udd00</button>';
     sl+='</div>';
@@ -562,6 +564,12 @@ function showTopicDetail(s,t){
   document.getElementById('topic-detail').innerHTML=html;document.getElementById('topic-detail').classList.add('active')}
 
 function backToLearnTopics(){learnState.topic=null;document.getElementById('topic-detail').classList.remove('active')}
+
+function goToLearn(s,t){
+  showSec('learn');
+  showLearnTopics(s);
+  showTopicDetail(s,t);
+}
 
 // ===== RENDER QUIZ =====
 function renderQuizSubjects(){
@@ -755,7 +763,7 @@ var toastTimer;
 function showToast(title,body){document.getElementById('toast-title').textContent=title;document.getElementById('toast-body').innerHTML=body;document.getElementById('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(function(){document.getElementById('toast').classList.remove('show')},3500)}
 
 // ===== INIT =====
-window.submitQuiz=submitQuiz;window.selectOpt=selectOpt;window.startTopicQuiz=startTopicQuiz;window.backToQuizSubjects=backToQuizSubjects;
+window.submitQuiz=submitQuiz;window.selectOpt=selectOpt;window.startTopicQuiz=startTopicQuiz;window.backToQuizSubjects=backToQuizSubjects;window.goToLearn=goToLearn;
 function boot(){try{load();initTaskMap();redistribute();save();render();renderWQ();renderWeak();renderLearnSubjects();renderQuizSubjects();}catch(e){console.error('INIT FAIL:',e);}}
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',boot);}else{boot();}
 </script>
