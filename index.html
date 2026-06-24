@@ -755,8 +755,9 @@ var toastTimer;
 function showToast(title,body){document.getElementById('toast-title').textContent=title;document.getElementById('toast-body').innerHTML=body;document.getElementById('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(function(){document.getElementById('toast').classList.remove('show')},3500)}
 
 // ===== INIT =====
-window.submitQuiz=submitQuiz;window.selectOpt=selectOpt;window.startQuizCh=startQuizCh;window.backToQuizSubjects=backToQuizSubjects;
-try{load();initTaskMap();redistribute();save();render();renderWQ();renderWeak();renderLearnSubjects();renderQuizSubjects();window.__initRan='OK';}catch(e){window.__initRan='ERR:'+e.message;console.error('INIT FAIL:',e);}
+window.submitQuiz=submitQuiz;window.selectOpt=selectOpt;window.startTopicQuiz=startTopicQuiz;window.backToQuizSubjects=backToQuizSubjects;
+function boot(){try{load();initTaskMap();redistribute();save();render();renderWQ();renderWeak();renderLearnSubjects();renderQuizSubjects();}catch(e){console.error('INIT FAIL:',e);}}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',boot);}else{boot();}
 </script>
 </body>
 </html>
