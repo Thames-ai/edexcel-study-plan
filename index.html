@@ -722,7 +722,7 @@ function subjKey(s){if(s.indexOf('Pure')>=0)return'Pure';if(s.indexOf('Stats')>=
 function typeLabel(t){return t==='practice'?'\u270d\ufe0f \u7ec3\u4e60':t==='revise'?'\ud83d\udd04 \u590d\u4e60':'\ud83d\udcd6 \u5b66\u4e60'}
 function subjPriority(s){return{Pure:1,Stats:2,Mech:3,Chem:4}[subjKey(s)]||5}
 
-function initTaskMap(){if(Object.keys(taskMap).length>0)return;TASKS.forEach(function(t){taskMap[t.id]=t.origDay})}
+function initTaskMap(){TASKS.forEach(function(t){if(taskMap[t.id]===undefined)taskMap[t.id]=t.origDay})}
 
 function save(){
   try{localStorage.setItem('sp4-sk',JSON.stringify(Array.from(skipped)));}catch(e){}
@@ -1105,7 +1105,7 @@ function showToast(title,body){document.getElementById('toast-title').textConten
 
 // ===== INIT =====
 window.submitQuiz=submitQuiz;window.selectOpt=selectOpt;window.startQuizCh=startQuizCh;window.backToQuizSubjects=backToQuizSubjects;
-load();if(!Object.keys(taskMap).length)initTaskMap();redistribute();save();render();renderWQ();renderWeak();renderLearnSubjects();renderQuizSubjects();
+load();initTaskMap();redistribute();save();render();renderWQ();renderWeak();renderLearnSubjects();renderQuizSubjects();
 </script>
 </body>
 </html>
