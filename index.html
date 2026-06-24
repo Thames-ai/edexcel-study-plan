@@ -1105,7 +1105,7 @@ function showToast(title,body){document.getElementById('toast-title').textConten
 
 // ===== INIT =====
 window.submitQuiz=submitQuiz;window.selectOpt=selectOpt;window.startQuizCh=startQuizCh;window.backToQuizSubjects=backToQuizSubjects;
-load();initTaskMap();redistribute();save();render();renderWQ();renderWeak();renderLearnSubjects();renderQuizSubjects();
+try{load();initTaskMap();redistribute();save();render();renderWQ();renderWeak();renderLearnSubjects();renderQuizSubjects();window.__initRan='OK';}catch(e){window.__initRan='ERR:'+e.message;console.error('INIT FAIL:',e);}
 </script>
 </body>
 </html>
