@@ -1,0 +1,2878 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edexcel A-Level 每日学习计划 | 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #080c14;
+  --bg2: #0f1520;
+  --card: #141c2b;
+  --card-h: #1a2538;
+  --surface: #111827;
+  --text: #e2e8f0;
+  --text2: #94a3b8;
+  --muted: #64748b;
+  --border: #1e293b;
+  --border2: #334155;
+  --accent: #3b82f6;
+  --green: #10b981;
+  --red: #ef4444;
+  --yellow: #eab308;
+  --orange: #f97316;
+  --purple: #8b5cf6;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(800px 600px at 15% 5%, rgba(59,130,246,0.05), transparent),
+    radial-gradient(600px 400px at 85% 90%, rgba(139,92,246,0.04), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* HEADER */
+.hdr {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.hdr-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(59,130,246,0.1);
+  border: 1px solid rgba(59,130,246,0.2);
+  padding: 4px 14px;
+  border-radius: 100px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.hdr h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 900;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #f1f5f9, #64748b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+.hdr p {
+  font-size: 15px;
+  color: var(--text2);
+  font-weight: 300;
+}
+
+/* STATS ROW */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  margin-bottom: 36px;
+}
+.stat {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+.stat .num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+.stat .lbl {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 2px;
+}
+.stat:nth-child(2) .num { color: var(--purple); }
+.stat:nth-child(3) .num { color: var(--green); }
+.stat:nth-child(4) .num { color: var(--orange); }
+.stat:nth-child(5) .num { color: var(--red); }
+.stat:nth-child(6) .num { color: var(--yellow); }
+
+/* PROGRESS */
+.prog-sec {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.prog-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.prog-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.prog-label {
+  font-size: 13px;
+  font-weight: 500;
+  min-width: 100px;
+}
+.prog-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--surface);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.prog-fill {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 0.6s ease;
+}
+.fill-pure { background: linear-gradient(90deg, #3b82f6, #06b6d4); }
+.fill-stats { background: linear-gradient(90deg, #8b5cf6, #ec4899); }
+.fill-mech { background: linear-gradient(90deg, #10b981, #06b6d4); }
+.fill-chem { background: linear-gradient(90deg, #f97316, #eab308); }
+.prog-pct {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  min-width: 36px;
+  text-align: right;
+}
+
+/* LEGEND */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 14px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text2);
+}
+.legend-dot {
+  width: 10px; height: 10px;
+  border-radius: 3px;
+}
+
+/* WEEK BLOCKS */
+.week-block {
+  margin-bottom: 24px;
+}
+.week-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.2s;
+}
+.week-header:hover {
+  border-color: var(--border2);
+}
+.week-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--accent);
+  background: rgba(59,130,246,0.1);
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+.week-range {
+  font-size: 13px;
+  color: var(--text2);
+  font-family: 'JetBrains Mono', monospace;
+}
+.week-toggle {
+  margin-left: auto;
+  font-size: 14px;
+  color: var(--muted);
+  transition: transform 0.3s;
+}
+.week-header.collapsed .week-toggle {
+  transform: rotate(-90deg);
+}
+.week-body {
+  padding-top: 8px;
+}
+.week-body.hidden {
+  display: none;
+}
+
+/* DAY CARDS */
+.day-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.day-card:hover {
+  border-color: var(--border2);
+}
+.day-card.weekend {
+  border-left: 3px solid var(--yellow);
+}
+.day-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.day-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: var(--text2);
+}
+.day-dow {
+  font-weight: 500;
+  color: var(--muted);
+}
+.day-note {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--yellow);
+  background: rgba(234,179,8,0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.day-slots {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* SLOT CARDS */
+.slot-card {
+  background: var(--bg2);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.slot-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.slot-cb {
+  width: 16px; height: 16px;
+  accent-color: var(--accent);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.slot-subject {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.slot-type {
+  font-size: 11px;
+  color: var(--muted);
+  margin-left: auto;
+}
+.slot-hrs {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+.slot-topic {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.slot-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.task-item {
+  font-size: 13px;
+  color: var(--text2);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.6;
+}
+.task-item::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+.task-revise {
+  color: #67e8f9;
+}
+.task-revise::before {
+  content: '↻';
+  color: #22d3ee;
+}
+.task-milestone {
+  color: #fbbf24;
+  font-weight: 600;
+}
+.task-milestone::before {
+  content: '★';
+  color: #fbbf24;
+}
+
+/* Completed slots */
+.slot-card.done {
+  opacity: 0.5;
+}
+.slot-card.done .slot-topic {
+  text-decoration: line-through;
+}
+
+/* Spacer */
+.spacer {
+  height: 8px;
+}
+
+/* TIPS at bottom */
+.tips {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-top: 32px;
+}
+.tips h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tip-box {
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 14px;
+}
+.tip-box .tip-emoji { font-size: 20px; margin-bottom: 6px; }
+.tip-box .tip-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.tip-box .tip-text { font-size: 12px; color: var(--text2); line-height: 1.7; }
+
+@media (max-width: 600px) {
+  .container { padding: 16px 12px; }
+  .stats { grid-template-columns: repeat(3, 1fr); }
+  .slot-header { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="hdr">
+  <div class="hdr-badge">📅 EDEXCEL A-LEVEL · DAILY PLAN</div>
+  <h1>每日学习计划</h1>
+  <p>2026年6月25日 → 2026年9月2日 · 69天 · 从零到全书完成</p>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="num">69</div><div class="lbl">总天数</div></div>
+  <div class="stat"><div class="num">55</div><div class="lbl">章节</div></div>
+  <div class="stat"><div class="num">5</div><div class="lbl">教材</div></div>
+  <div class="stat"><div class="num">~5h</div><div class="lbl">工作日/天</div></div>
+  <div class="stat"><div class="num">~3h</div><div class="lbl">周末/天</div></div>
+  <div class="stat"><div class="num">~260</div><div class="lbl">总学时</div></div>
+</div>
+
+<div class="prog-sec">
+  <div class="prog-title">📈 实时进度</div>
+  <div class="prog-row">
+    <span class="prog-label">📐 Pure</span>
+    <div class="prog-bar"><div class="prog-fill fill-pure" id="pf-pure" style="width:0%"></div></div>
+    <span class="prog-pct" id="pp-pure">0%</span>
+  </div>
+  <div class="prog-row">
+    <span class="prog-label">📊 Stats</span>
+    <div class="prog-bar"><div class="prog-fill fill-stats" id="pf-stats" style="width:0%"></div></div>
+    <span class="prog-pct" id="pp-stats">0%</span>
+  </div>
+  <div class="prog-row">
+    <span class="prog-label">⚙️ Mech</span>
+    <div class="prog-bar"><div class="prog-fill fill-mech" id="pf-mech" style="width:0%"></div></div>
+    <span class="prog-pct" id="pp-mech">0%</span>
+  </div>
+  <div class="prog-row">
+    <span class="prog-label">🧪 Chem</span>
+    <div class="prog-bar"><div class="prog-fill fill-chem" id="pf-chem" style="width:0%"></div></div>
+    <span class="prog-pct" id="pp-chem">0%</span>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(59,130,246,0.5)"></div>Pure Maths</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(139,92,246,0.5)"></div>Statistics</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(16,185,129,0.5)"></div>Mechanics</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(249,115,22,0.5)"></div>Chemistry</div>
+  <div class="legend-item"><span style="color:#22d3ee">↻</span> 间隔复习</div>
+  <div class="legend-item"><span style="color:#fbbf24">★</span> 里程碑</div>
+</div>
+
+<div class="week-block">
+          <div class="week-header">
+            <div class="week-badge">W1</div>
+            <div class="week-range">2026-06-25 → 2026-07-01</div>
+            <div class="week-toggle" onclick="toggleWeek(this)">▾</div>
+          </div>
+          <div class="week-body">
+        
+      <div class="day-card" id="day-0">
+        <div class="day-header">
+          <span class="day-date">2026-06-25</span>
+          <span class="day-dow">Thu 周四</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_0_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch1 Algebraic Expressions</div>
+            <div class="slot-tasks"><div class="task-item">Read p10-18: indices, surds, rationalising</div><div class="task-item">Ex 1A Q1-5, Ex 1B Q1-4</div><div class="task-item">Ex 1C Q1-5 (surds)</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_0_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch1 Data Collection (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p10-15: populations, samples, sampling</div><div class="task-item">Ex 1A Q1-3, Ex 1B Q1-3</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_0_2" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch1 Atomic Structure (1.1-1.3)</div>
+            <div class="slot-tasks"><div class="task-item">Read p19-26: atomic structure, mass spec</div><div class="task-item">Section questions p26 Q1-4</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-1">
+        <div class="day-header">
+          <span class="day-date">2026-06-26</span>
+          <span class="day-dow">Fri 周五</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_1_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch1 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 1D Q1-6 (rationalising)</div><div class="task-item">Mixed Ex 1 Q1,3,5,7,9 (odd numbers)</div><div class="task-item task-revise">🔄 Quick review: Ex 1A-C key examples</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_1_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch2 Quadratics (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p27-35: solving quadratics, discriminant</div><div class="task-item">Ex 2A Q1-4, Ex 2B Q1-5, Ex 2C Q1-3</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_1_2" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1h</span>
+            </div>
+            <div class="slot-topic">Ch1 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 1C Q1-3 (non-random sampling)</div><div class="task-item">Ex 1D Q1-3 (types of data)</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-2">
+        <div class="day-header">
+          <span class="day-date">2026-06-27</span>
+          <span class="day-dow">Sat 周六</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_2_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch2 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 2D Q1-4, Ex 2E Q1-3 (completing the square)</div><div class="task-item task-revise">🔄 Review Ch1: redo 2 tricky Qs from Mixed Ex 1</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_2_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch1 (1.4-1.5)</div>
+            <div class="slot-tasks"><div class="task-item">Read p27-34: electron config, periodic table trends</div><div class="task-item">Section questions p34 Q1-5</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-3">
+        <div class="day-header">
+          <span class="day-date">2026-06-28</span>
+          <span class="day-dow">Sun 周日</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_3_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch1 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 1E Q1-3 (large data set)</div><div class="task-item">Mixed Ex 1 Q1,3,5</div><div class="task-item task-revise">🔄 Review Pure Ch1 vocab</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_3_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch2 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 2F Q1-4, Ex 2G Q1-3, Ex 2H Q1-3</div><div class="task-item">Mixed Ex 2 Q1,3,5,7,9</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-4">
+        <div class="day-header">
+          <span class="day-date">2026-06-29</span>
+          <span class="day-dow">Mon 周一</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_4_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch3 Equations & Inequalities (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p47-55: simultaneous equations, quadratic inequalities</div><div class="task-item">Ex 3A Q1-4, Ex 3B Q1-4, Ex 3C Q1-4</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_4_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch1 (1.6-1.8)</div>
+            <div class="slot-tasks"><div class="task-item">Read p35-44: ionisation energy trends</div><div class="task-item">Section questions p44 Q1-6</div><div class="task-item task-revise">🔄 Review Ch1.1-1.5 flashcards</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(16,185,129,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_4_2" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(16,185,129,0.12);color:#34d399">⚙️ Mech Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch8 Modelling in Mechanics (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p127-131: models, assumptions, SI units</div><div class="task-item">Ex 8A Q1-3, Ex 8B Q1-3</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-5">
+        <div class="day-header">
+          <span class="day-date">2026-06-30</span>
+          <span class="day-dow">Tue 周二</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_5_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch3 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 3D Q1-5, Ex 3E Q1-4 (regions on graphs)</div><div class="task-item task-revise">🔄 Review Ch2: Mixed Ex 2 Q2,4,6</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_5_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch2 Measures of Location & Spread (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p29-36: mean, median, mode, quartiles</div><div class="task-item">Ex 2A Q1-4, Ex 2B Q1-3</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(16,185,129,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_5_2" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(16,185,129,0.12);color:#34d399">⚙️ Mech Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1h</span>
+            </div>
+            <div class="slot-topic">Ch8 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 8C Q1-3, Ex 8D Q1-3 (vectors basics)</div><div class="task-item">Mixed Ex 8 Q1-5</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-6">
+        <div class="day-header">
+          <span class="day-date">2026-07-01</span>
+          <span class="day-dow">Wed 周三</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_6_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch3 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 3F Q1-4, Ex 3G Q1-3, Ex 3H Q1-3</div><div class="task-item">Mixed Ex 3 Q1,3,5,7</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_6_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch2 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 2C Q1-3 (percentiles), Ex 2D Q1-3 (variance, std dev)</div><div class="task-item task-revise">🔄 Review Ch1: key definitions quiz</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_6_2" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">1h</span>
+            </div>
+            <div class="slot-topic">Ch1 Review + Ch2 start</div>
+            <div class="slot-tasks"><div class="task-item">Ch1 Mixed questions all</div><div class="task-item">Read p45-52: ionic bonding</div><div class="task-item task-revise">🔄 Review Ch1 full chapter summary</div></div>
+          </div>
+        </div>
+      </div>
+    </div><div class="week-block">
+          <div class="week-header">
+            <div class="week-badge">W2</div>
+            <div class="week-range">2026-07-02 → 2026-07-08</div>
+            <div class="week-toggle" onclick="toggleWeek(this)">▾</div>
+          </div>
+          <div class="week-body">
+        
+      <div class="day-card" id="day-7">
+        <div class="day-header">
+          <span class="day-date">2026-07-02</span>
+          <span class="day-dow">Thu 周四</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_7_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch4 Graphs & Transformations</div>
+            <div class="slot-tasks"><div class="task-item">Read p68-80: cubic/reciprocal graphs, transformations</div><div class="task-item">Ex 4A Q1-4, Ex 4B Q1-4, Ex 4C Q1-3</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_7_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch2 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 2E Q1-3 (coding)</div><div class="task-item">Mixed Ex 2 Q1,3,5,7</div><div class="task-item task-revise">🔄 Review Ch2 formulas: mean, variance, coding</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_7_2" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1h</span>
+            </div>
+            <div class="slot-topic">Ch2 (2.1-2.4)</div>
+            <div class="slot-tasks"><div class="task-item">Read p45-60: ionic, covalent, metallic bonding</div><div class="task-item">Section questions p60 Q1-5</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-8">
+        <div class="day-header">
+          <span class="day-date">2026-07-03</span>
+          <span class="day-dow">Fri 周五</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_8_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch4 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 4D Q1-4, Ex 4E Q1-3, Ex 4F Q1-4</div><div class="task-item">Mixed Ex 4 Q1,3,5</div><div class="task-item task-revise">🔄 Review Ch3: solve 2 inequalities Qs timed (5min each)</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(16,185,129,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_8_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(16,185,129,0.12);color:#34d399">⚙️ Mech Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch9 Constant Acceleration (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p139-148: displacement-time, velocity-time graphs,suvat</div><div class="task-item">Ex 9A Q1-4, Ex 9B Q1-4</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-9">
+        <div class="day-header">
+          <span class="day-date">2026-07-04</span>
+          <span class="day-dow">Sat 周六</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(16,185,129,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_9_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(16,185,129,0.12);color:#34d399">⚙️ Mech Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch9 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 9C Q1-4 (suvat formulae 1)</div><div class="task-item task-revise">🔄 Review Ch8: list all modelling assumptions</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_9_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch3 Representations of Data</div>
+            <div class="slot-tasks"><div class="task-item">Read p49-55: outliers, box plots</div><div class="task-item">Ex 3A Q1-3, Ex 3B Q1-3</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-10">
+        <div class="day-header">
+          <span class="day-date">2026-07-05</span>
+          <span class="day-dow">Sun 周日</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_10_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch5 Straight Line Graphs (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p98-108: gradients, equations of lines, parallel/perpendicular</div><div class="task-item">Ex 5A Q1-4, Ex 5B Q1-4</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_10_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch2 (2.5-2.7)</div>
+            <div class="slot-tasks"><div class="task-item">Read p61-74: shapes of molecules, VSEPR, electronegativity</div><div class="task-item">Section questions Q1-5</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-11">
+        <div class="day-header">
+          <span class="day-date">2026-07-06</span>
+          <span class="day-dow">Mon 周一</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_11_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch5 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 5C Q1-5, Ex 5D Q1-3, Ex 5E Q1-4, Ex 5F Q1-3, Ex 5G Q1-3</div><div class="task-item">Mixed Ex 5 Q1,3,5,7</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(16,185,129,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_11_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(16,185,129,0.12);color:#34d399">⚙️ Mech Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch9 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 9D Q1-4 (suvat formulae 2)</div><div class="task-item">Ex 9E Q1-3 (vertical motion under gravity)</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-12">
+        <div class="day-header">
+          <span class="day-date">2026-07-07</span>
+          <span class="day-dow">Tue 周二</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_12_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch6 Circles (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p122-132: equation of circle, intersections</div><div class="task-item">Ex 6A Q1-4, Ex 6B Q1-4</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_12_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch3 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 3C Q1-3 (cumulative freq), Ex 3D Q1-3 (histograms)</div><div class="task-item">Ex 3E Q1-3 (comparing data), Mixed Ex 3 Q1,3,5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_12_2" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1h</span>
+            </div>
+            <div class="slot-topic">Ch2 (2.8-2.9)</div>
+            <div class="slot-tasks"><div class="task-item">Read p75-87: intermolecular forces, bonding summary</div><div class="task-item">Ch2 Mixed questions all</div><div class="task-item task-revise">🔄 Review Ch1 key definitions</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-13">
+        <div class="day-header">
+          <span class="day-date">2026-07-08</span>
+          <span class="day-dow">Wed 周三</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_13_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch6 (finish) + Review Ex 1</div>
+            <div class="slot-tasks"><div class="task-item">Ex 6C Q1-4, Ex 6D-E Q1-3 each, Mixed Ex 6 Q1,3,5</div><div class="task-item">Review Exercise 1 (p94-97): Q1,3,5,7,9,11,13</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(16,185,129,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_13_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(16,185,129,0.12);color:#34d399">⚙️ Mech Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch9 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Mixed Ex 9 Q1-8</div><div class="task-item task-revise">🔄 Review Ch8-9: draw all suvat triangles from memory</div></div>
+          </div>
+        </div>
+      </div>
+    </div><div class="week-block">
+          <div class="week-header">
+            <div class="week-badge">W3</div>
+            <div class="week-range">2026-07-09 → 2026-07-15</div>
+            <div class="week-toggle" onclick="toggleWeek(this)">▾</div>
+          </div>
+          <div class="week-body">
+        
+      <div class="day-card" id="day-14">
+        <div class="day-header">
+          <span class="day-date">2026-07-09</span>
+          <span class="day-dow">Thu 周四</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_14_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch7 Algebraic Methods (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p146-155: proof, algebraic fractions, division</div><div class="task-item">Ex 7A Q1-4, Ex 7B Q1-4, Ex 7C Q1-4</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_14_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch4 Correlation</div>
+            <div class="slot-tasks"><div class="task-item">Read p68-77: correlation, linear regression</div><div class="task-item">Ex 4A Q1-4, Ex 4B Q1-3, Mixed Ex 4 Q1-5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_14_2" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">0.5h</span>
+            </div>
+            <div class="slot-topic">Ch3 Redox I</div>
+            <div class="slot-tasks"><div class="task-item">Read p88-100: oxidation states, half-equations</div><div class="task-item">All section questions & Mixed Ex 3</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-15">
+        <div class="day-header">
+          <span class="day-date">2026-07-10</span>
+          <span class="day-dow">Fri 周五</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_15_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch7 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 7D Q1-4 (partial fractions), Ex 7E-F Q1-3 each</div><div class="task-item">Mixed Ex 7 Q1,3,5,7</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(16,185,129,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_15_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(16,185,129,0.12);color:#34d399">⚙️ Mech Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch10 Forces and Motion (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p165-174: force diagrams, Newton's 2nd law</div><div class="task-item">Ex 10A Q1-4, Ex 10B Q1-3, Ex 10C Q1-4</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-16">
+        <div class="day-header">
+          <span class="day-date">2026-07-11</span>
+          <span class="day-dow">Sat 周六</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_16_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch5 Probability (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p78-84: Venn diagrams, mutually exclusive, independent</div><div class="task-item">Ex 5A Q1-4, Ex 5B Q1-4</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_16_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch4 Inorganic Chemistry</div>
+            <div class="slot-tasks"><div class="task-item">Read p101-112: Group 2, Group 7</div><div class="task-item">Section questions Q1-5</div><div class="task-item task-revise">🔄 Review Ch2: draw all bonding types from memory</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-17">
+        <div class="day-header">
+          <span class="day-date">2026-07-12</span>
+          <span class="day-dow">Sun 周日</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(16,185,129,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_17_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(16,185,129,0.12);color:#34d399">⚙️ Mech Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch10 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 10D Q1-4 (motion in 2D)</div><div class="task-item task-revise">🔄 Review Ch9: redo 3 tricky Mixed Ex 9 Qs</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_17_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">🔄 Review Ch4-7</div>
+            <div class="slot-tasks"><div class="task-item">Redo wrongly answered Qs from Mixed Ex 4-7</div><div class="task-item">Timed practice: 5 Qs in 15 min</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-18">
+        <div class="day-header">
+          <span class="day-date">2026-07-13</span>
+          <span class="day-dow">Mon 周一</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_18_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch8 Binomial Expansion</div>
+            <div class="slot-tasks"><div class="task-item">Read p167-181: Pascal's triangle, binomial formula</div><div class="task-item">Ex 8A Q1-5, Ex 8B Q1-4, Ex 8C-D Q1-3 each</div><div class="task-item">Mixed Ex 8 Q1,3,5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(16,185,129,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_18_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(16,185,129,0.12);color:#34d399">⚙️ Mech Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch10 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 10E Q1-4 (connected particles), Ex 10F Q1-4 (pulleys)</div><div class="task-item">Mixed Ex 10 Q1-6</div><div class="task-item task-revise">🔄 Review: write all formulas without looking</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-19">
+        <div class="day-header">
+          <span class="day-date">2026-07-14</span>
+          <span class="day-dow">Tue 周二</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_19_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch5 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 5C Q1-4 (independent events), Ex 5D Q1-3 (tree diagrams)</div><div class="task-item">Mixed Ex 5 Q1,3,5,7</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_19_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch4 (finish) + Ch5 start</div>
+            <div class="slot-tasks"><div class="task-item">Read p113-125: reactions of Group 2 & 7</div><div class="task-item">Ch4 Mixed Questions all</div><div class="task-item">Read p126-135: moles, equations</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-20">
+        <div class="day-header">
+          <span class="day-date">2026-07-15</span>
+          <span class="day-dow">Wed 周三</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_20_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch9 Trigonometric Ratios (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p182-196: sin/cos/tan, graphs, exact values</div><div class="task-item">Ex 9A Q1-5, Ex 9B Q1-4, Ex 9C Q1-4</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(16,185,129,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_20_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(16,185,129,0.12);color:#34d399">⚙️ Mech Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch11 Variable Acceleration</div>
+            <div class="slot-tasks"><div class="task-item">Read p190-205: differentiation/integration for motion</div><div class="task-item">Ex 11A Q1-4, Ex 11B Q1-4, Ex 11C Q1-3, Ex 11D-E Q1-3 each</div><div class="task-item">Mixed Ex 11 Q1-5</div></div>
+          </div>
+        </div>
+      </div>
+    </div><div class="week-block">
+          <div class="week-header">
+            <div class="week-badge">W4</div>
+            <div class="week-range">2026-07-16 → 2026-07-22</div>
+            <div class="week-toggle" onclick="toggleWeek(this)">▾</div>
+          </div>
+          <div class="week-body">
+        
+      <div class="day-card" id="day-21">
+        <div class="day-header">
+          <span class="day-date">2026-07-16</span>
+          <span class="day-dow">Thu 周四</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_21_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch9 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 9D Q1-4, Ex 9E Q1-4, Ex 9F Q1-3</div><div class="task-item">Mixed Ex 9 Q1,3,5,7</div><div class="task-item task-revise">🔄 Review Ch7-8: redo 3 tricky Qs</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_21_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch5 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Read p136-150: ideal gas equation, atom economy</div><div class="task-item">Section questions p135-150 Q1-6</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-22">
+        <div class="day-header">
+          <span class="day-date">2026-07-17</span>
+          <span class="day-dow">Fri 周五</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_22_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch10 Trig Identities & Equations</div>
+            <div class="slot-tasks"><div class="task-item">Read p211-225: identities, solving trig equations</div><div class="task-item">Ex 10A Q1-4, Ex 10B Q1-4, Ex 10C Q1-4, Ex 10D Q1-4</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_22_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch6 Statistical Distributions (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p92-100: probability distributions, binomial</div><div class="task-item">Ex 6A Q1-5, Ex 6B Q1-4</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-23">
+        <div class="day-header">
+          <span class="day-date">2026-07-18</span>
+          <span class="day-dow">Sat 周六</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_23_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch10 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 10E Q1-4, Ex 10F Q1-3</div><div class="task-item">Mixed Ex 10 Q1,3,5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(16,185,129,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_23_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(16,185,129,0.12);color:#34d399">⚙️ Mech Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">🔄 Review Ex 2 + Exam Prep</div>
+            <div class="slot-tasks"><div class="task-item">Review Exercise 2 (p206-209) Q1,3,5,7,9</div><div class="task-item">Exam-style practice paper (p210): timed attempt</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-24">
+        <div class="day-header">
+          <span class="day-date">2026-07-19</span>
+          <span class="day-dow">Sun 周日</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_24_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch6 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 6C Q1-4 (cumulative binomial)</div><div class="task-item">Mixed Ex 6 Q1,3,5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_24_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch5 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Read p151-156: practical techniques</div><div class="task-item">Ch5 Mixed Questions all</div><div class="task-item task-revise">🔄 Review Ch3 Redox half-equations</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-25">
+        <div class="day-header">
+          <span class="day-date">2026-07-20</span>
+          <span class="day-dow">Mon 周一</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_25_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch11 Vectors</div>
+            <div class="slot-tasks"><div class="task-item">Read p238-262: vector notation, magnitude, position vectors</div><div class="task-item">Ex 11A Q1-4, Ex 11B Q1-4, Ex 11C Q1-4, Ex 11D Q1-4</div><div class="task-item">Ex 11E-F Q1-3 each, Mixed Ex 11 Q1,3,5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_25_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch7 Hypothesis Testing (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p107-115: hypothesis testing, critical values</div><div class="task-item">Ex 7A Q1-4, Ex 7B Q1-4</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-26">
+        <div class="day-header">
+          <span class="day-date">2026-07-21</span>
+          <span class="day-dow">Tue 周二</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_26_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Review Exercise 2</div>
+            <div class="slot-tasks"><div class="task-item">Review Exercise 2 (p235-237): Q1,3,5,7,9,11</div><div class="task-item task-revise">🔄 Review Ch10: solve 5 trig equation Qs timed</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_26_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch7 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 7C Q1-4 (one-tailed), Ex 7D Q1-3 (two-tailed)</div><div class="task-item">Mixed Ex 7 Q1,3,5,7</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-27">
+        <div class="day-header">
+          <span class="day-date">2026-07-22</span>
+          <span class="day-dow">Wed 周三</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_27_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch12 Differentiation (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p263-280: gradient, first principles, rules</div><div class="task-item">Ex 12A Q1-4, Ex 12B Q1-4, Ex 12C Q1-5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_27_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch6.1 Organic Chemistry Intro</div>
+            <div class="slot-tasks"><div class="task-item">Read p157-177: nomenclature, isomerism, functional groups</div><div class="task-item">Section questions p177 Q1-6</div></div>
+          </div>
+        </div>
+      </div>
+    </div><div class="week-block">
+          <div class="week-header">
+            <div class="week-badge">W5</div>
+            <div class="week-range">2026-07-23 → 2026-07-29</div>
+            <div class="week-toggle" onclick="toggleWeek(this)">▾</div>
+          </div>
+          <div class="week-body">
+        
+      <div class="day-card" id="day-28">
+        <div class="day-header">
+          <span class="day-date">2026-07-23</span>
+          <span class="day-dow">Thu 周四</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_28_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch12 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 12D Q1-5 (tangents/normals), Ex 12E Q1-4 (stationary points)</div><div class="task-item task-revise">🔄 Review Ch11: vector problems x3</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_28_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Review Ex 1 + Full Stats Review</div>
+            <div class="slot-tasks"><div class="task-item">Review Exercise 1 (p122-126): Q1,3,5,7,9</div><div class="task-item">📋 Make formula sheet from memory</div><div class="task-item task-revise">🔄 Review Ch5-7: identify weak areas</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-29">
+        <div class="day-header">
+          <span class="day-date">2026-07-24</span>
+          <span class="day-dow">Fri 周五</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_29_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch12 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 12F Q1-4 (sketching), Ex 12G Q1-3 (modelling)</div><div class="task-item">Mixed Ex 12 Q1,3,5,7</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_29_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch6.2 Hydrocarbons</div>
+            <div class="slot-tasks"><div class="task-item">Read p178-198: alkanes, fractional distillation, cracking</div><div class="task-item">Section questions p198 Q1-5</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-30">
+        <div class="day-header">
+          <span class="day-date">2026-07-25</span>
+          <span class="day-dow">Sat 周六</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_30_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch13 Integration (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p294-304: indefinite integrals, definite integrals</div><div class="task-item">Ex 13A Q1-5, Ex 13B Q1-5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_30_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch6.2 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Read p199-208: alkenes, electrophilic addition, polymers</div><div class="task-item">Section questions p208 Q1-5</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-31">
+        <div class="day-header">
+          <span class="day-date">2026-07-26</span>
+          <span class="day-dow">Sun 周日</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_31_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch13 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 13C Q1-4 (area under curve), Ex 13D Q1-3</div><div class="task-item task-revise">🔄 Review Ch12: differentiation rules quiz</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_31_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">🔄 Full Stats Review</div>
+            <div class="slot-tasks"><div class="task-item">Redo wrong Qs from Review Ex 1</div><div class="task-item">Practice 10 Mixed Ex questions across Ch1-7</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-32">
+        <div class="day-header">
+          <span class="day-date">2026-07-27</span>
+          <span class="day-dow">Mon 周一</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_32_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch13 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 13E Q1-4 (area between curves), Ex 13F Q1-3</div><div class="task-item">Mixed Ex 13 Q1,3,5,7</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_32_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch6.3 Halogenoalkanes & Alcohols</div>
+            <div class="slot-tasks"><div class="task-item">Read p209-220: substitution, elimination, alcohols</div><div class="task-item">Section questions p220 Q1-5</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-33">
+        <div class="day-header">
+          <span class="day-date">2026-07-28</span>
+          <span class="day-dow">Tue 周二</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_33_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch14 Exponentials & Logarithms (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p318-330: exponential functions, log laws, base e</div><div class="task-item">Ex 14A Q1-4, Ex 14B Q1-5, Ex 14C Q1-4</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_33_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch6.3 (finish) + Ch7 Analytical</div>
+            <div class="slot-tasks"><div class="task-item">Read p221-231: oxidation of alcohols, elimination</div><div class="task-item">Ch6.3 Mixed Qs all</div><div class="task-item">Read p232-243: mass spec, IR spectroscopy</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-34">
+        <div class="day-header">
+          <span class="day-date">2026-07-29</span>
+          <span class="day-dow">Wed 周三</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_34_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch14 (finish) + Review Ex 3</div>
+            <div class="slot-tasks"><div class="task-item">Ex 14D Q1-4 (log equations), Ex 14E-F Q1-3 each</div><div class="task-item">Mixed Ex 14 Q1,3,5,7</div><div class="task-item">Review Exercise 3 (p345-348): Q1,3,5,7,9,11</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_34_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch7 (finish) + Ch8 Energetics start</div>
+            <div class="slot-tasks"><div class="task-item">Ch7 Mixed Questions</div><div class="task-item">Read p244-255: enthalpy changes, Hess's law</div></div>
+          </div>
+        </div>
+      </div>
+    </div><div class="week-block">
+          <div class="week-header">
+            <div class="week-badge">W6</div>
+            <div class="week-range">2026-07-30 → 2026-08-05</div>
+            <div class="week-toggle" onclick="toggleWeek(this)">▾</div>
+          </div>
+          <div class="week-body">
+        
+      <div class="day-card" id="day-35">
+        <div class="day-header">
+          <span class="day-date">2026-07-30</span>
+          <span class="day-dow">Thu 周四</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_35_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">🔄 PURE Y1 FULL REVIEW DAY</div>
+            <div class="slot-tasks"><div class="task-item">Exam-style practice Paper 1 (p349-351) — TIMED 2hr</div><div class="task-item">Mark & annotate all errors</div><div class="task-item">Make list of weak topics for future review</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_35_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch8 Energetics (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Read p256-268: bond enthalpies, calorimetry</div><div class="task-item">Section questions Q1-5</div><div class="task-item task-revise">🔄 Review Ch5: mole calculations x5</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-36">
+        <div class="day-header">
+          <span class="day-date">2026-07-31</span>
+          <span class="day-dow">Fri 周五</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(59,130,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_36_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(59,130,246,0.12);color:#60a5fa">📐 Pure Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">🔄 PURE Y1 FULL REVIEW DAY 2</div>
+            <div class="slot-tasks"><div class="task-item">Exam-style practice Paper 2 (p352-354) — TIMED</div><div class="task-item">Mark & review</div><div class="task-item">Redo all wrong Qs</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_36_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch8 (finish) + Ch9 Kinetics start</div>
+            <div class="slot-tasks"><div class="task-item">Ch8 Mixed Questions all</div><div class="task-item">Read p269-275: collision theory, rate equations</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-37">
+        <div class="day-header">
+          <span class="day-date">2026-08-01</span>
+          <span class="day-dow">Sat 周六</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_37_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">🔄 STATS Y1 REVIEW</div>
+            <div class="slot-tasks"><div class="task-item">Practice exam-style paper — TIMED</div><div class="task-item">Mark & identify weak areas</div><div class="task-item task-revise">🔄 Flashcards: all hypothesis testing rules</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(16,185,129,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_37_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(16,185,129,0.12);color:#34d399">⚙️ Mech Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">🔄 MECH Y1 REVIEW</div>
+            <div class="slot-tasks"><div class="task-item">Practice exam-style paper — TIMED</div><div class="task-item">Mark & identify weak areas</div><div class="task-item task-revise">🔄 Draw all force diagrams from memory</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-38">
+        <div class="day-header">
+          <span class="day-date">2026-08-02</span>
+          <span class="day-dow">Sun 周日</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_38_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch1 Algebraic Methods</div>
+            <div class="slot-tasks"><div class="task-item">Read p2-18: proof by contradiction, partial fractions, division</div><div class="task-item">Ex 1A Q1-4, Ex 1B Q1-4, Ex 1C Q1-4, Ex 1D-E Q1-3 each</div><div class="task-item">Mixed Ex 1 Q1,3,5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_38_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">1h</span>
+            </div>
+            <div class="slot-topic">🔄 Chem Review</div>
+            <div class="slot-tasks"><div class="task-item">Redo wrongly answered Qs from Ch1-8</div><div class="task-item">Organic reactions flowchart from memory</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-39">
+        <div class="day-header">
+          <span class="day-date">2026-08-03</span>
+          <span class="day-dow">Mon 周一</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_39_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch2 Functions and Graphs (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p25-42: modulus function, domain/range, composite/inverse</div><div class="task-item">Ex 2A Q1-4, Ex 2B Q1-4, Ex 2C Q1-4, Ex 2D Q1-4</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_39_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch9 Kinetics I (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Read p276-280: Maxwell-Boltzmann, catalysts</div><div class="task-item">Ch9 Mixed Questions</div><div class="task-item task-revise">🔄 Review Ch8 energetics calculations</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-40">
+        <div class="day-header">
+          <span class="day-date">2026-08-04</span>
+          <span class="day-dow">Tue 周二</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_40_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch2 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 2E Q1-4 (modulus graphs), Ex 2F Q1-3 (combined transforms), Ex 2G Q1-3</div><div class="task-item">Mixed Ex 2 Q1,3,5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_40_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch10 Equilibrium I</div>
+            <div class="slot-tasks"><div class="task-item">Read p281-292: Le Chatelier, Kc</div><div class="task-item">All section questions + Mixed Ex 10</div><div class="task-item task-revise">🔄 Review Ch9 kinetics graph questions</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-41">
+        <div class="day-header">
+          <span class="day-date">2026-08-05</span>
+          <span class="day-dow">Wed 周三</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_41_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch3 Sequences & Series (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p56-75: arithmetic/geometric sequences</div><div class="task-item">Ex 3A Q1-5, Ex 3B Q1-4, Ex 3C Q1-4, Ex 3D Q1-4</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_41_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">🔄 CHEM Y1 FULL REVIEW</div>
+            <div class="slot-tasks"><div class="task-item">Ch1-10 comprehensive mixed quiz</div><div class="task-item">Make complete reaction map</div><div class="task-item">📝 Identify top 3 weak chapters for later</div></div>
+          </div>
+        </div>
+      </div>
+    </div><div class="week-block">
+          <div class="week-header">
+            <div class="week-badge">W7</div>
+            <div class="week-range">2026-08-06 → 2026-08-12</div>
+            <div class="week-toggle" onclick="toggleWeek(this)">▾</div>
+          </div>
+          <div class="week-body">
+        
+      <div class="day-card" id="day-42">
+        <div class="day-header">
+          <span class="day-date">2026-08-06</span>
+          <span class="day-dow">Thu 周四</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_42_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch3 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 3E Q1-4 (geometric series), Ex 3F Q1-3 (sum to infinity)</div><div class="task-item">Ex 3G Q1-4 (sigma notation)</div><div class="task-item task-revise">🔄 Review Ch2: composite/inverse function Qs x5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(168,85,247,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_42_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(168,85,247,0.12);color:#c084fc">📊 Stats Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch1 Regression & Hypothesis Testing</div>
+            <div class="slot-tasks"><div class="task-item">Read p10-24: PMCC, hypothesis testing on correlation</div><div class="task-item">Ex 1A Q1-4, Ex 1B Q1-3, Ex 1C Q1-3</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-43">
+        <div class="day-header">
+          <span class="day-date">2026-08-07</span>
+          <span class="day-dow">Fri 周五</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_43_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch3 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 3H Q1-4 (recurrence relations), modelling Qs</div><div class="task-item">Mixed Ex 3 Q1,3,5,7</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(168,85,247,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_43_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(168,85,247,0.12);color:#c084fc">📊 Stats Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch2 Conditional Probability</div>
+            <div class="slot-tasks"><div class="task-item">Read p25-42: set notation, conditional prob, Venn/tree diagrams</div><div class="task-item">Ex 2A Q1-4, Ex 2B Q1-4, Ex 2C Q1-3</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-44">
+        <div class="day-header">
+          <span class="day-date">2026-08-08</span>
+          <span class="day-dow">Sat 周六</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(168,85,247,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_44_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(168,85,247,0.12);color:#c084fc">📊 Stats Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch2 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 2D Q1-3</div><div class="task-item task-revise">🔄 Review Stats Y1 Ch5 (probability foundations)</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(52,211,153,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_44_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(52,211,153,0.12);color:#6ee7b7">⚙️ Mech Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch4 Moments (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p79-90: moments, equilibrium, pivots</div><div class="task-item">Ex 4A Q1-4, Ex 4B Q1-4</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-45">
+        <div class="day-header">
+          <span class="day-date">2026-08-09</span>
+          <span class="day-dow">Sun 周日</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_45_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch4 Binomial Expansion</div>
+            <div class="slot-tasks"><div class="task-item">Read p101-107: expanding (1+x)^n approximation</div><div class="task-item">Ex 4A Q1-4, Ex 4B Q1-3, Ex 4C Q1-3</div><div class="task-item">Mixed Ex 4 Q1,3,5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(52,211,153,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_45_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(52,211,153,0.12);color:#6ee7b7">⚙️ Mech Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1h</span>
+            </div>
+            <div class="slot-topic">Ch4 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 4C Q1-4 (tilting), Ex 4D Q1-3</div><div class="task-item task-revise">🔄 Review Mech Y1 Ch10 (forces basics)</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-46">
+        <div class="day-header">
+          <span class="day-date">2026-08-10</span>
+          <span class="day-dow">Mon 周一</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_46_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch5 Radians</div>
+            <div class="slot-tasks"><div class="task-item">Read p107-113: radian measure, arc length, sector area</div><div class="task-item">Ex 5A Q1-5, Ex 5B Q1-4, Ex 5C Q1-3, Ex 5D-E Q1-3 each</div><div class="task-item">Mixed Ex 5 Q1,3,5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(168,85,247,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_46_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(168,85,247,0.12);color:#c084fc">📊 Stats Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch3 Normal Distribution (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p46-58: normal distribution, standard normal</div><div class="task-item">Ex 3A Q1-5, Ex 3B Q1-4</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-47">
+        <div class="day-header">
+          <span class="day-date">2026-08-11</span>
+          <span class="day-dow">Tue 周二</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_47_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">🔄 Review Ch1-5 + Review Ex 1</div>
+            <div class="slot-tasks"><div class="task-item">Review Exercise 1 (Y2): Q1,3,5,7,9,11</div><div class="task-item task-revise">🔄 Flashcard review: sequences formulas, binomial, radians</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(168,85,247,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_47_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(168,85,247,0.12);color:#c084fc">📊 Stats Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch3 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 3C Q1-4 (finding μ/σ), Ex 3D Q1-3 (approximations)</div><div class="task-item">Ex 3E Q1-3 (hypothesis testing), Mixed Ex 3 Q1,3,5</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-48">
+        <div class="day-header">
+          <span class="day-date">2026-08-12</span>
+          <span class="day-dow">Wed 周三</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_48_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch6 Trigonometric Functions</div>
+            <div class="slot-tasks"><div class="task-item">Read p114-127: sec/cosec/cot, graphs, identities</div><div class="task-item">Ex 6A Q1-4, Ex 6B Q1-4, Ex 6C Q1-4, Ex 6D Q1-3, Ex 6E Q1-3</div><div class="task-item">Mixed Ex 6 Q1,3,5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(52,211,153,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_48_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(52,211,153,0.12);color:#6ee7b7">⚙️ Mech Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch4 (finish) + Ch5 Forces & Friction start</div>
+            <div class="slot-tasks"><div class="task-item">Mixed Ex 4 Q1-5</div><div class="task-item">Read p99-107: friction, F=μR, inclined planes</div><div class="task-item">Ex 5A Q1-4</div></div>
+          </div>
+        </div>
+      </div>
+    </div><div class="week-block">
+          <div class="week-header">
+            <div class="week-badge">W8</div>
+            <div class="week-range">2026-08-13 → 2026-08-19</div>
+            <div class="week-toggle" onclick="toggleWeek(this)">▾</div>
+          </div>
+          <div class="week-body">
+        
+      <div class="day-card" id="day-49">
+        <div class="day-header">
+          <span class="day-date">2026-08-13</span>
+          <span class="day-dow">Thu 周四</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_49_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch7 Trigonometry & Modelling (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p128-145: addition formulae, double angle</div><div class="task-item">Ex 7A Q1-4, Ex 7B Q1-4, Ex 7C Q1-4, Ex 7D Q1-4</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(52,211,153,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_49_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(52,211,153,0.12);color:#6ee7b7">⚙️ Mech Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch5 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 5B Q1-4 (inclined planes), Ex 5C Q1-3 (limiting equilibrium)</div><div class="task-item">Ex 5D Q1-3, Mixed Ex 5 Q1,3,5</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-50">
+        <div class="day-header">
+          <span class="day-date">2026-08-14</span>
+          <span class="day-dow">Fri 周五</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_50_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch7 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 7E Q1-4 (solving equations), Ex 7F Q1-3 (acosx+bsinx=Rcos)</div><div class="task-item task-revise">🔄 Review Ch6: sec/cosec/cot identities quiz</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(52,211,153,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_50_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(52,211,153,0.12);color:#6ee7b7">⚙️ Mech Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">Ch6 Projectiles (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p116-126: horizontal projectiles, suvat in 2D</div><div class="task-item">Ex 6A Q1-4, Ex 6B Q1-4</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-51">
+        <div class="day-header">
+          <span class="day-date">2026-08-15</span>
+          <span class="day-dow">Sat 周六</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_51_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch7 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 7G Q1-3 (proving identities, modelling)</div><div class="task-item">Mixed Ex 7 Q1,3,5,7</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_51_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">🔄 Chem Y1 Review Day</div>
+            <div class="slot-tasks"><div class="task-item">Redo top 3 weak chapter mixed exercises</div><div class="task-item">Organic reaction pathways — draw from memory</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-52">
+        <div class="day-header">
+          <span class="day-date">2026-08-16</span>
+          <span class="day-dow">Sun 周日</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(52,211,153,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_52_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(52,211,153,0.12);color:#6ee7b7">⚙️ Mech Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch6 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 6C Q1-4 (projectiles at angle), Ex 6D Q1-3</div><div class="task-item task-revise">🔄 Review Mech Y1: suvat formulae quiz</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(168,85,247,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_52_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(168,85,247,0.12);color:#c084fc">📊 Stats Y2</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">🔄 Stats Y2 Review + Stats Y1 Review</div>
+            <div class="slot-tasks"><div class="task-item">Review Ex 1 (Stats Y2): Q1,3,5,7</div><div class="task-item task-revise">🔄 Review Stats Y1 Ch6-7 (distributions & hypothesis testing)</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-53">
+        <div class="day-header">
+          <span class="day-date">2026-08-17</span>
+          <span class="day-dow">Mon 周一</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_53_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch8 Parametric Equations</div>
+            <div class="slot-tasks"><div class="task-item">Read p162-173: parametric forms, trig identities, curve sketching</div><div class="task-item">Ex 8A Q1-4, Ex 8B Q1-4, Ex 8C Q1-3, Ex 8D-E Q1-3 each</div><div class="task-item">Mixed Ex 8 Q1,3,5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(52,211,153,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_53_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(52,211,153,0.12);color:#6ee7b7">⚙️ Mech Y2</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch6 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Mixed Ex 6 Q1,3,5</div><div class="task-item task-revise">🔄 Review Ch4-5: moments & friction summary sheet</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-54">
+        <div class="day-header">
+          <span class="day-date">2026-08-18</span>
+          <span class="day-dow">Tue 周二</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_54_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">🔄 Review Ch6-8 + Review Ex 2</div>
+            <div class="slot-tasks"><div class="task-item">Review Exercise 2 (Y2): Q1,3,5,7,9</div><div class="task-item task-revise">🔄 Review Ch7: trig addition/double angle from memory</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(52,211,153,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_54_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(52,211,153,0.12);color:#6ee7b7">⚙️ Mech Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch7 Applications of Forces (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p137-150: statics, dynamics, friction problems</div><div class="task-item">Ex 7A Q1-4, Ex 7B Q1-4</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-55">
+        <div class="day-header">
+          <span class="day-date">2026-08-19</span>
+          <span class="day-dow">Wed 周三</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_55_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch9 Differentiation (start)</div>
+            <div class="slot-tasks"><div class="task-item">Read p174-195: sin/cos diff, chain/product/quotient rules</div><div class="task-item">Ex 9A Q1-4, Ex 9B Q1-4, Ex 9C Q1-5, Ex 9D Q1-4</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(52,211,153,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_55_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(52,211,153,0.12);color:#6ee7b7">⚙️ Mech Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch7 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 7C Q1-4 (dynamics problems), Ex 7D Q1-3 (plane problems)</div><div class="task-item task-revise">🔄 Review Ch6: projectile paths & maximum height</div></div>
+          </div>
+        </div>
+      </div>
+    </div><div class="week-block">
+          <div class="week-header">
+            <div class="week-badge">W9</div>
+            <div class="week-range">2026-08-20 → 2026-08-26</div>
+            <div class="week-toggle" onclick="toggleWeek(this)">▾</div>
+          </div>
+          <div class="week-body">
+        
+      <div class="day-card" id="day-56">
+        <div class="day-header">
+          <span class="day-date">2026-08-20</span>
+          <span class="day-dow">Thu 周四</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_56_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch9 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 9E Q1-4 (trig differentiation), Ex 9F Q1-4 (parametric diff)</div><div class="task-item">Ex 9G Q1-4 (implicit diff)</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(52,211,153,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_56_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(52,211,153,0.12);color:#6ee7b7">⚙️ Mech Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch7 (finish) + Ch8 Further Kinematics</div>
+            <div class="slot-tasks"><div class="task-item">Mixed Ex 7 Q1-5</div><div class="task-item">Read p168-180: variable acceleration vectors, integration</div><div class="task-item">Ex 8A Q1-4</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-57">
+        <div class="day-header">
+          <span class="day-date">2026-08-21</span>
+          <span class="day-dow">Fri 周五</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_57_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch9 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 9H Q1-3 (implicit continued), Ex 9I Q1-4 (rates of change)</div><div class="task-item">Mixed Ex 9 Q1,3,5,7</div><div class="task-item task-revise">🔄 Review Ch8: parametric → Cartesian conversion x3</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(52,211,153,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_57_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(52,211,153,0.12);color:#6ee7b7">⚙️ Mech Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch8 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 8B Q1-4 (vector kinematics), Ex 8C Q1-3 (projectile vectors)</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-58">
+        <div class="day-header">
+          <span class="day-date">2026-08-22</span>
+          <span class="day-dow">Sat 周六</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(52,211,153,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_58_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(52,211,153,0.12);color:#6ee7b7">⚙️ Mech Y2</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">Ch8 (finish) + Review</div>
+            <div class="slot-tasks"><div class="task-item">Mixed Ex 8 Q1-5</div><div class="task-item task-revise">🔄 Review all Mech Y2: formula sheet from memory</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_58_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">🔄 Chem Y1 Deep Review</div>
+            <div class="slot-tasks"><div class="task-item">Redo all wrongly answered mixed exercise Qs</div><div class="task-item">Practice explaining practical methods in full sentences</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-59">
+        <div class="day-header">
+          <span class="day-date">2026-08-23</span>
+          <span class="day-dow">Sun 周日</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_59_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">Ch10 Numerical Methods</div>
+            <div class="slot-tasks"><div class="task-item">Read p221-237: locating roots, iteration, Newton-Raphson</div><div class="task-item">Ex 10A Q1-4, Ex 10B Q1-4, Ex 10C Q1-3, Ex 10D Q1-3</div><div class="task-item">Mixed Ex 10 Q1,3,5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(168,85,247,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_59_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(168,85,247,0.12);color:#c084fc">📊 Stats Y2</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">1h</span>
+            </div>
+            <div class="slot-topic">🔄 Stats Y2 Review + Mixed Practice</div>
+            <div class="slot-tasks"><div class="task-item">Mixed practice across Ch1-3: 10 varied questions</div><div class="task-item">Calculator skills: normal CD, inverse normal, binomial PD/CD</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-60">
+        <div class="day-header">
+          <span class="day-date">2026-08-24</span>
+          <span class="day-dow">Mon 周一</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_60_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch11 Integration (start - BIG chapter!)</div>
+            <div class="slot-tasks"><div class="task-item">Read p238-260: standard functions, reverse chain, trig identities</div><div class="task-item">Ex 11A Q1-5, Ex 11B Q1-5, Ex 11C Q1-4, Ex 11D Q1-4</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(168,85,247,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_60_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(168,85,247,0.12);color:#c084fc">📊 Stats Y2</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">🔄 Review Ex 2 (SM Y2)</div>
+            <div class="slot-tasks"><div class="task-item">Review Exercise 2 (Stats & Mech Y2): Q1,3,5,7,9</div><div class="task-item task-revise">🔄 Review Stats Y1 ALL: 15 mixed questions</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-61">
+        <div class="day-header">
+          <span class="day-date">2026-08-25</span>
+          <span class="day-dow">Tue 周二</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_61_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch11 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 11E Q1-4 (integration by substitution), Ex 11F Q1-4 (by parts)</div><div class="task-item">Ex 11G Q1-3 (partial fractions)</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(52,211,153,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_61_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(52,211,153,0.12);color:#6ee7b7">⚙️ Mech Y2</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">🔄 Mech Y2 Full Review</div>
+            <div class="slot-tasks"><div class="task-item">Mixed practice: 10 questions across Ch4-8</div><div class="task-item">Exam-style practice (p196-199): TIMED attempt</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-62">
+        <div class="day-header">
+          <span class="day-date">2026-08-26</span>
+          <span class="day-dow">Wed 周三</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_62_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch11 (continue)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 11H Q1-4 (finding areas), Ex 11I Q1-3 (trapezium rule)</div><div class="task-item">Ex 11J Q1-3 (differential equations)</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_62_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">🔄 Chem Y1 Final Review</div>
+            <div class="slot-tasks"><div class="task-item">Topic-by-topic quiz: 20 short questions</div><div class="task-item">Practice 6-mark extended writing Qs x3</div></div>
+          </div>
+        </div>
+      </div>
+    </div><div class="week-block">
+          <div class="week-header">
+            <div class="week-badge">W10</div>
+            <div class="week-range">2026-08-27 → 2026-09-02</div>
+            <div class="week-toggle" onclick="toggleWeek(this)">▾</div>
+          </div>
+          <div class="week-body">
+        
+      <div class="day-card" id="day-63">
+        <div class="day-header">
+          <span class="day-date">2026-08-27</span>
+          <span class="day-dow">Thu 周四</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_63_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">✍️ 练习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch11 (finish)</div>
+            <div class="slot-tasks"><div class="task-item">Ex 11K Q1-3 (modelling with DEs)</div><div class="task-item">Mixed Ex 11 Q1,3,5,7,9</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_63_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">🔄 Chem Y1 Weak Topics Focus</div>
+            <div class="slot-tasks"><div class="task-item">Targeted practice on 3 weakest chapters</div><div class="task-item">Review all required practicals</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-64">
+        <div class="day-header">
+          <span class="day-date">2026-08-28</span>
+          <span class="day-dow">Fri 周五</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_64_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">📖 学习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">Ch12 Vectors 3D</div>
+            <div class="slot-tasks"><div class="task-item">Read p311-329: 3D coordinates, vectors in 3D, geometric problems</div><div class="task-item">Ex 12A Q1-4, Ex 12B Q1-4, Ex 12C Q1-3, Ex 12D Q1-3</div><div class="task-item">Mixed Ex 12 Q1,3,5</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(52,211,153,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_64_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(52,211,153,0.12);color:#6ee7b7">⚙️ Mech Y2</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">🔄 Mech Weak Topics Focus</div>
+            <div class="slot-tasks"><div class="task-item">Targeted practice on pulleys & connected particles</div><div class="task-item">Review inclined plane problems</div><div class="task-item">Practice drawing force diagrams under exam conditions</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-65">
+        <div class="day-header">
+          <span class="day-date">2026-08-29</span>
+          <span class="day-dow">Sat 周六</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_65_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">🔄 PURE Y2 Review Ex 3</div>
+            <div class="slot-tasks"><div class="task-item">Review Exercise 3: Q1,3,5,7,9,11,13</div><div class="task-item task-revise">🔄 Review Ch11: integration techniques summary sheet</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(139,92,246,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_65_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊 Stats ALL</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">1.5h</span>
+            </div>
+            <div class="slot-topic">🔄 Stats Y1+Y2 Combined Review</div>
+            <div class="slot-tasks"><div class="task-item">Mixed practice: 15 questions spanning both years</div><div class="task-item">Hypothesis testing rules: write from memory</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card weekend" id="day-66">
+        <div class="day-header">
+          <span class="day-date">2026-08-30</span>
+          <span class="day-dow">Sun 周日</span>
+          <span class="day-note">打工日</span>
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_66_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">2h</span>
+            </div>
+            <div class="slot-topic">🔄 PURE Y2 Exam Practice</div>
+            <div class="slot-tasks"><div class="task-item">Exam-style practice Paper 1 (Y2): TIMED 2hr</div><div class="task-item">Mark & annotate all errors</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(249,115,22,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_66_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(249,115,22,0.12);color:#fb923c">🧪 Chem Y1</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">1h</span>
+            </div>
+            <div class="slot-topic">🔄 Chem Final Consolidation</div>
+            <div class="slot-tasks"><div class="task-item">Complete practice paper TIMED</div><div class="task-item">Organic reactions: write ALL mechanisms from memory</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-67">
+        <div class="day-header">
+          <span class="day-date">2026-08-31</span>
+          <span class="day-dow">Mon 周一</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(6,182,212,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_67_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(6,182,212,0.12);color:#22d3ee">📐 Pure Y2</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">🔄 PURE Y2 Exam Practice 2</div>
+            <div class="slot-tasks"><div class="task-item">Exam-style practice Paper 2: TIMED 2hr</div><div class="task-item">Mark, review, redo wrong Qs</div></div>
+          </div>
+        
+          <div class="slot-card" style="border-left:3px solid rgba(148,163,184,0.25)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_67_1" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(148,163,184,0.12);color:#94a3b8">📘 Stats+Mech ALL</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">2.5h</span>
+            </div>
+            <div class="slot-topic">🔄 Stats & Mech Full Paper</div>
+            <div class="slot-tasks"><div class="task-item">Complete Stats & Mech practice paper: TIMED</div><div class="task-item">Mark & identify weakest topics</div><div class="task-item">Formula sheet check: write ALL formulas from memory</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-68">
+        <div class="day-header">
+          <span class="day-date">2026-09-01</span>
+          <span class="day-dow">Tue 周二</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(234,179,8,0.2)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_68_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(234,179,8,0.10);color:#facc15">🎯 ALL</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">5h</span>
+            </div>
+            <div class="slot-topic">🔄 COMPREHENSIVE REVIEW DAY</div>
+            <div class="slot-tasks"><div class="task-item">Redo ALL wrongly answered questions from past papers</div><div class="task-item">Focus on weakest topics identified</div><div class="task-item">Create master formula/summary sheets for all 4 subjects</div><div class="task-item task-milestone">🏁 CELEBRATION: You finished all 5 textbooks!</div></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="day-card" id="day-69">
+        <div class="day-header">
+          <span class="day-date">2026-09-02</span>
+          <span class="day-dow">Wed 周三</span>
+          
+        </div>
+        <div class="day-slots">
+          <div class="slot-card" style="border-left:3px solid rgba(234,179,8,0.2)">
+            <div class="slot-header">
+              <input type="checkbox" class="slot-cb" id="cb_69_0" onchange="saveState()">
+              <span class="slot-subject" style="background:rgba(234,179,8,0.10);color:#facc15">🎯 ALL</span>
+              <span class="slot-type">🔄 复习</span>
+              <span class="slot-hrs">3h</span>
+            </div>
+            <div class="slot-topic">🔄 FINAL CONSOLIDATION</div>
+            <div class="slot-tasks"><div class="task-item">Light review of summary sheets</div><div class="task-item">Confidence-building: redo questions you NOW find easy</div><div class="task-item">Rest & prepare for ongoing periodic review schedule</div><div class="task-item task-milestone">📌 Going forward: 1 past paper per week per subject until 2028 exam</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="tips">
+  <h3>💡 学习策略说明</h3>
+  <div class="tips-grid">
+    <div class="tip-box">
+      <div class="tip-emoji">🔄</div>
+      <div class="tip-title">间隔复习策略</div>
+      <div class="tip-text">计划中每个🔄标记的复习任务基于间隔重复原理：学后1天、3天、7天分别回顾。复习时不要重新读整章，直接做3-5道关键题，发现遗忘再翻书。</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-emoji">✍️</div>
+      <div class="tip-title">做题策略</div>
+      <div class="tip-text">新章节第一遍做奇数题，复习时做偶数题。Mixed Exercise是巩固关键，每章必做。限时训练至少每周1次，培养考试节奏。</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-emoji">⚙️</div>
+      <div class="tip-title">统计力学专项</div>
+      <div class="tip-text">你的弱项，每天不能断。统计注意审题（≥ vs >），力学一定先画力图再列方程。公式做到不看书就能默写。</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-emoji">📱</div>
+      <div class="tip-title">追踪进度</div>
+      <div class="tip-text">勾选每个任务前的checkbox，页面自动保存到浏览器。进度条实时更新——看着进度条涨起来很有成就感！</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-emoji">🧪</div>
+      <div class="tip-title">化学记忆法</div>
+      <div class="tip-text">有机化学画反应路线图贴墙；物理化学理解推导过程而非死记；元素化合物性质用 periodic trend 联想记忆。</div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-emoji">🎯</div>
+      <div class="tip-title">完成后怎么办</div>
+      <div class="tip-text">9月后进入维护期：每周做1套Past Paper（每科），直到2028年考试。重点刷近3年真题，每年题型略有变化。</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+// Toggle week collapse
+function toggleWeek(el) {
+  const header = el.closest('.week-header');
+  const body = header.nextElementSibling;
+  header.classList.toggle('collapsed');
+  body.classList.toggle('hidden');
+}
+
+// Checkbox persistence
+function saveState() {
+  const state = {};
+  document.querySelectorAll('.slot-cb').forEach(cb => {
+    state[cb.id] = cb.checked;
+    const card = cb.closest('.slot-card');
+    if (cb.checked) card.classList.add('done');
+    else card.classList.remove('done');
+  });
+  localStorage.setItem('daily-plan-state', JSON.stringify(state));
+  updateProgress();
+}
+
+function loadState() {
+  const saved = localStorage.getItem('daily-plan-state');
+  if (saved) {
+    const state = JSON.parse(saved);
+    document.querySelectorAll('.slot-cb').forEach(cb => {
+      if (state[cb.id]) {
+        cb.checked = true;
+        cb.closest('.slot-card').classList.add('done');
+      }
+    });
+    updateProgress();
+  }
+}
+
+function updateProgress() {
+  // Count completed checkboxes per subject
+  const counts = { pure: {done:0, total:0}, stats: {done:0, total:0}, mech: {done:0, total:0}, chem: {done:0, total:0} };
+  document.querySelectorAll('.slot-cb').forEach(cb => {
+    const subj = cb.closest('.slot-card').querySelector('.slot-subject').textContent;
+    let key = null;
+    if (subj.includes('Pure')) key = 'pure';
+    else if (subj.includes('Stats')) key = 'stats';
+    else if (subj.includes('Mech')) key = 'mech';
+    else if (subj.includes('Chem')) key = 'chem';
+    if (key) {
+      counts[key].total++;
+      if (cb.checked) counts[key].done++;
+    }
+  });
+  
+  for (const [k, v] of Object.entries(counts)) {
+    const pct = v.total > 0 ? Math.round(v.done / v.total * 100) : 0;
+    const fill = document.getElementById('pf-' + k);
+    const pctEl = document.getElementById('pp-' + k);
+    if (fill) fill.style.width = pct + '%';
+    if (pctEl) pctEl.textContent = pct + '%';
+  }
+}
+
+// Init
+window.addEventListener('DOMContentLoaded', loadState);
+</script>
+</body>
+</html>
