@@ -384,7 +384,7 @@ function save(){
 }
 function load(){
   try{var s=localStorage.getItem('sp4-sk');if(s)skipped=new Set(JSON.parse(s));}catch(e){}
-  try{var t=localStorage.getItem('sp4-tm');if(t)taskMap=JSON.parse(t);else initTaskMap();}catch(e){initTaskMap();}
+  try{var t=localStorage.getItem('sp4-tm');if(t)taskMap=JSON.parse(t);}catch(e){}initTaskMap();
   try{var c=localStorage.getItem('sp4-cb');if(c)cbState=JSON.parse(c);}catch(e){}
   try{var w=localStorage.getItem('sp4-wq');if(w)wqData=JSON.parse(w);}catch(e){}
   try{var h=localStorage.getItem('sp4-qh');if(h)quizHistory=JSON.parse(h);}catch(e){}
