@@ -518,7 +518,24 @@ function renderDay(i){
       else ts+='<div class="ti">'+task+'</div>';
     });
     var topicKey=t.topic.replace(/ *\(start\) *| *\(continue\) *| *\(finish\) */g,'').trim();
-    var quizAvail=QBANK[t.subject]&&QBANK[t.subject][topicKey];
+    // Fuzzy match including CH_ALIAS
+    var quizAvail=false,conceptAvail=false,matchedKey=topicKey;
+    var aliasKey=CH_ALIAS[topicKey]||CH_ALIAS[topicKey.split(' (')[0]]||null;
+    var tryKeys=[topicKey];if(aliasKey)tryKeys.push(aliasKey);
+    tryKeys.forEach(function(tk){
+      if(quizAvail)return;
+      if(QBANK[t.subject]&&QBANK[t.subject][tk]){quizAvail=true;matchedKey=tk;return}
+      if(QBANK[t.subject]){for(var bk in QBANK[t.subject]){
+        if(bk.indexOf(tk.split(' (')[0])===0||tk.indexOf(bk)===0){quizAvail=true;matchedKey=bk;return}
+      }}
+    });
+    tryKeys.forEach(function(tk2){
+      if(conceptAvail)return;
+      if(CONCEPTS[t.subject]&&CONCEPTS[t.subject][tk2]){conceptAvail=true;return}
+      if(CONCEPTS[t.subject]){for(var bk2 in CONCEPTS[t.subject]){
+        if(bk2.indexOf(tk2.split(' (')[0])===0||tk2.indexOf(bk2)===0){conceptAvail=true;return}
+      }}
+    });
     sl+='<div class="sc'+(cbState[t.id]?' done':'')+'" style="border-left-color:'+c.bd+'" id="sc'+t.id+'">';
     sl+='<div class="sh"><input type="checkbox" class="scb" id="cb'+t.id+'" onchange="onCb(this,'+t.id+')"><span class="ssubj" style="background:'+c.bg+';color:'+c.tx+'">'+c.ic+' '+t.subject+'</span><span class="stype">'+tl+'</span><span class="shrs">'+t.hrs+'h</span></div>';
     sl+='<div class="st">'+t.topic+(isMoved?'<span class="orig-tag">\u4ece\u7b2c'+(t.origDay+1)+'\u5929\u79fb\u5165</span>':'')+'</div>';
@@ -526,7 +543,7 @@ function renderDay(i){
     sl+='<div style="display:flex;gap:3px;flex-wrap:wrap;margin-top:3px">';
     sl+='<button class="awb" onclick="openMod(\''+k+'\',\''+t.topic.replace(/'/g,"\\'")+'\')">❌ 加入错题本</button>';
     if(quizAvail)sl+='<button class="awb" style="color:var(--green);border-color:rgba(16,185,129,.3)" onclick="startTopicQuiz(\''+t.subject+'\',\''+matchedKey.replace(/'/g,"\\'")+'\')">🧠 做题</button>';
-    var conceptAvail=CONCEPTS[t.subject]&&CONCEPTS[t.subject][topicKey];
+
     if(conceptAvail&&t.type==='learn')sl+='<button class="awb" style="color:var(--accent);border-color:rgba(59,130,246,.3)" onclick="goToLearn(\''+t.subject+'\',\''+matchedKey.replace(/'/g,"\\'")+'\')">📖 学习</button>';
     sl+='</div>';
     sl+='<button class="sc-move" onclick="openMoveMod('+t.id+')" title="\u79fb\u52a8">\ud83d\udd00</button>';
