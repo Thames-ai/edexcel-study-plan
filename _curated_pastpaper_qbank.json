@@ -12,7 +12,7 @@
       "Proton: 0 charge, mass 1; Neutron: +1 charge, mass 1"
     ],
     "answer": 1,
-    "explain": "The only correct answer is C (402.7). A: the data for the neutron are the data for an electron; C: the data for the proton are the data for an electron; D: the data for the neutron and proton have been swapped +1 1 0 1; A: this is the sum of the atomic numbers not masses; B: this has 6H2 but only one O from the water of crystallisation",
+    "explain": "The only correct answer is B (proton: +1 charge, mass 1; neutron: 0 charge, mass 1). A is incorrect because the neutron data shown are for an electron; C is incorrect because the proton data shown are for an electron; D is incorrect because the neutron and proton data have been swapped.",
     "improve": "Review subatomic particle properties",
     "paper": "2023 C1 Core",
     "marks": 1,
@@ -31,7 +31,7 @@
       "Planar"
     ],
     "answer": 1,
-    "explain": "The only correct answer is B ( ). A: the data for the neutron are the data for an electron; C: the data for the proton are the data for an electron; D: the data for the neutron and proton have been swapped +1 1 0 1",
+    "explain": "The only correct answer is B (spherical). A is incorrect because a dumbbell is the shape of a p orbital; C is incorrect because clover-shaped describes a d orbital; D is incorrect because \"planar\" does not describe any s orbital.",
     "improve": "s=spherical, p=dumbbell, d=clover",
     "paper": "2023 C1 Core",
     "marks": 1,
@@ -50,7 +50,7 @@
       "10%"
     ],
     "answer": 1,
-    "explain": "The only correct answer is B ( ). A: the data for the neutron are the data for an electron; C: the data for the proton are the data for an electron; D: the data for the neutron and proton have been swapped +1 1 0 1",
+    "explain": "100 − 92.2 − 3.1 = 4.7(%). The relative isotopic mass of the third isotope is 29 (calculated from Ar data).",
     "improve": "Abundances sum to 100%",
     "paper": "2023 C1 Core",
     "marks": 3,
@@ -69,7 +69,7 @@
       "31.2%"
     ],
     "answer": 2,
-    "explain": "The only correct answer is C (402.7). A: this is the sum of the atomic numbers not masses; B: this has 6H2 but only one O from the water of crystallisation; D: this is the mass if the sulfate were (S4O4)2",
+    "explain": "The only correct answer is C (402.7) — the Mr of K₂Mg(SO₄)₂·6H₂O is 402.7. A is incorrect because this is the sum of the atomic numbers not masses; B is incorrect because this has only one O from the water; D is incorrect because this treats sulfate as (S₄O₄)²⁻. % water = (108/402.7)×100 = 26.8%.",
     "improve": "%=component/total*100",
     "paper": "2023 C1 Core",
     "marks": 3,
@@ -87,8 +87,8 @@
       "NaOH",
       "CH4"
     ],
-    "answer": 0,
-    "explain": "The only correct answer is A (0.0233). B: the value assumes the formula of calcium hydroxide is CaOH; C: the value assumes that 17.3 g is the mass of calcium not calcium hydroxide; D: this assumes the relative formula mass of calcium hydroxide is 29 (the sum of the atomic numbers)",
+    "answer": 2,
+    "explain": "The only correct answer is C (NaOH). A is incorrect because NaCl contains only Ionic bonds; B is incorrect because CCl₄ contains only covalent bonds; D is incorrect because CH₄ contains only covalent bonds. NaOH has ionic bonding between Na⁺ and OH⁻, and covalent bonding within the O-H bond.",
     "improve": "Look for polyatomic ions",
     "paper": "2023 C1 Core",
     "marks": 1,
@@ -107,7 +107,7 @@
       "Group 4"
     ],
     "answer": 1,
-    "explain": "The only correct answer is B (578 1817 2745 11 578). A: there is a big jump between the second and third ionisation energies so it is in Group 2; C: there is no big jump between the third and fourth ionisation energies; D: there is no big jump between the third and fourth ionisation energies",
+    "explain": "The only correct answer is B (578, 1817, 2745, 11578). A is incorrect because there is a big jump between the 2nd and 3rd IEs indicating Group 2; C and D are incorrect because there is no big jump between the 3rd and 4th IEs.",
     "improve": "Count IEs before the big jump",
     "paper": "2023 C1 Core",
     "marks": 2,
@@ -126,7 +126,7 @@
       "CO2"
     ],
     "answer": 1,
-    "explain": "C: +2 in CO, +4 in CO2. Oxidation state increases = oxidised",
+    "explain": "CO is oxidised because the oxidation state of carbon increases from +2 in CO to +4 in CO₂.",
     "improve": "Assign oxidation numbers on both sides",
     "paper": "2023 C1 Core",
     "marks": 2,
@@ -145,7 +145,7 @@
       "Curve shifts left"
     ],
     "answer": 1,
-    "explain": "Higher T: peak shifts right, lowers, broadens. Same area.",
+    "explain": "Higher temperature: peak shifts right and gets lower; distribution broadens. Area under curve remains the same.",
     "improve": "Draw both curves at different T",
     "paper": "2023 C2 Core",
     "marks": 2,
@@ -164,7 +164,7 @@
       "Has both single and double bonds"
     ],
     "answer": 1,
-    "explain": "Saturated=single bonds only. Hydrocarbon=C and H only.",
+    "explain": "The only correct answer is B (contains only single C-C bonds and H only). A is incorrect because saturated means no C=C; C is incorrect because a hydrocarbon contains only C and H; D is incorrect because saturated means single bonds only.",
     "improve": "Saturated=bonds(single only), hydrocarbon=C+H only",
     "paper": "2023 C2 Core",
     "marks": 2,
@@ -183,7 +183,7 @@
       "Add water"
     ],
     "answer": 1,
-    "explain": "The only correct answer is A (absorption P). A: the nitrogen in the intermediate should be positively charged with three hydrogens and the other product should be the bromide ion; C: there is a hydrogen atom missing on the N of NH2 in the product cation; D: the charges on the intermediate must be shown; B: this is an alkane absorption; C: this is the C=O of an amide absorption; D: this is an unassigned peak that happens to appear in the IR spectrum",
+    "explain": "The only correct answer is B (Add Br₂(aq) — alkene decolourises orange). A is incorrect because NaOH does not distinguish them; C is incorrect because HCl reacts with both; D is incorrect because water does not react distinguishably.",
     "improve": "Br2 decolourises with C=C",
     "paper": "2023 C2 Core",
     "marks": 1,
@@ -202,7 +202,7 @@
       "No reaction"
     ],
     "answer": 1,
-    "explain": "The only correct answer is B (phosphorus(V). A: hydrogen chloride is not white smoke; C: carbonates only react with acids and CO2 cannot be observed; D: carbonates only react with acids",
+    "explain": "The only correct answer is B (butanoic acid). A is incorrect because butanal is the product of partial oxidation (distillation); C is incorrect because butanone is from secondary alcohol oxidation; D is incorrect because primary alcohols do react with acidified K₂Cr₂O₇.",
     "improve": "Primary->aldehyde->acid. Secondary->ketone. Tertiary->no reaction",
     "paper": "2023 C2 Core",
     "marks": 2,
@@ -221,7 +221,7 @@
       "1s2 2s2 2p6 3s2 3p5"
     ],
     "answer": 1,
-    "explain": "The only correct answer is D (1086 2353 4621 6223)",
+    "explain": "The only correct answer is B (1s²2s²2p⁶3s²3p⁶). A is incorrect because this is the configuration of a P atom; C is incorrect because this would be P³⁺; D is incorrect because the 3s orbital is missing.",
     "improve": "Negative ions: ADD electrons",
     "paper": "2024 C1 Core",
     "marks": 1,
@@ -240,7 +240,7 @@
       "496,4562,6912,9544"
     ],
     "answer": 0,
-    "explain": "The only correct answer is B (1s22s22p63s23p6)",
+    "explain": "The only correct answer is A (738, 1451, 7733, 10541 kJ/mol — Mg, Group 2). B is incorrect because there is a large increase between the 2nd and 3rd IEs indicating Group 2; C is incorrect because the IEs are not evenly spaced; D is incorrect because this shows no large jump.",
     "paper": "2024 C1 Core",
     "marks": 1,
     "improve": "Count IEs before large jump",
@@ -258,8 +258,8 @@
       "No change",
       "Shifts right - more orange"
     ],
-    "answer": 2,
-    "explain": "The only correct answer is C (Kc = [CrO4 2‒]2 [H+]2 [Cr2O7 2‒] ). A: water is not included as it is in the liquid state; B: water is not included and [CrO4 2‒] and [H+] should be squared not multiplied by 2; D: [CrO4 2‒]and [H+] should be squared not multiplied by 2",
+    "answer": 1,
+    "explain": "The only correct answer is B (shifts right — more yellow). NaOH removes H⁺ ions. Le Chatelier: equilibrium shifts RIGHT to replace H⁺, producing more CrO₄²⁻ (yellow). MS Kc = C([CrO₄²⁻]²[H⁺]²/[Cr₂O₇²⁻]).",
     "improve": "Removing product shifts equilibrium right",
     "paper": "2024 C2 Core",
     "marks": 2,
@@ -278,7 +278,7 @@
       "Measure pH"
     ],
     "answer": 1,
-    "explain": "The only correct answer is D (volumetric flask). A: this is used to measure volumes of liquids required in a reaction; B: this is not a very accurate way to measure volumes; C: this is used to measure fixed volumes of liquids, not to make up solutions",
+    "explain": "The only correct answer is B (time for cross to disappear under flask). Na₂S₂O₃ + 2HCl → 2NaCl + SO₂ + S + H₂O. The sulfur precipitate causes the solution to become cloudy — the disappearing cross method measures the rate. A is incorrect because no gas is produced that would decrease mass.",
     "improve": "Disappearing cross for precipitation reactions",
     "paper": "2024 C2 Core",
     "marks": 1,
@@ -297,7 +297,7 @@
       "Kr (Z=36)"
     ],
     "answer": 1,
-    "explain": "The only correct answer is A ([Ar]4s13d10). C: it is a p-block element; D: it is a d-block element in Period 5; B: a full d-subshell is more stable; C: the atom does not have any 4p electrons; D: the atom does not have any 4p electrons",
+    "explain": "The only correct answer is B (Fe, Z=26). A is incorrect because Ca is an s-block element; C is incorrect because Br is a p-block element; D is incorrect because Kr is a p-block element. Fe has its outermost electron in a d orbital.",
     "improve": "d-block = Groups 3-12",
     "paper": "2023 C1 Adv",
     "marks": 1,
@@ -316,7 +316,7 @@
       "0.33"
     ],
     "answer": 2,
-    "explain": "The only correct answer is C (moves to the left, mixture gets lighter). A: there are more particles on the right-hand side, so increase in P moves equilibrium to the left. B: there are more particles on the right-hand side, so increase in P moves equilibrium to the left and N2O4 is colourless, so mixture lightens. D: N2O4 is colourless, so mixture lighten",
+    "explain": "N₂O₄(g) ⇌ 2NO₂(g). 20% dissociated at 1 atm. At equilibrium: 0.8 mol N₂O₄, 0.4 mol NO₂. Total = 1.2 mol. Mole fractions: N₂O₄ = 0.8/1.2 = 2/3, NO₂ = 0.4/1.2 = 1/3. Kp = (pNO₂)²/pN₂O₄ = (1/3)²/(2/3) = 1/6 ≈ 0.167.",
     "improve": "Kp uses partial pressures = mole fraction * total P",
     "paper": "2023 C1 Adv",
     "marks": 3,
@@ -334,8 +334,8 @@
       "Rate unchanged",
       "Rate halves"
     ],
-    "answer": 0,
-    "explain": "The only correct answer is A (2.24 × 10−5)",
+    "answer": 2,
+    "explain": "The only correct answer is C (rate unchanged). I₂ does not appear in the rate equation, so it is zero order. Doubling [I₂] has no effect on the rate of reaction.",
     "improve": "Only species in rate equation affect rate",
     "paper": "2023 C2 Adv",
     "marks": 1,
@@ -354,7 +354,7 @@
       "5"
     ],
     "answer": 2,
-    "explain": "The only correct answer is A (CnH2n−2)",
+    "explain": "The only correct answer is C (4). The four structural isomers of C₄H₉Br are: 1-bromobutane, 2-bromobutane, 1-bromo-2-methylpropane, and 2-bromo-2-methylpropane.",
     "improve": "Draw all carbon skeletons then place Br",
     "paper": "2023 C2 Adv",
     "marks": 1,
@@ -372,8 +372,8 @@
       "Stays constant",
       "Decreases then increases"
     ],
-    "answer": 3,
-    "explain": "The only correct answer is D (decreasing, increasing)",
+    "answer": 1,
+    "explain": "The only correct answer is B (decreases). Atomic radii decrease across Period 3 because increasing nuclear charge pulls electrons closer to the nucleus while the shielding remains similar.",
     "improve": "Across period: radius decreases. Down group: increases",
     "paper": "2024 C1 Core",
     "marks": 1,
@@ -391,8 +391,8 @@
       "143 cm3",
       "200 cm3"
     ],
-    "answer": 0,
-    "explain": "The only correct answer is A (1.96 g). B: it is the mass for 1 dm3 of a solution of concentration 0.045 mol dm−3; C: it is the mass for 250 cm3 of a solution of concentration 0.45 mol dm−3; D: this would be the mass for 4.0 dm3 instead of 250 cm3; A: this is the titration curve of 0.100 mol dm−3 of a strong acid and 0.100 mol dm−3 of a strong base; C: this is the titration curve of 0.100 mol dm-3 of a weak acid and 0.100 mol dm-3 of a weak base; D: this is the titration curve of 0.100 mol dm-3 of a strong acid and 0.100 mol dm−3 of a weak base",
+    "answer": 2,
+    "explain": "n(NaHCO₃) = 0.5/84 = 0.00595 mol. Since 1 mol NaHCO₃ produces 1 mol CO₂, n(CO₂) = 0.00595 mol. V = n × 24000 = 0.00595 × 24000 = 142.9 cm³. The only correct answer is C (143 cm³).",
     "improve": "n=mass/Mr, V=n*24000 at RTP",
     "paper": "2024 C1 Adv",
     "marks": 2,
@@ -634,7 +634,7 @@
       "Both but-1-ene and but-2-ene"
     ],
     "answer": 1,
-    "explain": "E/Z isomerism requires a C=C with TWO different groups on EACH carbon. But-2-ene: each C of C=C has H and CH3. But-1-ene: C1 has 2H (same), no E/Z. Methylpropene: C2 has 2CH3 groups (same).",
+    "explain": "The only correct answer is B (but-2-ene only). E/Z isomerism requires each carbon of the C=C to have two different groups. But-2-ene: each C has H and CH₃. But-1-ene: C1 has 2H (same groups). Methylpropene: C2 has 2CH₃ groups (same).",
     "improve": "For E/Z: each C in C=C must have 2 DIFFERENT groups",
     "paper": "2024 C2 Core",
     "marks": 1,
@@ -653,7 +653,7 @@
       "Catalyst only"
     ],
     "answer": 2,
-    "explain": "The only correct answer is C (0.21). A: this is the concentration in the first experiment which is diluted with water and acid; B: this is the concentration in the most concentrated of the experiments and is diluted with acid; D: this is the ratio of the volumes of thiosulfate and total volume in the reaction = 5/7",
+    "explain": "The only correct answer is C (source of H⁺ to protonate −OH and provide Br⁻). H₂SO₄ protonates the −OH group turning it into a good leaving group (−OH₂⁺) and reacts with NaBr to form HBr which provides the nucleophile Br⁻.",
     "improve": "H2SO4 acts as acid and reacts with NaBr to form HBr reagent",
     "paper": "2024 C2 Core",
     "marks": 1,
@@ -890,7 +890,7 @@
       "+4 to +2 (decrease of 2)"
     ],
     "answer": 0,
-    "explain": "The only correct answer is A (heat in a sealed tube, ethanol). A: cyclohexane is not a good solvent for Grignard reagents as it is not polar; C: ethyl ethanoate would react with Grignard reagents; D: hexane is not a good solvent for Grignard reagents as it is not polar",
+    "explain": "The only correct answer is A (+7 to +2, decrease of 5). In MnO₄⁻: Mn = +7 (each O = −2). In Mn²⁺: Mn = +2. This is a decrease of 5 in oxidation number, meaning Mn gains 5 electrons (reduction).",
     "improve": "Mn in MnO4- is +7. Mn2+ is +2. Mn is reduced (gains 5e)",
     "paper": "2024 C2 Adv",
     "marks": 2,
@@ -909,7 +909,7 @@
       "BF3"
     ],
     "answer": 2,
-    "explain": "The only correct answer is D (Ca2+). A: S2– has fewer protons than Ca2+ and has the largest ionic radius of those listed; B: Cl− has fewer protons than Ca2+ and has the second largest ionic radius; C: K+ has fewer protons than Ca2+ and has the second smallest ionic radius; A: these are the successive ionisation energies of a Group 3 element; B: these are the successive ionisation energies of a transition element; C: these are the successive ionisation energies of a Group 2 element",
+    "explain": "The only correct answer is C (CH₃COOH). The CH₃ group has tetrahedral bond angles of 109.5°, while the COOH carbon has trigonal planar bond angles of 120°. A only has 109.5°; B only has 107°; D only has 120°.",
     "improve": "Look for molecules with DIFFERENT regions of electron density around different atoms",
     "paper": "2024 C1 Adv",
     "marks": 1,
@@ -927,8 +927,8 @@
       "No effect",
       "Cannot determine"
     ],
-    "answer": 2,
-    "explain": "The only correct answer is C (hydrogen bonding, permanent dipole-dipole forces and London forces). B: the equation shows 2 mol NH3 so the term [NH3] must be squared not doubled , and ammonium carbamate is a solid so it does not appear in the equilibrium expression D is not correct because ammonium carbamate is a solid so it should not be included in the equilibrium expression; A: although hydrogen bonding is the strongest intermolecular force, permanent dipole-dipole interactions and London forces are also present; B: London forces are always present between molecules in the liquid state; D: London forces are the weakest of the intermolecular forces, and other intermolecular forces are also present between butan-1-ol molecules; A: hydrogen chloride is not white smoke; C: carbonates only react with acids and CO2 cannot be observed; D: carbonates only react with acids",
+    "answer": 0,
+    "explain": "The only correct answer is A (yield increases — equilibrium shifts right to fewer gas moles). Le Chatelier: increasing pressure shifts equilibrium to the side with fewer gas moles (3 mol → 2 mol), producing more SO₃.",
     "improve": "Le Chatelier: increase pressure shifts to side with fewer gas moles",
     "paper": "2023 C2 Core",
     "marks": 2,
@@ -946,8 +946,8 @@
       "The reaction is impossible",
       "The temperature decreases during reaction"
     ],
-    "answer": 0,
-    "explain": "The only correct answer is A (0.0233). B: the value assumes the formula of calcium hydroxide is CaOH; C: the value assumes that 17.3 g is the mass of calcium not calcium hydroxide; D: this assumes the relative formula mass of calcium hydroxide is 29 (the sum of the atomic numbers)",
+    "answer": 1,
+    "explain": "The only correct answer is B (the reaction releases heat to surroundings). A is incorrect because a negative ΔH means exothermic (heat released); C is incorrect because the reaction is not impossible; D is incorrect because temperature increases during an exothermic reaction.",
     "improve": "Negative delta-H = exothermic (heat out). Positive = endothermic (heat in)",
     "paper": "2023 C1 Core",
     "marks": 1,
@@ -1021,8 +1021,8 @@
       "Zn -> Zn2+",
       "Cu -> Cu2+"
     ],
-    "answer": 3,
-    "explain": "The only correct answer is D (permanent dipoles). A: there are no covalent bonds between molecules. B: this molecule does not contain hydrogen so there are no hydrogen bonds between molecules. C: there are no ionic bonds between molecules",
+    "answer": 1,
+    "explain": "The only correct answer is B (Cl₂ → 2Cl⁻). A is incorrect because Fe²⁺ → Fe³⁺ is oxidation (increase in oxidation state); C is incorrect because Zn → Zn²⁺ is oxidation; D is incorrect because Cu → Cu²⁺ is oxidation. Cl₂ (0) → 2Cl⁻ (−1) shows a decrease in oxidation state = reduction.",
     "improve": "Reduction: oxidation state DECREASES (gains e-). Oxidation: oxidation state INCREASES (loses e-)",
     "paper": "2024 C1 Core",
     "marks": 1,
@@ -1041,7 +1041,7 @@
       "NaOH, room temperature"
     ],
     "answer": 0,
-    "explain": "Fermentation: yeast, 30-40 deg C (enzyme optimum), anaerobic (no oxygen). C6H12O6 -> 2C2H5OH + 2CO2",
+    "explain": "The only correct answer is A (yeast, 30−40°C, anaerobic). B is incorrect because 100°C would denature enzymes and fermentation requires anaerobic conditions. C describes hydration of ethene. D does not produce ethanol by fermentation.",
     "improve": "Fermentation conditions: yeast, warm (30-40), anaerobic",
     "paper": "2024 C2 Core",
     "marks": 2,
@@ -1060,7 +1060,7 @@
       "+890.3 kJ/mol"
     ],
     "answer": 0,
-    "explain": "The only correct answer is A (heat in a sealed tube, ethanol). A: cyclohexane is not a good solvent for Grignard reagents as it is not polar; C: ethyl ethanoate would react with Grignard reagents; D: hexane is not a good solvent for Grignard reagents as it is not polar",
+    "explain": "ΔH = ΣΔHf(products) − ΣΔHf(reactants) = [(-393.5) + 2(-285.8)] − [(-74.8) + 0] = -965.1 − (-74.8) = -890.3 kJ/mol.",
     "improve": "delta-H rxn = sum(delta-Hf products) - sum(delta-Hf reactants). Elements have delta-Hf = 0",
     "paper": "2024 C2 Adv",
     "marks": 3,
