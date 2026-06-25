@@ -1,0 +1,1328 @@
+[
+  {
+    "id": "pp23c1aq1a",
+    "text": "Which label (1-4) on an ionisation energy graph identifies a d-block element in Period 4?",
+    "type": "mc",
+    "options": [
+      "Label 1",
+      "Label 2",
+      "Label 3",
+      "Label 4"
+    ],
+    "answer": 2,
+    "explain": "d-block elements in Period 4 (Sc to Zn) show a gradual increase in ionisation energy across the block, appearing as label 3 on the graph between the s-block and p-block jumps.",
+    "improve": "Review electron configurations and ionisation energy trends across Period 4. d-block elements show gradual increase in IE across the block.",
+    "paper": "2023 C1 Adv",
+    "marks": 1,
+    "chapter": "Ch1 Atomic Structure"
+  },
+  {
+    "id": "pp23c1aq1b",
+    "text": "What is meant by the term 'd-block element'?",
+    "type": "mc",
+    "options": [
+      "An element whose atoms have partially filled d orbitals",
+      "An element whose highest energy electron is in a d orbital",
+      "An element that forms ions with partially filled d orbitals",
+      "An element in the central block of the periodic table"
+    ],
+    "answer": 3,
+    "explain": "A d-block element is defined as an element in the central block of the periodic table (Groups 3-12). Note: a transition element requires partially filled d orbitals in ions.",
+    "improve": "Learn the Edexcel definitions of d-block vs transition elements carefully.",
+    "paper": "2023 C1 Adv",
+    "marks": 1,
+    "chapter": "Ch7 Periodicity"
+  },
+  {
+    "id": "pp23c1aq2a",
+    "text": "What is meant by the term 'orbital'?",
+    "type": "mc",
+    "options": [
+      "A region around the nucleus where an electron is likely to be found",
+      "The path an electron follows around the nucleus",
+      "A fixed energy level where electrons orbit",
+      "The space between two electron shells"
+    ],
+    "answer": 0,
+    "explain": "An orbital is a region around the nucleus where there is a high probability of finding an electron. This is the quantum mechanical model, not the Bohr model of orbits.",
+    "improve": "Review atomic structure: orbitals, sub-shells, and electron configurations.",
+    "paper": "2023 C1 Adv",
+    "marks": 2,
+    "chapter": "Ch1 Atomic Structure"
+  },
+  {
+    "id": "pp23c1aq2c",
+    "text": "What is the electronic configuration of a copper atom?",
+    "type": "mc",
+    "options": [
+      "[Ar] 4s2 3d9",
+      "[Ar] 4s1 3d10",
+      "[Ar] 3d10 4s1",
+      "[Ar] 4s2 3d8"
+    ],
+    "answer": 1,
+    "explain": "Copper is an exception: its configuration is [Ar]4s1 3d10 because a completely filled d subshell is more stable than 4s2 3d9. Chromium is the other exception: [Ar]4s1 3d5.",
+    "improve": "Remember the two exceptions: Cu = [Ar]4s1 3d10, Cr = [Ar]4s1 3d5.",
+    "paper": "2023 C1 Adv",
+    "marks": 1,
+    "chapter": "Ch1 Atomic Structure"
+  },
+  {
+    "id": "pp23c1aq3a",
+    "text": "Which change occurs when concentrated sulfuric acid is added to potassium bromide?",
+    "type": "mc",
+    "options": [
+      "Bromide ions oxidise sulfuric acid forming sulfur",
+      "Bromide ions oxidise sulfuric acid forming sulfur dioxide",
+      "Bromide ions reduce sulfuric acid forming sulfur",
+      "Bromide ions reduce sulfuric acid forming sulfur dioxide"
+    ],
+    "answer": 3,
+    "explain": "Bromide ions (Br-) act as a reducing agent and REDUCE sulfuric acid (from S+6 to S+4). The sulfuric acid is reduced to sulfur dioxide (SO2). Br- is oxidised to Br2.",
+    "improve": "Learn the reactions of halides with concentrated sulfuric acid: Cl- gives HCl only, Br- gives Br2 + SO2, I- gives I2 + SO2 + H2S or S.",
+    "paper": "2023 C1 Adv",
+    "marks": 1,
+    "chapter": "Ch8 Groups 2&7"
+  },
+  {
+    "id": "pp23c1aq3bi",
+    "text": "Which statement is correct for bromide ions tested with acidified silver nitrate solution?",
+    "type": "mc",
+    "options": [
+      "A white precipitate forms that dissolves in concentrated ammonia only",
+      "A white precipitate forms that dissolves in both dilute and concentrated ammonia",
+      "A cream precipitate forms that dissolves in concentrated ammonia only",
+      "A cream precipitate forms that dissolves in both dilute and concentrated ammonia"
+    ],
+    "answer": 2,
+    "explain": "AgBr is a cream precipitate. It dissolves in concentrated ammonia but NOT in dilute ammonia. AgCl (white) dissolves in both, AgI (yellow) dissolves in neither.",
+    "improve": "Memorise the halide ion test results: colour and solubility in dilute/concentrated ammonia.",
+    "paper": "2023 C1 Adv",
+    "marks": 1,
+    "chapter": "Ch8 Groups 2&7"
+  },
+  {
+    "id": "pp23c1aq4",
+    "text": "Which statement best explains why silicon has the highest melting temperature in Period 3?",
+    "type": "mc",
+    "options": [
+      "Silicon has the most electrons per atom",
+      "Silicon has a giant covalent structure with many strong covalent bonds",
+      "Silicon has metallic bonding which is very strong",
+      "Silicon has the strongest intermolecular forces"
+    ],
+    "answer": 1,
+    "explain": "Silicon has a giant covalent (macromolecular) structure requiring many strong covalent bonds to be broken. Metals (Na-Al) have metallic bonding, while P, S, Cl are molecular with weak intermolecular forces.",
+    "improve": "Study the trends in bonding and structure across Period 3 elements.",
+    "paper": "2023 C1 Adv",
+    "marks": 6,
+    "chapter": "Ch7 Periodicity"
+  },
+  {
+    "id": "pp23c1aq5aiii",
+    "text": "What feature of a graph of ΔG against temperature gives the enthalpy change of the reaction?",
+    "type": "mc",
+    "options": [
+      "Intercept of the x-axis",
+      "(Intercept of the x-axis) × −1",
+      "Intercept of the y-axis",
+      "(Intercept of the y-axis) × −1"
+    ],
+    "answer": 2,
+    "explain": "From ΔG = −TΔS + ΔH, when T = 0, ΔG = ΔH. Therefore the y-intercept gives the enthalpy change of the reaction.",
+    "improve": "Practise using ΔG = ΔH − TΔS for thermodynamic calculations.",
+    "paper": "2023 C1 Adv",
+    "marks": 1,
+    "chapter": "Ch10 Equilibria"
+  },
+  {
+    "id": "pp23c1aq5b",
+    "text": "For the equilibrium N2O4(g) ⇌ 2NO2(g), what happens to the position of equilibrium and colour when pressure is increased at constant volume?",
+    "type": "mc",
+    "options": [
+      "Moves to the right, mixture gets lighter",
+      "Moves to the right, mixture gets darker",
+      "Moves to the left, mixture gets lighter",
+      "Moves to the left, mixture gets darker"
+    ],
+    "answer": 2,
+    "explain": "Increasing pressure shifts equilibrium toward the side with fewer moles of gas (left, 1 mol vs 2 mol). Less NO2 (brown) means the mixture gets lighter.",
+    "improve": "Practise applying Le Chatelier's principle to equilibrium changes.",
+    "paper": "2023 C1 Adv",
+    "marks": 1,
+    "chapter": "Ch10 Equilibria"
+  },
+  {
+    "id": "pp23c1aq6a",
+    "text": "When benzoic acid (Ka = 6.3 × 10⁻⁵) is mixed with nitric acid (Ka = 40), which species are present in the equilibrium mixture?",
+    "type": "mc",
+    "options": [
+      "C₆H₅COOH + HNO₃",
+      "C₆H₅COO⁻ + H₂NO₃⁺",
+      "C₆H₅COOH₂⁺ + NO₃⁻",
+      "C₆H₅COO⁻ + NO₃⁻ + H⁺"
+    ],
+    "answer": 2,
+    "explain": "Nitric acid is much stronger (Ka = 40) than benzoic acid (Ka = 6.3×10⁻⁵). Nitric acid donates a proton to benzoic acid forming C₆H₅COOH₂⁺ and NO₃⁻.",
+    "improve": "Review Brønsted-Lowry acid-base theory and relative strengths of acids.",
+    "paper": "2023 C1 Adv",
+    "marks": 1,
+    "chapter": "Ch11 Acid-Base Equilibria"
+  },
+  {
+    "id": "pp23c1aq7a",
+    "text": "What is meant by the term 'isotopes'?",
+    "type": "mc",
+    "options": [
+      "Atoms of the same element with different numbers of neutrons",
+      "Atoms of different elements with the same mass number",
+      "Atoms with the same electron configuration but different numbers of protons",
+      "Ions of the same element with different charges"
+    ],
+    "answer": 0,
+    "explain": "Isotopes are atoms of the same element (same number of protons) with different numbers of neutrons, giving them different mass numbers.",
+    "improve": "Review atomic structure definitions: isotopes, relative atomic mass, mass spectrometry.",
+    "paper": "2023 C1 Adv",
+    "marks": 2,
+    "chapter": "Ch1 Atomic Structure"
+  },
+  {
+    "id": "pp23c1aq9aii",
+    "text": "Why is the first electron affinity of oxygen negative but the second electron affinity positive?",
+    "type": "mc",
+    "options": [
+      "Both release energy",
+      "The first EA releases energy (electron attracted to nucleus), the second EA requires energy (electron repelled by O⁻)",
+      "Both require energy",
+      "The second EA is negative because the ion becomes stable"
+    ],
+    "answer": 1,
+    "explain": "The first EA is exothermic (negative) because the electron is attracted to the nucleus. The second EA is endothermic (positive) because the electron is repelled by the negatively charged O⁻ ion.",
+    "improve": "Understand the Born-Haber cycle and the signs of each step including electron affinities.",
+    "paper": "2023 C1 Adv",
+    "marks": 3,
+    "chapter": "Ch5 Moles & Equations"
+  },
+  {
+    "id": "pp23c1cq1a",
+    "text": "Which are the correct data for a proton and a neutron?",
+    "type": "mc",
+    "options": [
+      "Proton: +1 charge, 1 mass; Neutron: −1 charge, 0.0005 mass",
+      "Proton: +1 charge, 1 mass; Neutron: 0 charge, 1 mass",
+      "Proton: −1 charge, 0.0005 mass; Neutron: 0 charge, 1 mass",
+      "Proton: +1 charge, 1 mass; Neutron: +1 charge, 0.0005 mass"
+    ],
+    "answer": 1,
+    "explain": "A proton has relative charge +1 and relative mass 1. A neutron has relative charge 0 and relative mass 1. The electron has charge −1 and mass 0.0005.",
+    "improve": "Learn the relative charges and masses of subatomic particles.",
+    "paper": "2023 C1 Core",
+    "marks": 1,
+    "chapter": "Ch1 Atomic Structure"
+  },
+  {
+    "id": "pp23c1cq1bi",
+    "text": "What is the shape of the 2s orbital of a silicon atom?",
+    "type": "mc",
+    "options": [
+      "Dumbbell-shaped",
+      "Spherical",
+      "Clover-shaped",
+      "Cylindrical"
+    ],
+    "answer": 1,
+    "explain": "All s orbitals (1s, 2s, 3s etc.) are spherical in shape. p orbitals are dumbbell-shaped and d orbitals are clover-shaped.",
+    "improve": "Review orbital shapes: s = spherical, p = dumbbell, d = cloverleaf.",
+    "paper": "2023 C1 Core",
+    "marks": 1,
+    "chapter": "Ch1 Atomic Structure"
+  },
+  {
+    "id": "pp23c1cq1c",
+    "text": "A sample of silicon has Ar = 28.11 from three isotopes: ²⁸Si (92.2%), ³⁰Si (3.1%). What is the relative isotopic mass of the third isotope?",
+    "type": "mc",
+    "options": [
+      "27",
+      "29",
+      "31",
+      "32"
+    ],
+    "answer": 1,
+    "explain": "Let x = abundance of third isotope: 92.2 + 3.1 + x = 100, so x = 4.7%. Then 28.11 = (92.2×28 + 4.7×M + 3.1×30)/100. Solving gives M = 29 (²⁹Si).",
+    "improve": "Practise relative atomic mass calculations using isotopic abundance data.",
+    "paper": "2023 C1 Core",
+    "marks": 2,
+    "chapter": "Ch1 Atomic Structure"
+  },
+  {
+    "id": "pp23c1cq2",
+    "text": "Why is the term 'relative formula mass' used instead of 'relative molecular mass' for K₂Mg(SO₄)₂·6H₂O?",
+    "type": "mc",
+    "options": [
+      "The compound is ionic so does not exist as molecules",
+      "The compound contains water of crystallisation",
+      "The compound is a double salt with two cations",
+      "The relative molecular mass would be too large"
+    ],
+    "answer": 0,
+    "explain": "K₂Mg(SO₄)₂·6H₂O is an ionic compound and does not exist as discrete molecules, so 'relative formula mass' is used instead of 'relative molecular mass'.",
+    "improve": "Understand the difference between relative molecular mass and relative formula mass.",
+    "paper": "2023 C1 Core",
+    "marks": 1,
+    "chapter": "Ch5 Moles & Equations"
+  },
+  {
+    "id": "pp23c1cq3ai",
+    "text": "What happens to the atoms of a metal and a Group 7 element when they react together?",
+    "type": "mc",
+    "options": [
+      "Metal gains electrons to form a positive ion; Group 7 element loses electrons to form a negative ion",
+      "Metal loses electrons to form a positive ion; Group 7 element gains electrons to form a negative ion",
+      "Metal loses electrons to form a negative ion; Group 7 element gains electrons to form a positive ion",
+      "Metal gains electrons to form a negative ion; Group 7 element gains electrons to form a negative ion"
+    ],
+    "answer": 1,
+    "explain": "Metals lose electrons (oxidation) to form positive cations. Group 7 elements gain electrons (reduction) to form negative halide anions. This is electron transfer in ionic bonding.",
+    "improve": "Review the reactions of Group 7 elements with metals and electron transfer.",
+    "paper": "2023 C1 Core",
+    "marks": 1,
+    "chapter": "Ch8 Groups 2&7"
+  },
+  {
+    "id": "pp23c1cq3aii",
+    "text": "Which is NOT true when calcium reacts with bromine?",
+    "type": "mc",
+    "options": [
+      "Bromine reacts less vigorously than chlorine",
+      "During the reaction bromine oxidises the calcium",
+      "The percentage by mass of calcium in the product is 33%",
+      "The product gives a brick-red flame test"
+    ],
+    "answer": 1,
+    "explain": "Calcium is oxidised (loses electrons) and bromine is reduced (gains electrons). Bromine is the oxidising agent, not the species doing the oxidising. Statement B incorrectly says bromine oxidises calcium.",
+    "improve": "Understand oxidation and reduction in terms of electron transfer and identify oxidising/reducing agents.",
+    "paper": "2023 C1 Core",
+    "marks": 1,
+    "chapter": "Ch8 Groups 2&7"
+  },
+  {
+    "id": "pp23c1cq5",
+    "text": "What is meant by the term 'electronegativity'?",
+    "type": "mc",
+    "options": [
+      "The ability of an atom to attract electron density in a covalent bond",
+      "The energy released when an atom gains an electron",
+      "The attraction between the nucleus and the outermost electrons",
+      "The tendency of an atom to lose electrons and form positive ions"
+    ],
+    "answer": 0,
+    "explain": "Electronegativity is the ability of an atom to attract the bonding electrons in a covalent bond towards itself. It increases across a period and decreases down a group.",
+    "improve": "Review electronegativity definition and trends across the periodic table.",
+    "paper": "2023 C1 Core",
+    "marks": 1,
+    "chapter": "Ch3 Bonding"
+  },
+  {
+    "id": "pp23c1cq6",
+    "text": "In the reaction 8KI + 5H₂SO₄ → 4I₂ + 4K₂SO₄ + H₂S + 4H₂O, what happens in terms of electron transfer?",
+    "type": "mc",
+    "options": [
+      "I⁻ is oxidised (loses electrons), H₂SO₄ is reduced",
+      "I⁻ is reduced (gains electrons), H₂SO₄ is oxidised",
+      "Both I⁻ and H₂SO₄ are oxidised",
+      "Both I⁻ and H₂SO₄ are reduced"
+    ],
+    "answer": 0,
+    "explain": "I⁻ (in KI) is oxidised to I₂ (loses electrons). The sulfur in H₂SO₄ is reduced from +6 to -2 in H₂S (gains electrons). KI is the reducing agent, H₂SO₄ is the oxidising agent.",
+    "improve": "Practise assigning oxidation numbers and identifying oxidising/reducing agents.",
+    "paper": "2023 C1 Core",
+    "marks": 3,
+    "chapter": "Ch6 Redox"
+  },
+  {
+    "id": "pp23c1cq7",
+    "text": "What is the correct order of increasing ionic radius for Br⁻, Ca²⁺, Cl⁻, K⁺?",
+    "type": "mc",
+    "options": [
+      "Ca²⁺ < K⁺ < Cl⁻ < Br⁻",
+      "K⁺ < Ca²⁺ < Cl⁻ < Br⁻",
+      "Ca²⁺ < Cl⁻ < K⁺ < Br⁻",
+      "Cl⁻ < Ca²⁺ < K⁺ < Br⁻"
+    ],
+    "answer": 0,
+    "explain": "All four ions are isoelectronic (18 electrons). Greater nuclear charge pulls electrons closer, so Ca²⁺ (20 protons) < K⁺ (19) < Cl⁻ (17). Br⁻ has an extra shell so is largest.",
+    "improve": "Understand trends in ionic radius including isoelectronic series.",
+    "paper": "2023 C1 Core",
+    "marks": 4,
+    "chapter": "Ch3 Bonding"
+  },
+  {
+    "id": "pp23c1cq8",
+    "text": "In an experiment to determine the molar volume of CO₂ using CaCO₃ + 2H⁺, which change reduces the volume of gas lost between adding CaCO₃ and replacing the bung?",
+    "type": "mc",
+    "options": [
+      "Use a more concentrated acid",
+      "Use a more dilute acid",
+      "Use a larger mass of CaCO₃",
+      "Use a higher temperature acid"
+    ],
+    "answer": 1,
+    "explain": "Using more dilute acid reduces the rate of reaction, so less CO₂ is produced before the bung is replaced, reducing gas loss.",
+    "improve": "Review practical techniques for measuring gas volumes in reactions.",
+    "paper": "2023 C1 Core",
+    "marks": 2,
+    "chapter": "Ch5 Moles & Equations"
+  },
+  {
+    "id": "pp23c1cq9a",
+    "text": "Which set of first four ionisation energies (kJ mol⁻¹) belongs to a Group 3 element?",
+    "type": "mc",
+    "options": [
+      "738, 1451, 7753, 10541",
+      "578, 1817, 2745, 11578",
+      "789, 1577, 3232, 4356",
+      "1012, 1903, 2912, 4957"
+    ],
+    "answer": 1,
+    "explain": "A Group 3 element shows a large jump between the 3rd and 4th ionisation energies because the 4th electron is removed from an inner shell. Option B shows a jump from 2745 to 11578.",
+    "improve": "Practise identifying group and period from successive ionisation energy data.",
+    "paper": "2023 C1 Core",
+    "marks": 1,
+    "chapter": "Ch1 Atomic Structure"
+  },
+  {
+    "id": "pp23c2aq1b",
+    "text": "What is the general formula for a cycloalkene?",
+    "type": "mc",
+    "options": [
+      "CnH2n−2",
+      "CnH2n",
+      "CnH2n+1",
+      "CnH2n+2"
+    ],
+    "answer": 0,
+    "explain": "A cycloalkene has one ring AND one double bond. Each feature reduces hydrogen count by 2 relative to the alkane CnH2n+2, giving CnH2n−2.",
+    "improve": "Learn general formulae: alkanes CnH2n+2, alkenes/cycloalkanes CnH2n, alkynes/cycloalkenes CnH2n-2.",
+    "paper": "2023 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch12 Organic Intro"
+  },
+  {
+    "id": "pp23c2aq2a",
+    "text": "How is ethanol formed by fermentation of carbohydrates classified?",
+    "type": "mc",
+    "options": [
+      "A biofuel and non-renewable",
+      "A biofuel and renewable",
+      "A fossil fuel and non-renewable",
+      "A fossil fuel and renewable"
+    ],
+    "answer": 1,
+    "explain": "Ethanol from fermentation uses plant carbohydrates (biomass), making it a biofuel. It is renewable because plants can be regrown. Hydration of ethene uses fossil fuel feedstock.",
+    "improve": "Compare fermentation vs hydration of ethene for ethanol production.",
+    "paper": "2023 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch16 Alcohols"
+  },
+  {
+    "id": "pp23c2aq2di",
+    "text": "Which set of IR wavenumber ranges (cm⁻¹) appears in the spectrum of propan-2-ol?",
+    "type": "mc",
+    "options": [
+      "1485–1365, 2962–2853 and 3300–2500",
+      "1485–1365, 2962–2853 and 3750–3200",
+      "1669–1645, 2962–2853 and 3750–3200",
+      "1740–1720, 3300–2500 and 3750–3200"
+    ],
+    "answer": 1,
+    "explain": "Propan-2-ol shows: C-H stretches (2962-2853 and 1485-1365) and the broad O-H alcohol stretch (3750-3200). The 3300-2500 range is for carboxylic acid O-H.",
+    "improve": "Memorise key IR absorption ranges: O-H alcohol (3750-3200), O-H acid (3300-2500), C=O (1740-1720), C=C (1669-1645).",
+    "paper": "2023 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch17 Organic Analysis"
+  },
+  {
+    "id": "pp23c2aq3a",
+    "text": "A compound gives a molecular ion peak at m/z = 60.0323. Which compound matches this exact mass? [Ar: H=1.0078, C=12.0000, N=14.0031, O=15.9949]",
+    "type": "mc",
+    "options": [
+      "Ethanamide CH₃CONH₂",
+      "Ethanoic acid CH₃COOH",
+      "Trimethylamine (CH₃)₃N",
+      "Urea CO(NH₂)₂"
+    ],
+    "answer": 0,
+    "explain": "Calculating exact masses: CH₃CONH₂ = 2C + 3H + O + N = 24.0000 + 3.0234 + 15.9949 + 14.0031 = 60.0323. This matches the molecular ion peak.",
+    "improve": "Practise calculating molecular formulae from exact mass spectrometry data.",
+    "paper": "2023 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch5 Moles & Equations"
+  },
+  {
+    "id": "pp23c2aq4bi",
+    "text": "An electrophile is a substance that",
+    "type": "mc",
+    "options": [
+      "Accepts a pair of electrons",
+      "Accepts an unpaired electron",
+      "Donates a pair of electrons",
+      "Donates an unpaired electron"
+    ],
+    "answer": 0,
+    "explain": "An electrophile is an electron-pair acceptor. A nucleophile is an electron-pair donor. These are fundamental definitions in organic reaction mechanisms.",
+    "improve": "Learn definitions: electrophile = electron pair acceptor, nucleophile = electron pair donor, free radical = species with unpaired electron.",
+    "paper": "2023 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch14 Alkenes"
+  },
+  {
+    "id": "pp23c2aq8a",
+    "text": "How many structural isomers are there with the formula C₅H₁₂?",
+    "type": "mc",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": 1,
+    "explain": "C₅H₁₂ has three structural isomers: pentane, 2-methylbutane, and 2,2-dimethylpropane.",
+    "improve": "Practise drawing structural isomers for different molecular formulae.",
+    "paper": "2023 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch12 Organic Intro"
+  },
+  {
+    "id": "pp23c2cq1",
+    "text": "When the temperature of a reaction is increased, what happens to the Maxwell-Boltzmann distribution?",
+    "type": "mc",
+    "options": [
+      "The peak moves right and gets lower; the curve broadens",
+      "The peak moves left and gets higher",
+      "The peak stays the same but the curve rises",
+      "The distribution does not change"
+    ],
+    "answer": 0,
+    "explain": "At higher temperature, the peak shifts to the right (higher average energy), becomes lower, and the distribution broadens. More molecules exceed the activation energy.",
+    "improve": "Review Maxwell-Boltzmann distribution curves and the effect of temperature on reaction rate.",
+    "paper": "2023 C2 Core",
+    "marks": 2,
+    "chapter": "Ch9 Kinetics"
+  },
+  {
+    "id": "pp23c2cq2",
+    "text": "What is meant by the term 'saturated hydrocarbon'?",
+    "type": "mc",
+    "options": [
+      "A hydrocarbon containing only single C-C bonds",
+      "A hydrocarbon containing C=C double bonds",
+      "A compound containing only carbon and hydrogen with rings",
+      "A compound soluble in water"
+    ],
+    "answer": 0,
+    "explain": "Saturated means all carbon-carbon bonds are single bonds (no double bonds). Hydrocarbon means it contains only carbon and hydrogen atoms.",
+    "improve": "Review definitions: saturated, unsaturated, hydrocarbon, homologous series.",
+    "paper": "2023 C2 Core",
+    "marks": 2,
+    "chapter": "Ch13 Alkanes"
+  },
+  {
+    "id": "pp23c2cq3a",
+    "text": "Why do alkenes have the general formula CnH2n, different from alkanes (CnH2n+2)?",
+    "type": "mc",
+    "options": [
+      "Alkenes have one C=C double bond, reducing H count by 2",
+      "Alkenes have more carbon atoms",
+      "Alkenes are unsaturated with rings",
+      "Alkenes contain oxygen atoms"
+    ],
+    "answer": 0,
+    "explain": "Alkenes contain a C=C double bond which means two fewer hydrogen atoms compared to the corresponding alkane. General formula changes from CnH2n+2 (alkane) to CnH2n (alkene).",
+    "improve": "Learn general formulae for hydrocarbon families and understand why they differ.",
+    "paper": "2023 C2 Core",
+    "marks": 3,
+    "chapter": "Ch14 Alkenes"
+  },
+  {
+    "id": "pp23c2cq4",
+    "text": "In comparing the rates of hydrolysis of 1-chloropropane, 1-bromopropane and 1-iodopropane with aqueous silver nitrate, which forms a precipitate first?",
+    "type": "mc",
+    "options": [
+      "1-chloropropane",
+      "1-bromopropane",
+      "1-iodopropane",
+      "They all form precipitates at the same rate"
+    ],
+    "answer": 2,
+    "explain": "1-iodopropane reacts fastest because the C-I bond is the weakest (lowest bond enthalpy), so it breaks most easily during nucleophilic substitution.",
+    "improve": "Review the trend in C-halogen bond strength and rate of hydrolysis of halogenoalkanes.",
+    "paper": "2023 C2 Core",
+    "marks": 3,
+    "chapter": "Ch15 Halogenoalkanes"
+  },
+  {
+    "id": "pp23c2cq5",
+    "text": "In an experiment to determine the enthalpy change of combustion of an alcohol using a spirit burner, which of the following causes the experimental value to be less exothermic than the data book value?",
+    "type": "mc",
+    "options": [
+      "Incomplete combustion producing carbon",
+      "Heat loss to the surroundings",
+      "Using a more concentrated alcohol",
+      "Weighing the burner too precisely"
+    ],
+    "answer": 1,
+    "explain": "Heat loss to the surroundings is the main source of error, meaning less heat is transferred to the water, giving a less exothermic value. Carbon from incomplete combustion also reduces energy released.",
+    "improve": "Review calorimetry experiments and sources of error in enthalpy measurements.",
+    "paper": "2023 C2 Core",
+    "marks": 3,
+    "chapter": "Ch16 Alcohols"
+  },
+  {
+    "id": "pp23c2cq6",
+    "text": "For NH₂COONH₄(s) ⇌ 2NH₃(g) + CO₂(g), what is the correct Kc expression?",
+    "type": "mc",
+    "options": [
+      "[NH₃]²[CO₂] / [NH₂COONH₄]",
+      "[NH₃]²[CO₂]",
+      "[NH₃][CO₂]",
+      "[NH₃][CO₂] / [NH₂COONH₄]"
+    ],
+    "answer": 1,
+    "explain": "Solids are omitted from the Kc expression. Since NH₂COONH₄ is a solid, only the gaseous products appear: Kc = [NH₃]²[CO₂].",
+    "improve": "Remember to exclude solids and pure liquids from Kc expressions.",
+    "paper": "2023 C2 Core",
+    "marks": 1,
+    "chapter": "Ch10 Equilibria"
+  },
+  {
+    "id": "pp23c2cq7a",
+    "text": "Which are the intermolecular force(s) between butan-1-ol molecules in the liquid phase?",
+    "type": "mc",
+    "options": [
+      "Hydrogen bonding only",
+      "Hydrogen bonding and permanent dipole-dipole forces only",
+      "Hydrogen bonding, permanent dipole-dipole forces and London forces",
+      "London forces only"
+    ],
+    "answer": 2,
+    "explain": "Butan-1-ol has an -OH group so exhibits hydrogen bonding. It also has permanent dipole-dipole forces (due to the polar C-O and O-H bonds) and London forces (present between all molecules).",
+    "improve": "Remember all molecules have London forces. Identify additional forces: H-bonding (OH, NH, HF) and permanent dipole-dipole (polar molecules).",
+    "paper": "2023 C2 Core",
+    "marks": 1,
+    "chapter": "Ch4 Intermolecular Forces"
+  },
+  {
+    "id": "pp23c2cq7ci",
+    "text": "Which is a suitable test and result to confirm the presence of the OH group in butan-1-ol?",
+    "type": "mc",
+    "options": [
+      "PCl₅ → white smoke",
+      "PCl₅ → steamy fumes",
+      "Na₂CO₃ → carbon dioxide given off",
+      "Na₂CO₃ → effervescence"
+    ],
+    "answer": 1,
+    "explain": "Phosphorus(V) chloride (PCl₅) reacts with alcohols to produce HCl gas, which appears as steamy fumes. White smoke would indicate a different reaction.",
+    "improve": "Learn tests for the -OH group: PCl₅ gives steamy fumes of HCl, sodium gives H₂ gas.",
+    "paper": "2023 C2 Core",
+    "marks": 1,
+    "chapter": "Ch16 Alcohols"
+  },
+  {
+    "id": "pp23c2cq8",
+    "text": "The standard enthalpy change of combustion of hydrogen is −285.8 kJ mol⁻¹. What are the two conditions denoted by the standard symbol ⦵?",
+    "type": "mc",
+    "options": [
+      "298 K and 100 kPa",
+      "273 K and 101.3 kPa",
+      "298 K and 101.3 kPa",
+      "273 K and 100 kPa"
+    ],
+    "answer": 2,
+    "explain": "Standard conditions (⦵) are 298 K (25°C) and 101.3 kPa (1 atm). Note: some specifications now use 100 kPa but Edexcel uses 101.3 kPa.",
+    "improve": "Remember standard conditions: 298 K temperature and 101.3 kPa pressure.",
+    "paper": "2023 C2 Core",
+    "marks": 2,
+    "chapter": "Ch5 Moles & Equations"
+  },
+  {
+    "id": "pp24c1aq1",
+    "text": "How many protons, neutrons and electrons are in ³⁴S²⁻?",
+    "type": "mc",
+    "options": [
+      "16 protons, 18 neutrons, 18 electrons",
+      "16 protons, 18 neutrons, 16 electrons",
+      "16 protons, 16 neutrons, 18 electrons",
+      "18 protons, 16 neutrons, 18 electrons"
+    ],
+    "answer": 0,
+    "explain": "³⁴S²⁻ has atomic number 16, so 16 protons. Mass number 34 minus 16 = 18 neutrons. With a 2- charge, electrons = 16 + 2 = 18.",
+    "improve": "Practise determining subatomic particle numbers from isotopic notation and charge.",
+    "paper": "2024 C1 Adv",
+    "marks": 3,
+    "chapter": "Ch1 Atomic Structure"
+  },
+  {
+    "id": "pp24c1aq2",
+    "text": "Which statement explains the trend in first electron affinities: Cl (-349), Br (-325), I (-295) kJ mol⁻¹?",
+    "type": "mc",
+    "options": [
+      "Electronegativity decreases down the group so less energy released",
+      "Atomic radius increases down the group, electron further from nucleus, less attraction",
+      "Nuclear charge increases making electron affinity more exothermic",
+      "Shielding stays constant down the group"
+    ],
+    "answer": 1,
+    "explain": "Down Group 7, atomic radius increases and shielding increases, so the added electron is further from the nucleus and experiences less attraction, releasing less energy.",
+    "improve": "Understand and explain trends in electron affinity down Group 7.",
+    "paper": "2024 C1 Adv",
+    "marks": 4,
+    "chapter": "Ch2 Periodic Table"
+  },
+  {
+    "id": "pp24c1aq4a",
+    "text": "What is meant by a Brønsted-Lowry acid?",
+    "type": "mc",
+    "options": [
+      "A proton (H⁺) donor",
+      "A proton (H⁺) acceptor",
+      "An electron pair donor",
+      "An electron pair acceptor"
+    ],
+    "answer": 0,
+    "explain": "A Brønsted-Lowry acid is a proton (H⁺) donor. A Brønsted-Lowry base is a proton acceptor. This is different from Lewis definitions (electron pair donor/acceptor).",
+    "improve": "Learn Brønsted-Lowry definitions vs Lewis definitions of acids and bases.",
+    "paper": "2024 C1 Adv",
+    "marks": 1,
+    "chapter": "Ch11 Acid-Base Equilibria"
+  },
+  {
+    "id": "pp24c1aq4b",
+    "text": "Which titration curve shows NaOH added to CH₃COOH (weak acid-strong base)?",
+    "type": "mc",
+    "options": [
+      "Curve starting at low pH, steep middle, ending at high pH with buffer region",
+      "Curve starting at pH 1, vertical at 25 cm³",
+      "Curve starting at moderate pH, no buffer region",
+      "Curve starting at neutral pH, vertical at 50 cm³"
+    ],
+    "answer": 0,
+    "explain": "Weak acid-strong base titration: starts at moderate pH (weak acid), shows buffer region (flat area), steep near equivalence point (pH > 7), rises to high pH with excess NaOH.",
+    "improve": "Practise sketching and interpreting titration curves for different acid-base combinations.",
+    "paper": "2024 C1 Adv",
+    "marks": 1,
+    "chapter": "Ch11 Acid-Base Equilibria"
+  },
+  {
+    "id": "pp24c1aq5a",
+    "text": "In the reaction C₂H₅OH(l) + 3O₂(g) → 3H₂O(l) + 2CO₂(g), which bonds are broken and formed?",
+    "type": "mc",
+    "options": [
+      "Break: 5C-H, 1C-C, 1C-O, 1O-H, 3O=O; Form: 6O-H, 4C=O",
+      "Break: 5C-H, 1C-C, 1C-O, 1O-H, 1.5O=O; Form: 6O-H, 4C=O",
+      "Break: 5C-H, 1C-C, 1C-O, 1O-H, 3O=O; Form: 3O-H, 2C=O",
+      "Break: 6C-H, 1C-C, 1C-O, 3O=O; Form: 6O-H, 4C=O"
+    ],
+    "answer": 0,
+    "explain": "Bonds broken in C₂H₅OH: 5C-H + 1C-C + 1C-O + 1O-H. Plus 3O=O in 3O₂. Bonds formed: 6O-H in 3H₂O + 4C=O in 2CO₂.",
+    "improve": "Practise identifying bonds broken and formed in combustion reactions for enthalpy calculations.",
+    "paper": "2024 C1 Adv",
+    "marks": 3,
+    "chapter": "Ch5 Moles & Equations"
+  },
+  {
+    "id": "pp24c1aq7aii",
+    "text": "Which variable affects the value of Kp for the reaction SO₂ + ½O₂ ⇌ SO₃?",
+    "type": "mc",
+    "options": [
+      "Pressure",
+      "Temperature",
+      "Surface area of the catalyst",
+      "Concentration of O₂"
+    ],
+    "answer": 1,
+    "explain": "Only temperature affects the value of Kp. Changes in pressure, concentration, or catalyst change the position of equilibrium but not the value of Kp.",
+    "improve": "Remember: only temperature changes the value of Kc and Kp.",
+    "paper": "2024 C1 Adv",
+    "marks": 1,
+    "chapter": "Ch10 Equilibria"
+  },
+  {
+    "id": "pp24c1aq7c",
+    "text": "Which row shows the correct colour of solution and oxidation number of vanadium in VO₂⁺?",
+    "type": "mc",
+    "options": [
+      "Yellow, +3",
+      "Green, +4",
+      "Yellow, +5",
+      "Blue, +5"
+    ],
+    "answer": 2,
+    "explain": "VO₂⁺ (dioxovanadium(V)) has vanadium in the +5 oxidation state. The solution is yellow. VO²⁺ (oxidovanadium(IV)) is blue with V at +4.",
+    "improve": "Learn the colours and oxidation states of vanadium ions: V²⁺ violet (+2), V³⁺ green (+3), VO²⁺ blue (+4), VO₂⁺ yellow (+5).",
+    "paper": "2024 C1 Adv",
+    "marks": 1,
+    "chapter": "Ch7 Periodicity"
+  },
+  {
+    "id": "pp24c1aq7d",
+    "text": "What is the cell potential for: 2VO₂⁺(aq) + 4H⁺(aq) + Zn(s) → 2VO²⁺(aq) + 2H₂O(l) + Zn²⁺(aq)? [E(VO₂⁺/VO²⁺) = +1.00 V, E(Zn²⁺/Zn) = -0.76 V]",
+    "type": "mc",
+    "options": [
+      "+1.76 V",
+      "+0.24 V",
+      "-0.24 V",
+      "-1.76 V"
+    ],
+    "answer": 0,
+    "explain": "Ecell = E(reduction) - E(oxidation) = E(VO₂⁺/VO²⁺) - E(Zn²⁺/Zn) = +1.00 - (-0.76) = +1.76 V. Positive Ecell means reaction is feasible.",
+    "improve": "Practise calculating cell potentials using standard electrode potentials from the data booklet.",
+    "paper": "2024 C1 Adv",
+    "marks": 1,
+    "chapter": "Ch5 Moles & Equations"
+  },
+  {
+    "id": "pp24c1aq8b",
+    "text": "Which definition correctly describes the enthalpy change of solution, ΔsolH?",
+    "type": "mc",
+    "options": [
+      "The enthalpy change when 1 mol of gaseous ions dissolves in sufficient water to give an infinitely dilute solution",
+      "The enthalpy change when 1 mol of an ionic substance dissolves in water to give an infinitely dilute solution",
+      "The enthalpy change when 1 mol of gaseous ions dissolves in sufficient water to give a solution of concentration 1 mol dm⁻³",
+      "The enthalpy change when 1 mol of an ionic substance dissolves in water to give a solution of concentration 1 mol dm⁻³"
+    ],
+    "answer": 1,
+    "explain": "ΔsolH is the enthalpy change when 1 mol of an ionic substance dissolves in sufficient water to give an infinitely dilute solution. Option A describes the enthalpy change of hydration.",
+    "improve": "Review Born-Haber cycle definitions: lattice energy, enthalpy of hydration, enthalpy of solution.",
+    "paper": "2024 C1 Adv",
+    "marks": 1,
+    "chapter": "Ch5 Moles & Equations"
+  },
+  {
+    "id": "pp24c1aq9",
+    "text": "For the decomposition 2NaHCO₃(s) → Na₂CO₃(s) + CO₂(g) + H₂O(l) with ΔrH = +91.6 kJ mol⁻¹, how do you determine feasibility at 298 K?",
+    "type": "mc",
+    "options": [
+      "Calculate ΔG = ΔH - TΔS; if ΔG < 0, the reaction is feasible",
+      "Calculate ΔG = ΔH + TΔS; if ΔG > 0, the reaction is feasible",
+      "If ΔH is positive, the reaction is always feasible",
+      "The reaction is feasible because entropy increases"
+    ],
+    "answer": 0,
+    "explain": "Use ΔG = ΔH - TΔS. Calculate ΔS from standard entropy values, then find ΔG at 298 K. If ΔG < 0, the reaction is thermodynamically feasible.",
+    "improve": "Practise Gibbs free energy calculations and determining feasibility temperatures.",
+    "paper": "2024 C1 Adv",
+    "marks": 3,
+    "chapter": "Ch5 Moles & Equations"
+  },
+  {
+    "id": "pp24c1cq1",
+    "text": "What is the electronic configuration of the phosphide ion, ³¹₁₅P³⁻?",
+    "type": "mc",
+    "options": [
+      "1s² 2s² 2p⁶ 3s² 3p³",
+      "1s² 2s² 2p⁶ 3s² 3p⁶",
+      "1s² 2s² 2p⁶ 3s²",
+      "1s² 2s² 2p⁶ 3p⁶"
+    ],
+    "answer": 1,
+    "explain": "P has 15 electrons. P³⁻ has 15+3 = 18 electrons. Configuration: 1s²2s²2p⁶3s²3p⁶ (same as Ar).",
+    "improve": "Practise writing electron configurations for ions, remembering to add/subtract electrons for the charge.",
+    "paper": "2024 C1 Core",
+    "marks": 1,
+    "chapter": "Ch1 Atomic Structure"
+  },
+  {
+    "id": "pp24c1cq2",
+    "text": "Which could be the first four successive ionisation energies (kJ mol⁻¹) of a Group 4 element?",
+    "type": "mc",
+    "options": [
+      "496, 4563, 6913, 9544",
+      "900, 1757, 14849, 21007",
+      "801, 2427, 3610, 25026",
+      "1086, 2353, 4621, 6223"
+    ],
+    "answer": 3,
+    "explain": "A Group 4 element has 4 outer shell electrons. The first 4 IEs increase gradually (same shell), with a big jump at the 5th IE. Option D shows gradual increases with no jump in the first four.",
+    "improve": "Practise interpreting successive ionisation energy data to identify group number.",
+    "paper": "2024 C1 Core",
+    "marks": 1,
+    "chapter": "Ch1 Atomic Structure"
+  },
+  {
+    "id": "pp24c1cq3",
+    "text": "What is the trend in atomic radii across Period 2 and down Group 2?",
+    "type": "mc",
+    "options": [
+      "Increasing across Period 2, increasing down Group 2",
+      "Increasing across Period 2, decreasing down Group 2",
+      "Decreasing across Period 2, decreasing down Group 2",
+      "Decreasing across Period 2, increasing down Group 2"
+    ],
+    "answer": 3,
+    "explain": "Across a period, atomic radius decreases (increasing nuclear charge, same shell). Down a group, atomic radius increases (extra electron shells added).",
+    "improve": "Review periodic trends in atomic radius, ionisation energy and electronegativity.",
+    "paper": "2024 C1 Core",
+    "marks": 1,
+    "chapter": "Ch2 Periodic Table"
+  },
+  {
+    "id": "pp24c1cq4",
+    "text": "When dilute HNO₃ and AgNO₃ are added to KCl, KBr and KI solutions, what are the correct observations?",
+    "type": "mc",
+    "options": [
+      "KCl: white ppt; KBr: cream ppt; KI: yellow ppt",
+      "KCl: cream ppt; KBr: white ppt; KI: yellow ppt",
+      "KCl: yellow ppt; KBr: white ppt; KI: cream ppt",
+      "KCl: white ppt; KBr: yellow ppt; KI: cream ppt"
+    ],
+    "answer": 0,
+    "explain": "AgCl = white precipitate, AgBr = cream precipitate, AgI = yellow precipitate. The acid must be nitric acid (not HCl which would introduce Cl⁻).",
+    "improve": "Memorise halide test colours: Cl⁻ = white, Br⁻ = cream, I⁻ = yellow.",
+    "paper": "2024 C1 Core",
+    "marks": 3,
+    "chapter": "Ch8 Groups 2&7"
+  },
+  {
+    "id": "pp24c1cq5",
+    "text": "In the reaction 5NaClO₂ + 4HCl → 5NaCl + 4ClO₂ + 2H₂O, if ClO₂ decomposes as 2ClO₂(g) → Cl₂(g) + 2O₂(g), what happens to the volume?",
+    "type": "mc",
+    "options": [
+      "Volume increases",
+      "Volume decreases",
+      "Volume stays the same",
+      "Cannot be determined"
+    ],
+    "answer": 0,
+    "explain": "2 mol ClO₂ decomposes to 1 mol Cl₂ + 2 mol O₂ = 3 mol total gas. From 2 mol to 3 mol, so volume increases.",
+    "improve": "Practise mole calculations involving gas volumes and decomposition reactions.",
+    "paper": "2024 C1 Core",
+    "marks": 4,
+    "chapter": "Ch5 Moles & Equations"
+  },
+  {
+    "id": "pp24c1cq6",
+    "text": "A compound A contains 26.7% C, 2.2% H and 71.1% O by mass. Its molar mass is 90 g mol⁻¹. What is its molecular formula?",
+    "type": "mc",
+    "options": [
+      "C₂H₂O₄",
+      "CHO₂",
+      "C₃H₃O₆",
+      "CH₂O₃"
+    ],
+    "answer": 0,
+    "explain": "Empirical formula: C = 26.7/12 = 2.225, H = 2.2/1 = 2.2, O = 71.1/16 = 4.44. Ratio = 1:1:2 → CHO₂. Mr(CHO₂) = 45. 90/45 = 2. Molecular formula = C₂H₂O₄ (oxalic acid).",
+    "improve": "Practise calculating empirical and molecular formulae from percentage composition data.",
+    "paper": "2024 C1 Core",
+    "marks": 4,
+    "chapter": "Ch5 Moles & Equations"
+  },
+  {
+    "id": "pp24c1cq6c",
+    "text": "Which of these species is a cation?",
+    "type": "mc",
+    "options": [
+      "3p, 4n, 3e",
+      "6p, 6n, 6e",
+      "12p, 12n, 10e",
+      "35p, 44n, 36e"
+    ],
+    "answer": 2,
+    "explain": "A cation has more protons than electrons. Option C has 12 protons but only 10 electrons, giving a 2+ charge (Mg²⁺).",
+    "improve": "Remember: cations have lost electrons (fewer e⁻ than p⁺), anions have gained electrons (more e⁻ than p⁺).",
+    "paper": "2024 C1 Core",
+    "marks": 1,
+    "chapter": "Ch1 Atomic Structure"
+  },
+  {
+    "id": "pp24c1cq7",
+    "text": "When KCl and KBr react with concentrated H₂SO₄, which observations are correct?",
+    "type": "mc",
+    "options": [
+      "KCl: white fumes of HCl; KBr: brown fumes of Br₂ and SO₂",
+      "KCl: brown fumes; KBr: white fumes only",
+      "Both produce only white fumes",
+      "KCl: no reaction; KBr: orange fumes"
+    ],
+    "answer": 0,
+    "explain": "With conc H₂SO₄: KCl produces HCl (white fumes) only as Cl⁻ is not a strong enough reducing agent. KBr produces Br₂ (brown fumes) and SO₂ (choking gas) because Br⁻ reduces H₂SO₄.",
+    "improve": "Learn the products of halide reactions with concentrated sulfuric acid: Cl⁻ → HCl only, Br⁻ → Br₂ + SO2, I⁻ → I₂ + SO₂ + H₂S.",
+    "paper": "2024 C1 Core",
+    "marks": 6,
+    "chapter": "Ch8 Groups 2&7"
+  },
+  {
+    "id": "pp24c1cq8",
+    "text": "Why is water a good solvent for ionic compounds like calcium chloride?",
+    "type": "mc",
+    "options": [
+      "Water molecules are polar and surround the ions, forming ion-dipole interactions",
+      "Water molecules form hydrogen bonds with the ions",
+      "Water is covalent and shares electrons with ions",
+      "Water molecules have London forces with the ions"
+    ],
+    "answer": 0,
+    "explain": "Water is polar. The δ⁻ oxygen end is attracted to cations and the δ⁺ hydrogen end is attracted to anions. These are ion-dipole interactions that overcome the ionic lattice forces.",
+    "improve": "Review how solubility relates to the types of intermolecular forces involved.",
+    "paper": "2024 C1 Core",
+    "marks": 4,
+    "chapter": "Ch4 Intermolecular Forces"
+  },
+  {
+    "id": "pp24c1cq9",
+    "text": "In the reaction ClO⁻ + Cl⁻ + 2H⁺ → Cl₂ + H₂O, why is this NOT a disproportionation reaction?",
+    "type": "mc",
+    "options": [
+      "Chlorine in ClO⁻ is reduced to Cl₂ and chlorine in Cl⁻ is oxidised to Cl₂; the same element is simultaneously oxidised and reduced in different species",
+      "Both chlorines are oxidised",
+      "Both chlorines are reduced",
+      "No electrons are transferred"
+    ],
+    "answer": 0,
+    "explain": "In disproportionation, the SAME species is simultaneously oxidised and reduced. Here ClO⁻ (Cl = +1) is reduced and Cl⁻ (Cl = -1) is oxidised, but they are different starting species, so this is not disproportionation.",
+    "improve": "Understand the definition of disproportionation carefully - it requires the SAME species to be both oxidised and reduced.",
+    "paper": "2024 C1 Core",
+    "marks": 1,
+    "chapter": "Ch6 Redox"
+  },
+  {
+    "id": "pp24c2aq1a",
+    "text": "Equal amounts of four bromoalkanes were added to silver nitrate solution at the same temperature. Which forms a precipitate first?",
+    "type": "mc",
+    "options": [
+      "1-bromobutane",
+      "2-bromobutane",
+      "1-bromo-2-methylpropane",
+      "2-bromo-2-methylpropane"
+    ],
+    "answer": 3,
+    "explain": "2-bromo-2-methylpropane (tertiary) is the fastest because it reacts via SN1 mechanism which has a lower activation energy. The tertiary carbocation intermediate is most stable.",
+    "improve": "Compare rates of hydrolysis for primary, secondary and tertiary halogenoalkanes.",
+    "paper": "2024 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch15 Halogenoalkanes"
+  },
+  {
+    "id": "pp24c2aq1b",
+    "text": "Which pair of reactants will form an N-substituted amide?",
+    "type": "mc",
+    "options": [
+      "CH₃COCl and NH₃",
+      "CH₃CH₂OH and NH₃",
+      "CH₃COCl and CH₃NH₂",
+      "CH₃CH₂OH and CH₃NH₂"
+    ],
+    "answer": 2,
+    "explain": "An acyl chloride (CH₃COCl) reacts with a primary amine (CH₃NH₂) to form an N-substituted amide (CH₃CONHCH₃). NH₃ gives an unsubstituted amide. Alcohols do not form amides.",
+    "improve": "Learn the reactions of acyl chlorides with nucleophiles including ammonia and amines.",
+    "paper": "2024 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch17 Organic Analysis"
+  },
+  {
+    "id": "pp24c2aq2a",
+    "text": "The most suitable solvent for forming a Grignard reagent is",
+    "type": "mc",
+    "options": [
+      "cyclohexane",
+      "ether",
+      "ethyl ethanoate",
+      "hexane"
+    ],
+    "answer": 1,
+    "explain": "Dry ether is the standard solvent for Grignard reagent formation. It must be anhydrous because water reacts with the Grignard reagent. Ether stabilisers the organomagnesium compound.",
+    "improve": "Review Grignard reagent preparation and reactions.",
+    "paper": "2024 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch15 Halogenoalkanes"
+  },
+  {
+    "id": "pp24c2aq2c",
+    "text": "In their reactions, the Grignard reagent is best described as",
+    "type": "mc",
+    "options": [
+      "a carbocation",
+      "an electrophile",
+      "a nucleophile",
+      "a radical"
+    ],
+    "answer": 2,
+    "explain": "The Grignard reagent has a polar C-Mg bond with δ⁻ on carbon. The carbanion character makes it a nucleophile, attacking δ⁺ carbon atoms in carbonyl compounds.",
+    "improve": "Understand the reactivity of Grignard reagents as carbon nucleophiles.",
+    "paper": "2024 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch15 Halogenoalkanes"
+  },
+  {
+    "id": "pp24c2aq3a",
+    "text": "How many lone pairs of electrons are on each oxygen atom in a molecule of H₂O₂?",
+    "type": "mc",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 1,
+    "explain": "Each oxygen in H₂O₂ has 2 bonding pairs (O-H and O-O) and 2 lone pairs (6 valence electrons − 2×1 shared = 2 lone pairs per O).",
+    "improve": "Practise drawing dot-and-cross diagrams for molecules including H₂O₂.",
+    "paper": "2024 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch3 Bonding"
+  },
+  {
+    "id": "pp24c2aq3b",
+    "text": "In the decomposition 2H₂O₂ → 2H₂O + O₂, which statement about the oxidation number changes is correct?",
+    "type": "mc",
+    "options": [
+      "Oxygen is oxidised from -1 to 0 and reduced from -1 to -2",
+      "Oxygen is oxidised from -2 to 0 and reduced from -1 to -2",
+      "All oxygen atoms are oxidised",
+      "All oxygen atoms are reduced"
+    ],
+    "answer": 0,
+    "explain": "In H₂O₂, oxygen has oxidation number -1. In H₂O it is -2 (reduction), in O₂ it is 0 (oxidation). This is disproportionation: the same species (O in H₂O₂) is both oxidised and reduced.",
+    "improve": "Practise identifying disproportionation using oxidation numbers.",
+    "paper": "2024 C2 Adv",
+    "marks": 3,
+    "chapter": "Ch6 Redox"
+  },
+  {
+    "id": "pp24c2aq5a",
+    "text": "When 2-methylbutane is passed over a hot platinum catalyst to form cyclopentane, what type of reaction occurs?",
+    "type": "mc",
+    "options": [
+      "Substitution",
+      "Addition",
+      "Reforming",
+      "Cracking"
+    ],
+    "answer": 2,
+    "explain": "The conversion of an alkane to a cycloalkane over a platinum catalyst is called reforming (or dehydrocyclisation). This is used in the petroleum industry to improve fuel quality.",
+    "improve": "Learn the types of reactions in organic chemistry including reforming, cracking and isomerisation.",
+    "paper": "2024 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch13 Alkanes"
+  },
+  {
+    "id": "pp24c2aq5c",
+    "text": "What condition is needed to initiate the reaction between cyclopentane and bromine?",
+    "type": "mc",
+    "options": [
+      "UV light",
+      "High pressure",
+      "Catalyst",
+      "Reflux"
+    ],
+    "answer": 0,
+    "explain": "Free radical substitution requires UV light to break the Br-Br bond homolytically, producing bromine free radicals that initiate the chain reaction.",
+    "improve": "Remember: free radical substitution always requires UV light for initiation.",
+    "paper": "2024 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch13 Alkanes"
+  },
+  {
+    "id": "pp24c2aq6a",
+    "text": "Which part of the electromagnetic spectrum is used in NMR spectroscopy?",
+    "type": "mc",
+    "options": [
+      "Infrared",
+      "Radio waves",
+      "Ultraviolet",
+      "X-ray"
+    ],
+    "answer": 1,
+    "explain": "NMR spectroscopy uses radio waves to flip nuclear spins between energy states in a strong magnetic field. IR uses infrared, UV-vis uses ultraviolet/visible light.",
+    "improve": "Remember which spectroscopic technique uses which part of the EM spectrum.",
+    "paper": "2024 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch17 Organic Analysis"
+  },
+  {
+    "id": "pp24c2aq7a",
+    "text": "What is the IUPAC name of chloroprene?",
+    "type": "mc",
+    "options": [
+      "3-chlorobuta-1,3-diene",
+      "2-chlorobuta-2,4-diene",
+      "3-chlorobuta-2,4-diene",
+      "2-chlorobuta-1,3-diene"
+    ],
+    "answer": 3,
+    "explain": "Chloroprene has the structure CH₂=C(Cl)-CH=CH₂. Numbering to give lowest locants: 2-chlorobuta-1,3-diene.",
+    "improve": "Practise IUPAC naming of dienes and substituted dienes.",
+    "paper": "2024 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch14 Alkenes"
+  },
+  {
+    "id": "pp24c2aq8ai",
+    "text": "What is meant by a 'chiral carbon atom'?",
+    "type": "mc",
+    "options": [
+      "A carbon atom bonded to four different groups",
+      "A carbon atom with a double bond",
+      "A carbon atom bonded to two identical groups",
+      "A carbon atom in a ring structure"
+    ],
+    "answer": 0,
+    "explain": "A chiral (asymmetric) carbon atom is bonded to four different groups/atoms, making it a stereocentre. This creates two non-superimposable mirror image molecules (enantiomers).",
+    "improve": "Review chirality and optical isomerism in organic molecules.",
+    "paper": "2024 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch12 Organic Intro"
+  },
+  {
+    "id": "pp24c2aq8c",
+    "text": "What is the formula of the zwitterion of serine?",
+    "type": "mc",
+    "options": [
+      "⁺H₃N-CH(CH₂OH)-COO⁻",
+      "⁺H₃N-CH(CH₂OH)-COOH",
+      "H₂N-CH(CH₂OH)-COO⁻",
+      "⁺H₃N-CH(CH₂O⁻)-COOH"
+    ],
+    "answer": 0,
+    "explain": "A zwitterion has both positive and negative charges. The amino group is protonated (NH₃⁺) and the carboxyl group is deprotonated (COO⁻). The -CH₂OH remains unchanged.",
+    "improve": "Understand zwitterion structure: NH₂ → NH₃⁺ (protonated), COOH → COO⁻ (deprotonated).",
+    "paper": "2024 C2 Adv",
+    "marks": 1,
+    "chapter": "Ch17 Organic Analysis"
+  },
+  {
+    "id": "pp24c2cq1a",
+    "text": "Which piece of apparatus should be used for making a solution with a volume of exactly 250 cm³?",
+    "type": "mc",
+    "options": [
+      "Burette",
+      "Measuring cylinder",
+      "Pipette",
+      "Volumetric flask"
+    ],
+    "answer": 3,
+    "explain": "A volumetric flask is used to make up a solution to a precise volume (e.g. 250 cm³). Burettes and pipettes deliver specific volumes; measuring cylinders are less precise.",
+    "improve": "Learn which glassware to use for different measurement purposes in titration experiments.",
+    "paper": "2024 C2 Core",
+    "marks": 1,
+    "chapter": "Ch5 Moles & Equations"
+  },
+  {
+    "id": "pp24c2cq1bi",
+    "text": "A burette reading has the meniscus between 2.4 and 2.5 cm³, aligned at the midpoint. What is the reading?",
+    "type": "mc",
+    "options": [
+      "2.40 cm³",
+      "2.45 cm³",
+      "3.55 cm³",
+      "3.60 cm³"
+    ],
+    "answer": 1,
+    "explain": "Burettes read from top down. If the meniscus is exactly halfway between 2.4 and 2.5, the reading is 2.45 cm³. Always read to 0.05 cm³ precision.",
+    "improve": "Practise reading burette measurements correctly to 0.05 cm³.",
+    "paper": "2024 C2 Core",
+    "marks": 1,
+    "chapter": "Ch5 Moles & Equations"
+  },
+  {
+    "id": "pp24c2cq2",
+    "text": "For the equilibrium Cr₂O₇²⁻(aq) + H₂O(l) ⇌ 2CrO₄²⁻(aq) + 2H⁺(aq), what happens when NaOH is added?",
+    "type": "mc",
+    "options": [
+      "Solution turns more orange because equilibrium shifts left",
+      "Solution turns more yellow because equilibrium shifts right",
+      "No colour change because NaOH does not affect equilibrium",
+      "Solution turns green due to a side reaction"
+    ],
+    "answer": 1,
+    "explain": "Adding NaOH reduces [H⁺]. By Le Chatelier's principle, equilibrium shifts right to produce more H⁺, producing more CrO₄²⁻ (yellow). The solution turns yellower.",
+    "improve": "Practise applying Le Chatelier's principle to predict equilibrium shifts.",
+    "paper": "2024 C2 Core",
+    "marks": 3,
+    "chapter": "Ch10 Equilibria"
+  },
+  {
+    "id": "pp24c2cq3bi",
+    "text": "What is the name and type of the mechanism for the reaction of methylpropene with hydrogen bromide?",
+    "type": "mc",
+    "options": [
+      "Electrophilic addition",
+      "Nucleophilic addition",
+      "Electrophilic substitution",
+      "Nucleophilic substitution"
+    ],
+    "answer": 0,
+    "explain": "Alkenes react with HBr via electrophilic addition. The pi bond electrons attack H⁺ (electrophile), forming a carbocation, then Br⁻ adds to the carbocation.",
+    "improve": "Learn the mechanism of electrophilic addition to alkenes with curly arrows.",
+    "paper": "2024 C2 Core",
+    "marks": 1,
+    "chapter": "Ch14 Alkenes"
+  },
+  {
+    "id": "pp24c2cq4",
+    "text": "Why do bond enthalpies give a more accurate value than mean bond enthalpies for the dimerisation of ethene to cyclobutane?",
+    "type": "mc",
+    "options": [
+      "Bond enthalpies are specific to the particular molecule, whereas mean bond enthalpies are averaged over different molecules",
+      "Mean bond enthalpies are always larger",
+      "Bond enthalpies exclude London forces",
+      "Mean bond enthalpies only apply to gases"
+    ],
+    "answer": 0,
+    "explain": "Bond enthalpies are specific to particular bonds in specific molecules. Mean bond enthalpies are averages across different compounds, so they may not accurately represent the bonds involved in this specific reaction.",
+    "improve": "Understand the difference between bond enthalpies and mean bond enthalpies.",
+    "paper": "2024 C2 Core",
+    "marks": 2,
+    "chapter": "Ch5 Moles & Equations"
+  },
+  {
+    "id": "pp24c2cq5",
+    "text": "In the preparation of 1-bromobutane from butan-1-ol, sodium bromide and concentrated H₂SO₄, which step prevents side reactions?",
+    "type": "mc",
+    "options": [
+      "Using an ice-water bath during addition",
+      "Distilling the product",
+      "Using anti-bumping granules",
+      "Washing with Na₂CO₃"
+    ],
+    "answer": 0,
+    "explain": "The ice-water bath and condenser during Steps 1-2 prevent side reactions by keeping the temperature low. Otherwise, dehydration or oxidation products may form.",
+    "improve": "Review the practical procedure for preparing halogenoalkanes from alcohols.",
+    "paper": "2024 C2 Core",
+    "marks": 2,
+    "chapter": "Ch16 Alcohols"
+  },
+  {
+    "id": "pp24c2cq6",
+    "text": "In the reaction Na₂S₂O₃ + 2HCl → S + SO₂ + H₂O + 2NaCl, why does the mixture become cloudy?",
+    "type": "mc",
+    "options": [
+      "Sulfur dioxide gas is produced",
+      "Solid sulfur is formed as a precipitate",
+      "Sodium chloride crystallises out",
+      "Hydrogen sulfide gas is produced"
+    ],
+    "answer": 1,
+    "explain": "The cloudiness is caused by finely divided solid sulfur forming as a colloidal precipitate in the solution. This is used as a visual endpoint for timing the reaction.",
+    "improve": "Understand the observation in the thiosulfate-acid rate experiment and its significance.",
+    "paper": "2024 C2 Core",
+    "marks": 1,
+    "chapter": "Ch9 Kinetics"
+  },
+  {
+    "id": "pp24c2cq8",
+    "text": "In an experiment to determine the enthalpy of combustion of methanol, which is the main reason the experimental value is less exothermic than the data book value?",
+    "type": "mc",
+    "options": [
+      "Incomplete combustion",
+      "Heat loss to the surroundings",
+      "Using a lid on the beaker",
+      "Mass measurement errors"
+    ],
+    "answer": 1,
+    "explain": "Heat loss to the surroundings (air, beaker, thermometer) is the main error. Not all heat from combustion reaches the water. Incomplete combustion (carbon deposit) also reduces energy released.",
+    "improve": "Review sources of error in combustion calorimetry experiments.",
+    "paper": "2024 C2 Core",
+    "marks": 4,
+    "chapter": "Ch16 Alcohols"
+  }
+]
